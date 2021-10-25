@@ -15619,11 +15619,6 @@
   "RootNamespace": "MusicWebApp",
   "Documents": [
     {
-      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_LoginPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -15639,8 +15634,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Areas/Identity/Pages/_ViewStart.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Accunt/Register.cshtml",
+      "TargetPath": "Views\\Accunt\\Register.cshtml",
       "FileKind": "mvc"
     },
     {
