@@ -18,9 +18,10 @@ namespace MusicWebApp.Areas.Identity
                 services.AddDbContext<MusicAppContext>(options =>
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("MusicWebAppIdentityDbContextConnection")));
-
+                
                 services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                    .AddEntityFrameworkStores<MusicAppContext>();
+                    .AddEntityFrameworkStores<MusicAppContext>()
+                    .AddDefaultTokenProviders();
             });
         }
     }

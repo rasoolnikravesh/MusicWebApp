@@ -10,6 +10,10 @@ namespace MusicWebApp.Areas.Identity.Data
 {
     public class MusicAppContext : IdentityDbContext<AspNetUser>
     {
+        public MusicAppContext()
+        {
+            
+        }
         public MusicAppContext(DbContextOptions<MusicAppContext> options)
             : base(options)
         {
