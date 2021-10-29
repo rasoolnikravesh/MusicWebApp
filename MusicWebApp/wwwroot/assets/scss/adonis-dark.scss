@@ -1,0 +1,7936 @@
+//colors
+$color_biloba_flower_approx: #a68cf8;
+$black_10: rgba(0, 0, 0, 0.1);
+$color_chicago_approx: #5e5d5a;
+$color_cod_gray_approx: #111111;
+$color_gallery_approx: #ebebeb;
+$color_portage_approx: #91a5f4;
+$white: #fff;
+$color_pigeon_post_20_approx: rgba(168, 179, 211, 0.2);
+$color_mine_shaft_approx: #222222;
+$color_zeus_approx: #2a2824;
+$color_tiara_approx: #d5d6d6;
+$color_iron_approx: #e2e3e4;
+$color_oslo_gray_approx: #8e9194;
+$black: #000000;
+$color_east_side_28_approx: rgba(165, 149, 198, 0.28);
+$black_50: rgba(0, 0, 0, 0.5);
+$black_80: rgba(0, 0, 0, 0.8);
+$color_silver_sand_approx: #b8babc;
+$color_athens_gray_approx: #edeeef;
+$color_amethyst_smoke_approx: #a49ac3;
+$color_razzmatazz_approx: #ed145b;
+$black_30: rgba(0, 0, 0, 0.3);
+$color_alto_approx: #ddd;
+$color_martini_approx: #959595;
+$color_silver_approx: #cccccc;
+$color_alabaster_approx: #f9f9f9;
+$color_aqua_haze_approx: #ebf2f3;
+$color_boulder_approx: #7d7d7d;
+$color_mercury_approx: #e1e1e1;
+$color_heather_approx: #b9c1ca;
+$color_silver_chalice_approx: #a1a1a1;
+$color_catskill_white_approx: #ebf4f5;
+$color_dorado_approx: #555555;
+$color_white_lilac_approx: #f6f7fb;
+$color_lochmara_approx: #0d88c1;
+$color_dove_gray_approx: #666;
+$color_cerulean_approx: #009be3;
+$color_pizazz_approx: #ff9500;
+$color_outrageous_orange_approx: #ff5e3a;
+$color_bud_50_approx: rgba(165, 169, 158, 0.5);
+$color_deep_sea_green_approx: #0c5460;
+$color_dull_lavender_approx: #a27bf9;
+
+//fonts
+$font_0: Vazir;
+$font_1: Yekan;
+
+//urls
+$url_0: url(../images/star.svg);
+$url_1: url(../images/star-active.svg);
+$url_2: url(../image/jplayer.blue.monday.video.play.png);
+$url_3: url(../images/svg/play-btn-light.svg);
+$url_4: url(../images/svg/dot-nav-horizontal.svg);
+$url_5: url(../images/new-releases/new-releases-2.jpg);
+$url_6: url(../images/single/single-3.jpg);
+$url_7: url(../images/single/single-1.jpg);
+$url_8: url(../images/banner-1.jpg);
+
+@import "../fonts/fonts.css";
+#wrap {
+  overflow: hidden;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.6s;
+  &.search-open {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(0.99);
+  }
+}
+.col-auto {
+  max-width: 100%;
+}
+@media(min-width: 1600px) {
+  .container {
+    max-width: 1400px;
+  }
+  .d-xxl-flex {
+    display: flex !important;
+  }
+  .d-xxl-none {
+    display: none !important;
+  }
+  .col-xxl-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+  .col-xxl-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+  .col-xxl-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .col-xxl-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+  .col-xxl-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+  .col-xxl-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-xxl-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+  .col-xxl-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+  .col-xxl-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .col-xxl-10 {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+  }
+  .col-xxl-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+  .col-xxl-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .justify-content-xxl-start {
+    justify-content: flex-start !important;
+  }
+  .pb-xxl-3 {
+    padding-bottom: 1rem !important;
+  }
+  .justify-content-xxl-end {
+    justify-content: flex-end !important;
+  }
+}
+@media(min-width: 768px) {
+  .fluid-reverse-md-l {
+    margin-left: -15px;
+    &.preloader {
+      left: -15px;
+    }
+  }
+  .fluid-reverse-md-r {
+    margin-right: -15px;
+    &.preloader {
+      right: -15px;
+    }
+  }
+  .fluid-reverse-md-none {
+    margin: 0;
+  }
+  .fluid-reverse-r-md-none {
+    margin-right: 0;
+  }
+  .fluid-reverse-md-l-none {
+    margin-left: 0;
+  }
+  .flex-column-content-md {
+    width: 40%;
+    flex: 2 0 auto;
+    max-width: 90%;
+  }
+  .flex-column-sidebar-md {
+    width: 350px;
+    flex: 0 0 350px;
+    max-width: 350px;
+  }
+  .col-md-grow-40 {
+    flex: 0 0 40%;
+    flex-grow: 1;
+    width: 40%;
+    max-width: none;
+  }
+  .mb-e-md-0 {
+    margin-bottom: 0 !important;
+  }
+  .mb-e-md-10 {
+    margin-bottom: 10px !important;
+  }
+  .mb-e-md-15 {
+    margin-bottom: 15px !important;
+  }
+  .mb-e-md-20 {
+    margin-bottom: 20px !important;
+  }
+  .mb-e-md-25 {
+    margin-bottom: 25px !important;
+  }
+  .mb-e-md-30 {
+    margin-bottom: 30px !important;
+  }
+  .mb-e-md-40 {
+    margin-bottom: 40px !important;
+  }
+  .mb-e-md-50 {
+    margin-bottom: 50px !important;
+  }
+  .mb-e-md-60 {
+    margin-bottom: 60px !important;
+  }
+  .mt-e-md-0 {
+    margin-top: 0 !important;
+  }
+  .mt-e-md-10 {
+    margin-top: 10px !important;
+  }
+  .mt-e-md-15 {
+    margin-top: 15px !important;
+  }
+  .mt-e-md-20 {
+    margin-top: 20px !important;
+  }
+  .mt-e-md-25 {
+    margin-top: 25px !important;
+  }
+  .mt-e-md-30 {
+    margin-top: 30px !important;
+  }
+  .mt-e-md-40 {
+    margin-top: 40px !important;
+  }
+  .mt-e-md-50 {
+    margin-top: 50px !important;
+  }
+  .mt-e-md-60 {
+    margin-top: 60px !important;
+  }
+  .ml-e-md-0 {
+    margin-left: 0 !important;
+  }
+  .ml-e-md-10 {
+    margin-left: 10px !important;
+  }
+  .ml-e-md-15 {
+    margin-left: 15px !important;
+  }
+  .ml-e-md-20 {
+    margin-left: 20px !important;
+  }
+  .ml-e-md-25 {
+    margin-left: 25px !important;
+  }
+  .ml-e-md-30 {
+    margin-left: 30px !important;
+  }
+  .ml-e-md-40 {
+    margin-left: 40px !important;
+  }
+  .ml-e-md-50 {
+    margin-left: 50px !important;
+  }
+  .ml-e-md-60 {
+    margin-left: 60px !important;
+  }
+  .mr-e-md-0 {
+    margin-right: 0 !important;
+  }
+  .mr-e-md-10 {
+    margin-right: 10px !important;
+  }
+  .mr-e-md-15 {
+    margin-right: 15px !important;
+  }
+  .mr-e-md-20 {
+    margin-right: 20px !important;
+  }
+  .mr-e-md-25 {
+    margin-right: 25px !important;
+  }
+  .mr-e-md-30 {
+    margin-right: 30px !important;
+  }
+  .mr-e-md-40 {
+    margin-right: 40px !important;
+  }
+  .mr-e-md-50 {
+    margin-right: 50px !important;
+  }
+  .mr-e-md-60 {
+    margin-right: 60px !important;
+  }
+  .pt-e-md-0 {
+    padding-top: 0 !important;
+  }
+  .pt-e-md-10 {
+    padding-top: 10px !important;
+  }
+  .pt-e-md-15 {
+    padding-top: 15px !important;
+  }
+  .pt-e-md-20 {
+    padding-top: 20px !important;
+  }
+  .pt-e-md-25 {
+    padding-top: 25px !important;
+  }
+  .pt-e-md-30 {
+    padding-top: 30px !important;
+  }
+  .pt-e-md-40 {
+    padding-top: 40px !important;
+  }
+  .pt-e-md-50 {
+    padding-top: 50px !important;
+  }
+  .pt-e-md-60 {
+    padding-top: 60px !important;
+  }
+  .pb-e-md-0 {
+    padding-bottom: 0 !important;
+  }
+  .pb-e-md-10 {
+    padding-bottom: 10px !important;
+  }
+  .pb-e-md-15 {
+    padding-bottom: 15px !important;
+  }
+  .pb-e-md-20 {
+    padding-bottom: 20px !important;
+  }
+  .pb-e-md-25 {
+    padding-bottom: 25px !important;
+  }
+  .pb-e-md-30 {
+    padding-bottom: 30px !important;
+  }
+  .pb-e-md-40 {
+    padding-bottom: 40px !important;
+  }
+  .pb-e-md-50 {
+    padding-bottom: 50px !important;
+  }
+  .pb-e-md-60 {
+    padding-bottom: 60px !important;
+  }
+  .pl-e-md-0 {
+    padding-left: 0 !important;
+  }
+  .pl-e-md-10 {
+    padding-left: 10px !important;
+  }
+  .pl-e-md-15 {
+    padding-left: 15px !important;
+  }
+  .pl-e-md-20 {
+    padding-left: 20px !important;
+  }
+  .pl-e-md-25 {
+    padding-left: 25px !important;
+  }
+  .pl-e-md-30 {
+    padding-left: 30px !important;
+  }
+  .pl-e-md-40 {
+    padding-left: 40px !important;
+  }
+  .pl-e-md-50 {
+    padding-left: 50px !important;
+  }
+  .pl-e-md-60 {
+    padding-left: 60px !important;
+  }
+  .pr-e-md-0 {
+    padding-right: 0 !important;
+  }
+  .pr-e-md-10 {
+    padding-right: 10px !important;
+  }
+  .pr-e-md-15 {
+    padding-right: 15px !important;
+  }
+  .pr-e-md-20 {
+    padding-right: 20px !important;
+  }
+  .pr-e-md-25 {
+    padding-right: 25px !important;
+  }
+  .pr-e-md-30 {
+    padding-right: 30px !important;
+  }
+  .pr-e-md-40 {
+    padding-right: 40px !important;
+  }
+  .pr-e-md-50 {
+    padding-right: 50px !important;
+  }
+  .pr-e-md-60 {
+    padding-right: 60px !important;
+  }
+  .gutter-md-4 {
+    margin-left: -2px;
+    margin-right: -2px;
+    [class^="col-"] {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+    .swiper-slide {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+    .owl-item .item {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+  }
+  .gutter-md-10 {
+    margin-left: -5px;
+    margin-right: -5px;
+    [class^="col-"] {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .swiper-slide {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .owl-item .item {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+  .gutter-md-20 {
+    margin-left: -10px;
+    margin-right: -10px;
+    [class^="col-"] {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .swiper-slide {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .owl-item .item {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  .gutter-md-30 {
+    margin-left: -15px;
+    margin-right: -15px;
+    [class^="col-"] {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .swiper-slide {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .owl-item .item {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .gutter-md-40 {
+    margin-left: -20px;
+    margin-right: -20px;
+    [class^="col-"] {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .swiper-slide {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .owl-item .item {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  .gutter-md-50 {
+    margin-left: -25px;
+    margin-right: -25px;
+    [class^="col-"] {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    .swiper-slide {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    .owl-item .item {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+  .gutter-md-60 {
+    margin-left: -30px;
+    margin-right: -30px;
+    [class^="col-"] {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .swiper-slide {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .owl-item .item {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  .gutter-md-80 {
+    margin-left: -40px;
+    margin-right: -40px;
+    [class^="col-"] {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    .swiper-slide {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    .owl-item .item {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+  .off-canvas-off-md {
+    position: inherit !important;
+    z-index: 100 !important;
+    height: auto !important;
+  }
+  .d-shadow {
+    //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+    transition-duration: 0.3s;
+  }
+  .h-d-shadow {
+    //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+    transition-duration: 0.3s;
+  }
+  .fs-md-1 {
+    font-size: 0.7475rem !important;
+  }
+  .fs-md-2 {
+    font-size: 0.8125rem !important;
+  }
+  .fs-md-3 {
+    font-size: 0.8775rem !important;
+  }
+  .fs-md-4 {
+    font-size: 0.9368125rem !important;
+  }
+  .fs-md-5 {
+    font-size: 1.0018125rem !important;
+  }
+  .fs-md-6 {
+    font-size: 1.1253125rem !important;
+  }
+  .fs-md-7 {
+    font-size: 1.2504375rem !important;
+  }
+  .fs-md-8 {
+    font-size: 1.38125rem !important;
+  }
+  .fs-md-9 {
+    font-size: 1.625rem !important;
+  }
+  .fs-md-10 {
+    font-size: 2.03125rem !important;
+  }
+  .fs-md-11 {
+    font-size: 2.4375rem !important;
+  }
+  .fs-md-12 {
+    font-size: 2.998125rem !important;
+  }
+  .fs-md-13 {
+    font-size: 3.7496875rem !important;
+  }
+  a {
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: color 0.2s ease;
+  }
+  .tagcloud {
+    a {
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: color 0.3s ease-out;
+    }
+    a::before {
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: opacity 0.3s ease-out;
+    }
+  }
+  .flex-column-md-album-poster {
+    width: 350px;
+    flex: 0 0 350px;
+    flex-grow: 0;
+    max-width: none;
+  }
+  .flex-column-md-album-content {
+    width: 40%;
+    flex: 2 0 auto;
+    max-width: none;
+  }
+  #adonis-playlist {
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.6s;
+  }
+  .music-img-box {
+    .img-box {
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all 0.5s;
+    }
+    .title a {
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: color 0.3s;
+    }
+  }
+  .hover-state {
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s;
+  }
+  .play-btn-dark.round-btn::before {
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.3s;
+  }
+}
+@media(max-width: 991px) {
+  .master-container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .fluid-reverse-l {
+    margin-left: -15px;
+    &.preloader {
+      left: -15px;
+    }
+  }
+  .fluid-reverse-r {
+    margin-right: -15px;
+    &.preloader {
+      right: -15px;
+    }
+  }
+  .adonis-player-wrap .jp-volume-controls .jp-volume-bar {
+    width: 100px;
+  }
+}
+@media(min-width: 992px) {
+  .master-container-fluid {
+    padding-left: 51.5px;
+    padding-right: 51.5px;
+  }
+  .fluid-reverse-l {
+    margin-left: -51.5px;
+    &.preloader {
+      left: -51.5px;
+    }
+  }
+  .fluid-reverse-r {
+    margin-right: -51.5px;
+    &.preloader {
+      right: -51.5px;
+    }
+  }
+  .fluid-reverse-lg-l {
+    margin-left: -51.5px;
+    &.preloader {
+      left: -51.5px;
+    }
+  }
+  .fluid-reverse-lg-r {
+    margin-right: -51.5px;
+    &.preloader {
+      right: -51.5px;
+    }
+  }
+  .fluid-reverse-lg-none {
+    margin-left: 0;
+  }
+  .col-lg-grow-40 {
+    flex: 0 0 40%;
+    flex: 0 0 auto;
+    flex-grow: 1;
+    width: 40%;
+    max-width: none;
+  }
+  .mb-e-lg-0 {
+    margin-bottom: 0 !important;
+  }
+  .mb-e-lg-10 {
+    margin-bottom: 10px !important;
+  }
+  .mb-e-lg-15 {
+    margin-bottom: 15px !important;
+  }
+  .mb-e-lg-20 {
+    margin-bottom: 20px !important;
+  }
+  .mb-e-lg-25 {
+    margin-bottom: 25px !important;
+  }
+  .mb-e-lg-30 {
+    margin-bottom: 30px !important;
+  }
+  .mb-e-lg-40 {
+    margin-bottom: 40px !important;
+  }
+  .mb-e-lg-50 {
+    margin-bottom: 50px !important;
+  }
+  .mb-e-lg-60 {
+    margin-bottom: 60px !important;
+  }
+  .mt-e-lg-0 {
+    margin-top: 0 !important;
+  }
+  .mt-e-lg-10 {
+    margin-top: 10px !important;
+  }
+  .mt-e-lg-15 {
+    margin-top: 15px !important;
+  }
+  .mt-e-lg-20 {
+    margin-top: 20px !important;
+  }
+  .mt-e-lg-25 {
+    margin-top: 25px !important;
+  }
+  .mt-e-lg-30 {
+    margin-top: 30px !important;
+  }
+  .mt-e-lg-40 {
+    margin-top: 40px !important;
+  }
+  .mt-e-lg-50 {
+    margin-top: 50px !important;
+  }
+  .mt-e-lg-60 {
+    margin-top: 60px !important;
+  }
+  .ml-e-lg-0 {
+    margin-left: 0 !important;
+  }
+  .ml-e-lg-10 {
+    margin-left: 10px !important;
+  }
+  .ml-e-lg-15 {
+    margin-left: 15px !important;
+  }
+  .ml-e-lg-20 {
+    margin-left: 20px !important;
+  }
+  .ml-e-lg-25 {
+    margin-left: 25px !important;
+  }
+  .ml-e-lg-30 {
+    margin-left: 30px !important;
+  }
+  .ml-e-lg-40 {
+    margin-left: 40px !important;
+  }
+  .ml-e-lg-50 {
+    margin-left: 50px !important;
+  }
+  .ml-e-lg-60 {
+    margin-left: 60px !important;
+  }
+  .mr-e-lg-0 {
+    margin-right: 0 !important;
+  }
+  .mr-e-lg-10 {
+    margin-right: 10px !important;
+  }
+  .mr-e-lg-15 {
+    margin-right: 15px !important;
+  }
+  .mr-e-lg-20 {
+    margin-right: 20px !important;
+  }
+  .mr-e-lg-25 {
+    margin-right: 25px !important;
+  }
+  .mr-e-lg-30 {
+    margin-right: 30px !important;
+  }
+  .mr-e-lg-40 {
+    margin-right: 40px !important;
+  }
+  .mr-e-lg-50 {
+    margin-right: 50px !important;
+  }
+  .mr-e-lg-60 {
+    margin-right: 60px !important;
+  }
+  .pt-e-lg-0 {
+    padding-top: 0 !important;
+  }
+  .pt-e-lg-10 {
+    padding-top: 10px !important;
+  }
+  .pt-e-lg-15 {
+    padding-top: 15px !important;
+  }
+  .pt-e-lg-20 {
+    padding-top: 20px !important;
+  }
+  .pt-e-lg-25 {
+    padding-top: 25px !important;
+  }
+  .pt-e-lg-30 {
+    padding-top: 30px !important;
+  }
+  .pt-e-lg-40 {
+    padding-top: 40px !important;
+  }
+  .pt-e-lg-50 {
+    padding-top: 50px !important;
+  }
+  .pt-e-lg-60 {
+    padding-top: 60px !important;
+  }
+  .pb-e-lg-0 {
+    padding-bottom: 0 !important;
+  }
+  .pb-e-lg-10 {
+    padding-bottom: 10px !important;
+  }
+  .pb-e-lg-15 {
+    padding-bottom: 15px !important;
+  }
+  .pb-e-lg-20 {
+    padding-bottom: 20px !important;
+  }
+  .pb-e-lg-25 {
+    padding-bottom: 25px !important;
+  }
+  .pb-e-lg-30 {
+    padding-bottom: 30px !important;
+  }
+  .pb-e-lg-40 {
+    padding-bottom: 40px !important;
+  }
+  .pb-e-lg-50 {
+    padding-bottom: 50px !important;
+  }
+  .pb-e-lg-60 {
+    padding-bottom: 60px !important;
+  }
+  .pl-e-lg-0 {
+    padding-left: 0 !important;
+  }
+  .pl-e-lg-10 {
+    padding-left: 10px !important;
+  }
+  .pl-e-lg-15 {
+    padding-left: 15px !important;
+  }
+  .pl-e-lg-20 {
+    padding-left: 20px !important;
+  }
+  .pl-e-lg-25 {
+    padding-left: 25px !important;
+  }
+  .pl-e-lg-30 {
+    padding-left: 30px !important;
+  }
+  .pl-e-lg-40 {
+    padding-left: 40px !important;
+  }
+  .pl-e-lg-50 {
+    padding-left: 50px !important;
+  }
+  .pl-e-lg-60 {
+    padding-left: 60px !important;
+  }
+  .pr-e-lg-0 {
+    padding-right: 0 !important;
+  }
+  .pr-e-lg-10 {
+    padding-right: 10px !important;
+  }
+  .pr-e-lg-15 {
+    padding-right: 15px !important;
+  }
+  .pr-e-lg-20 {
+    padding-right: 20px !important;
+  }
+  .pr-e-lg-25 {
+    padding-right: 25px !important;
+  }
+  .pr-e-lg-30 {
+    padding-right: 30px !important;
+  }
+  .pr-e-lg-40 {
+    padding-right: 40px !important;
+  }
+  .pr-e-lg-50 {
+    padding-right: 50px !important;
+  }
+  .pr-e-lg-60 {
+    padding-right: 60px !important;
+  }
+  .gutter-lg-4 {
+    margin-left: -2px;
+    margin-right: -2px;
+    [class^="col-"] {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+    .swiper-slide {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+    .owl-item .item {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+  }
+  .gutter-lg-10 {
+    margin-left: -5px;
+    margin-right: -5px;
+    [class^="col-"] {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .swiper-slide {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .owl-item .item {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+  .gutter-lg-20 {
+    margin-left: -10px;
+    margin-right: -10px;
+    [class^="col-"] {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .swiper-slide {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .owl-item .item {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  .gutter-lg-30 {
+    margin-left: -15px;
+    margin-right: -15px;
+    [class^="col-"] {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .swiper-slide {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .owl-item .item {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .gutter-lg-40 {
+    margin-left: -20px;
+    margin-right: -20px;
+    [class^="col-"] {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .swiper-slide {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .owl-item .item {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  .gutter-lg-50 {
+    margin-left: -25px;
+    margin-right: -25px;
+    [class^="col-"] {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    .swiper-slide {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    .owl-item .item {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+  .gutter-lg-60 {
+    margin-left: -30px;
+    margin-right: -30px;
+    [class^="col-"] {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .swiper-slide {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .owl-item .item {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  .gutter-lg-80 {
+    margin-left: -40px;
+    margin-right: -40px;
+    [class^="col-"] {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    .swiper-slide {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    .owl-item .item {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+  .fs-lg-1 {
+    font-size: 0.7475rem !important;
+  }
+  .fs-lg-2 {
+    font-size: 0.8125rem !important;
+  }
+  .fs-lg-3 {
+    font-size: 0.8775rem !important;
+  }
+  .fs-lg-4 {
+    font-size: 0.9368125rem !important;
+  }
+  .fs-lg-5 {
+    font-size: 1.0018125rem !important;
+  }
+  .fs-lg-6 {
+    font-size: 1.1253125rem !important;
+  }
+  .fs-lg-7 {
+    font-size: 1.2504375rem !important;
+  }
+  .fs-lg-8 {
+    font-size: 1.38125rem !important;
+  }
+  .fs-lg-9 {
+    font-size: 1.625rem !important;
+  }
+  .fs-lg-10 {
+    font-size: 2.03125rem !important;
+  }
+  .fs-lg-11 {
+    font-size: 2.4375rem !important;
+  }
+  .fs-lg-12 {
+    font-size: 2.998125rem !important;
+  }
+  .fs-lg-13 {
+    font-size: 3.7496875rem !important;
+  }
+  .flex-column-lg-album-poster {
+    width: 350px;
+    flex: 0 0 350px;
+    flex-grow: 0;
+    max-width: none;
+  }
+  .flex-column-lg-album-content {
+    width: 40%;
+    flex: 2 0 auto;
+    max-width: none;
+  }
+  .adonis-album-list > li.item {
+    .item-number {
+      padding-right: 1rem;
+      min-width: 50px;
+    }
+    &:hover .hover-lg-show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .owl-theme-adonis .owl-nav [class*='owl-'] {
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.3s;
+  }
+}
+.col-grow-40 {
+  flex: 0 0 40%;
+  flex-grow: 1;
+  width: 40%;
+  max-width: none;
+}
+.masonry-item {
+  float: right;
+}
+@media(min-width: 1200px) {
+  .col-xl-grow-40 {
+    flex: 0 0 40%;
+    flex-grow: 1;
+    width: 40%;
+    max-width: none;
+  }
+  .flex-column-content-xl {
+    width: 40%;
+    flex: 2 0 auto;
+    max-width: 90%;
+  }
+  .flex-column-sidebar-xl {
+    width: 350px;
+    flex: 0 0 350px;
+    max-width: 350px;
+  }
+  .content-middle-grow {
+    flex: 0 0 40%;
+    flex-grow: 1;
+    width: 40%;
+    max-width: none;
+  }
+  .mb-e-xl-0 {
+    margin-bottom: 0 !important;
+  }
+  .mb-e-xl-10 {
+    margin-bottom: 10px !important;
+  }
+  .mb-e-xl-15 {
+    margin-bottom: 15px !important;
+  }
+  .mb-e-xl-20 {
+    margin-bottom: 20px !important;
+  }
+  .mb-e-xl-25 {
+    margin-bottom: 25px !important;
+  }
+  .mb-e-xl-30 {
+    margin-bottom: 30px !important;
+  }
+  .mb-e-xl-40 {
+    margin-bottom: 40px !important;
+  }
+  .mb-e-xl-50 {
+    margin-bottom: 50px !important;
+  }
+  .mb-e-xl-60 {
+    margin-bottom: 60px !important;
+  }
+  .mt-e-xl-0 {
+    margin-top: 0 !important;
+  }
+  .mt-e-xl-10 {
+    margin-top: 10px !important;
+  }
+  .mt-e-xl-15 {
+    margin-top: 15px !important;
+  }
+  .mt-e-xl-20 {
+    margin-top: 20px !important;
+  }
+  .mt-e-xl-25 {
+    margin-top: 25px !important;
+  }
+  .mt-e-xl-30 {
+    margin-top: 30px !important;
+  }
+  .mt-e-xl-40 {
+    margin-top: 40px !important;
+  }
+  .mt-e-xl-50 {
+    margin-top: 50px !important;
+  }
+  .mt-e-xl-60 {
+    margin-top: 60px !important;
+  }
+  .ml-e-xl-0 {
+    margin-left: 0 !important;
+  }
+  .ml-e-xl-10 {
+    margin-left: 10px !important;
+  }
+  .ml-e-xl-15 {
+    margin-left: 15px !important;
+  }
+  .ml-e-xl-20 {
+    margin-left: 20px !important;
+  }
+  .ml-e-xl-25 {
+    margin-left: 25px !important;
+  }
+  .ml-e-xl-30 {
+    margin-left: 30px !important;
+  }
+  .ml-e-xl-40 {
+    margin-left: 40px !important;
+  }
+  .ml-e-xl-50 {
+    margin-left: 50px !important;
+  }
+  .ml-e-xl-60 {
+    margin-left: 60px !important;
+  }
+  .mr-e-xl-0 {
+    margin-right: 0 !important;
+  }
+  .mr-e-xl-10 {
+    margin-right: 10px !important;
+  }
+  .mr-e-xl-15 {
+    margin-right: 15px !important;
+  }
+  .mr-e-xl-20 {
+    margin-right: 20px !important;
+  }
+  .mr-e-xl-25 {
+    margin-right: 25px !important;
+  }
+  .mr-e-xl-30 {
+    margin-right: 30px !important;
+  }
+  .mr-e-xl-40 {
+    margin-right: 40px !important;
+  }
+  .mr-e-xl-50 {
+    margin-right: 50px !important;
+  }
+  .mr-e-xl-60 {
+    margin-right: 60px !important;
+  }
+  .pt-e-xl-0 {
+    padding-top: 0 !important;
+  }
+  .pt-e-xl-10 {
+    padding-top: 10px !important;
+  }
+  .pt-e-xl-15 {
+    padding-top: 15px !important;
+  }
+  .pt-e-xl-20 {
+    padding-top: 20px !important;
+  }
+  .pt-e-xl-25 {
+    padding-top: 25px !important;
+  }
+  .pt-e-xl-30 {
+    padding-top: 30px !important;
+  }
+  .pt-e-xl-40 {
+    padding-top: 40px !important;
+  }
+  .pt-e-xl-50 {
+    padding-top: 50px !important;
+  }
+  .pt-e-xl-60 {
+    padding-top: 60px !important;
+  }
+  .pb-e-xl-0 {
+    padding-bottom: 0 !important;
+  }
+  .pb-e-xl-10 {
+    padding-bottom: 10px !important;
+  }
+  .pb-e-xl-15 {
+    padding-bottom: 15px !important;
+  }
+  .pb-e-xl-20 {
+    padding-bottom: 20px !important;
+  }
+  .pb-e-xl-25 {
+    padding-bottom: 25px !important;
+  }
+  .pb-e-xl-30 {
+    padding-bottom: 30px !important;
+  }
+  .pb-e-xl-40 {
+    padding-bottom: 40px !important;
+  }
+  .pb-e-xl-50 {
+    padding-bottom: 50px !important;
+  }
+  .pb-e-xl-60 {
+    padding-bottom: 60px !important;
+  }
+  .pl-e-xl-0 {
+    padding-left: 0 !important;
+  }
+  .pl-e-xl-10 {
+    padding-left: 10px !important;
+  }
+  .pl-e-xl-15 {
+    padding-left: 15px !important;
+  }
+  .pl-e-xl-20 {
+    padding-left: 20px !important;
+  }
+  .pl-e-xl-25 {
+    padding-left: 25px !important;
+  }
+  .pl-e-xl-30 {
+    padding-left: 30px !important;
+  }
+  .pl-e-xl-40 {
+    padding-left: 40px !important;
+  }
+  .pl-e-xl-50 {
+    padding-left: 50px !important;
+  }
+  .pl-e-xl-60 {
+    padding-left: 60px !important;
+  }
+  .pr-e-xl-0 {
+    padding-right: 0 !important;
+  }
+  .pr-e-xl-10 {
+    padding-right: 10px !important;
+  }
+  .pr-e-xl-15 {
+    padding-right: 15px !important;
+  }
+  .pr-e-xl-20 {
+    padding-right: 20px !important;
+  }
+  .pr-e-xl-25 {
+    padding-right: 25px !important;
+  }
+  .pr-e-xl-30 {
+    padding-right: 30px !important;
+  }
+  .pr-e-xl-40 {
+    padding-right: 40px !important;
+  }
+  .pr-e-xl-50 {
+    padding-right: 50px !important;
+  }
+  .pr-e-xl-60 {
+    padding-right: 60px !important;
+  }
+  .gutter-xl-4 {
+    margin-left: -2px;
+    margin-right: -2px;
+    [class^="col-"] {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+    .swiper-slide {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+    .owl-item .item {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+  }
+  .gutter-xl-10 {
+    margin-left: -5px;
+    margin-right: -5px;
+    [class^="col-"] {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .swiper-slide {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .owl-item .item {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+  .gutter-xl-20 {
+    margin-left: -10px;
+    margin-right: -10px;
+    [class^="col-"] {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .swiper-slide {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .owl-item .item {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  .gutter-xl-30 {
+    margin-left: -15px;
+    margin-right: -15px;
+    [class^="col-"] {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .swiper-slide {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .owl-item .item {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .gutter-xl-40 {
+    margin-left: -20px;
+    margin-right: -20px;
+    [class^="col-"] {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .swiper-slide {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .owl-item .item {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  .gutter-xl-50 {
+    margin-left: -25px;
+    margin-right: -25px;
+    [class^="col-"] {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    .swiper-slide {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    .owl-item .item {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+  .gutter-xl-60 {
+    margin-left: -30px;
+    margin-right: -30px;
+    [class^="col-"] {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .swiper-slide {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .owl-item .item {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  .gutter-xl-80 {
+    margin-left: -40px;
+    margin-right: -40px;
+    [class^="col-"] {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    .swiper-slide {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    .owl-item .item {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+  .off-canvas-off-xl {
+    position: inherit !important;
+    z-index: 100 !important;
+    height: auto !important;
+  }
+  .flex-column-xl-album-poster {
+    width: 350px;
+    flex: 0 0 350px;
+    min-width: 250px;
+  }
+  .flex-column-xl-album-content {
+    width: 40%;
+    flex: 2 0 auto;
+    max-width: none;
+  }
+  .adonis-carousel.gutter-xl-60 .owl-item .item {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.mb-e-0 {
+  margin-bottom: 0 !important;
+}
+.mb-e-10 {
+  margin-bottom: 10px !important;
+}
+.mb-e-15 {
+  margin-bottom: 15px !important;
+}
+.mb-e-20 {
+  margin-bottom: 20px !important;
+}
+.mb-e-25 {
+  margin-bottom: 25px !important;
+}
+.mb-e-30 {
+  margin-bottom: 30px !important;
+}
+.mb-e-40 {
+  margin-bottom: 40px !important;
+}
+.mb-e-50 {
+  margin-bottom: 50px !important;
+}
+.mb-e-60 {
+  margin-bottom: 60px !important;
+}
+.mt-e-0 {
+  margin-top: 0 !important;
+}
+.mt-e-10 {
+  margin-top: 10px !important;
+}
+.mt-e-15 {
+  margin-top: 15px !important;
+}
+.mt-e-20 {
+  margin-top: 20px !important;
+}
+.mt-e-25 {
+  margin-top: 25px !important;
+}
+.mt-e-30 {
+  margin-top: 30px !important;
+}
+.mt-e-40 {
+  margin-top: 40px !important;
+}
+.mt-e-50 {
+  margin-top: 50px !important;
+}
+.mt-e-60 {
+  margin-top: 60px !important;
+}
+.ml-e-0 {
+  margin-left: 0 !important;
+}
+.ml-e-10 {
+  margin-left: 10px !important;
+}
+.ml-e-15 {
+  margin-left: 15px !important;
+}
+.ml-e-20 {
+  margin-left: 20px !important;
+}
+.ml-e-25 {
+  margin-left: 25px !important;
+}
+.ml-e-30 {
+  margin-left: 30px !important;
+}
+.ml-e-40 {
+  margin-left: 40px !important;
+}
+.ml-e-50 {
+  margin-left: 50px !important;
+}
+.ml-e-60 {
+  margin-left: 60px !important;
+}
+.mr-e-0 {
+  margin-right: 0 !important;
+}
+.mr-e-10 {
+  margin-right: 10px !important;
+}
+.mr-e-15 {
+  margin-right: 15px !important;
+}
+.mr-e-20 {
+  margin-right: 20px !important;
+}
+.mr-e-25 {
+  margin-right: 25px !important;
+}
+.mr-e-30 {
+  margin-right: 30px !important;
+}
+.mr-e-40 {
+  margin-right: 40px !important;
+}
+.mr-e-50 {
+  margin-right: 50px !important;
+}
+.mr-e-60 {
+  margin-right: 60px !important;
+}
+.pt-e-0 {
+  padding-top: 0 !important;
+}
+.pt-e-10 {
+  padding-top: 10px !important;
+}
+.pt-e-15 {
+  padding-top: 15px !important;
+}
+.pt-e-20 {
+  padding-top: 20px !important;
+}
+.pt-e-25 {
+  padding-top: 25px !important;
+}
+.pt-e-30 {
+  padding-top: 30px !important;
+}
+.pt-e-40 {
+  padding-top: 40px !important;
+}
+.pt-e-50 {
+  padding-top: 50px !important;
+}
+.pt-e-60 {
+  padding-top: 60px !important;
+}
+.pb-e-0 {
+  padding-bottom: 0 !important;
+}
+.pb-e-10 {
+  padding-bottom: 10px !important;
+}
+.pb-e-15 {
+  padding-bottom: 15px !important;
+}
+.pb-e-20 {
+  padding-bottom: 20px !important;
+}
+.pb-e-25 {
+  padding-bottom: 25px !important;
+}
+.pb-e-30 {
+  padding-bottom: 30px !important;
+}
+.pb-e-40 {
+  padding-bottom: 40px !important;
+}
+.pb-e-50 {
+  padding-bottom: 50px !important;
+}
+.pb-e-60 {
+  padding-bottom: 60px !important;
+}
+.pl-e-0 {
+  padding-left: 0 !important;
+}
+.pl-e-10 {
+  padding-left: 10px !important;
+}
+.pl-e-15 {
+  padding-left: 15px !important;
+}
+.pl-e-20 {
+  padding-left: 20px !important;
+}
+.pl-e-25 {
+  padding-left: 25px !important;
+}
+.pl-e-30 {
+  padding-left: 30px !important;
+}
+.pl-e-40 {
+  padding-left: 40px !important;
+}
+.pl-e-50 {
+  padding-left: 50px !important;
+}
+.pl-e-60 {
+  padding-left: 60px !important;
+}
+.pr-e-0 {
+  padding-right: 0 !important;
+}
+.pr-e-10 {
+  padding-right: 10px !important;
+}
+.pr-e-15 {
+  padding-right: 15px !important;
+}
+.pr-e-20 {
+  padding-right: 20px !important;
+}
+.pr-e-25 {
+  padding-right: 25px !important;
+}
+.pr-e-30 {
+  padding-right: 30px !important;
+}
+.pr-e-40 {
+  padding-right: 40px !important;
+}
+.pr-e-50 {
+  padding-right: 50px !important;
+}
+.pr-e-60 {
+  padding-right: 60px !important;
+}
+.pt-e-percent-1 {
+  padding-top: 1%;
+}
+.pt-e-percent-2 {
+  padding-top: 2%;
+}
+.pt-e-percent-3 {
+  padding-top: 3%;
+}
+.pt-e-percent-4 {
+  padding-top: 4%;
+}
+.pt-e-percent-5 {
+  padding-top: 5%;
+}
+.pt-e-percent-7 {
+  padding-top: 7%;
+}
+.pt-e-percent-8 {
+  padding-top: 8%;
+}
+.pt-e-percent-10 {
+  padding-top: 10%;
+}
+.pt-e-percent-12 {
+  padding-top: 12%;
+}
+.pt-e-percent-15 {
+  padding-top: 15%;
+}
+.pt-e-percent-18 {
+  padding-top: 18%;
+}
+.pt-e-percent-20 {
+  padding-top: 20%;
+}
+.pt-e-percent-25 {
+  padding-top: 25%;
+}
+.pb-e-percent-1 {
+  padding-bottom: 1%;
+}
+.pb-e-percent-2 {
+  padding-bottom: 2%;
+}
+.pb-e-percent-3 {
+  padding-bottom: 3%;
+}
+.pb-e-percent-4 {
+  padding-bottom: 4%;
+}
+.pb-e-percent-5 {
+  padding-bottom: 5%;
+}
+.pb-e-percent-7 {
+  padding-bottom: 7%;
+}
+.pb-e-percent-8 {
+  padding-bottom: 8%;
+}
+.pb-e-percent-10 {
+  padding-bottom: 10%;
+}
+.pb-e-percent-12 {
+  padding-bottom: 12%;
+}
+.pb-e-percent-15 {
+  padding-bottom: 15%;
+}
+.pb-e-percent-18 {
+  padding-bottom: 18%;
+}
+.pb-e-percent-20 {
+  padding-bottom: 20%;
+}
+.pb-e-percent-25 {
+  padding-bottom: 25%;
+}
+.pl-e-percent-1 {
+  padding-left: 1%;
+}
+.pl-e-percent-2 {
+  padding-left: 2%;
+}
+.pl-e-percent-3 {
+  padding-left: 3%;
+}
+.pl-e-percent-4 {
+  padding-left: 4%;
+}
+.pl-e-percent-5 {
+  padding-left: 5%;
+}
+.pl-e-percent-7 {
+  padding-left: 7%;
+}
+.pl-e-percent-8 {
+  padding-left: 8%;
+}
+.pl-e-percent-10 {
+  padding-left: 10%;
+}
+.pl-e-percent-12 {
+  padding-left: 12%;
+}
+.pl-e-percent-15 {
+  padding-left: 15%;
+}
+.pl-e-percent-18 {
+  padding-left: 18%;
+}
+.pl-e-percent-20 {
+  padding-left: 20%;
+}
+.pl-e-percent-25 {
+  padding-left: 25%;
+}
+.pr-e-percent-1 {
+  padding-right: 1%;
+}
+.pr-e-percent-2 {
+  padding-right: 2%;
+}
+.pr-e-percent-3 {
+  padding-right: 3%;
+}
+.pr-e-percent-4 {
+  padding-right: 4%;
+}
+.pr-e-percent-5 {
+  padding-right: 5%;
+}
+.pr-e-percent-7 {
+  padding-right: 7%;
+}
+.pr-e-percent-8 {
+  padding-right: 8%;
+}
+.pr-e-percent-10 {
+  padding-right: 10%;
+}
+.pr-e-percent-12 {
+  padding-right: 12%;
+}
+.pr-e-percent-15 {
+  padding-right: 15%;
+}
+.pr-e-percent-18 {
+  padding-right: 18%;
+}
+.pr-e-percent-20 {
+  padding-right: 20%;
+}
+.pr-e-percent-25 {
+  padding-right: 25%;
+}
+.pb-vh-5 {
+  padding-bottom: 5vh;
+}
+.pb-vh-7 {
+  padding-bottom: 7vh;
+}
+.pb-vh-10 {
+  padding-bottom: 10vh;
+}
+.gutter-4 {
+  margin-left: -2px;
+  margin-right: -2px;
+  [class^="col-"] {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .swiper-slide {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .owl-item .item {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+.gutter-10 {
+  margin-left: -5px;
+  margin-right: -5px;
+  [class^="col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .swiper-slide {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .owl-item .item {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+.gutter-20 {
+  margin-left: -10px;
+  margin-right: -10px;
+  [class^="col-"] {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .swiper-slide {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .owl-item .item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.gutter-30 {
+  margin-left: -15px;
+  margin-right: -15px;
+  [class^="col-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .swiper-slide {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .owl-item .item {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.gutter-40 {
+  margin-left: -20px;
+  margin-right: -20px;
+  [class^="col-"] {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .swiper-slide {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .owl-item .item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.gutter-50 {
+  margin-left: -25px;
+  margin-right: -25px;
+  [class^="col-"] {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .swiper-slide {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .owl-item .item {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+.gutter-60 {
+  margin-left: -30px;
+  margin-right: -30px;
+  [class^="col-"] {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .swiper-slide {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .owl-item .item {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.gutter-80 {
+  margin-left: -40px;
+  margin-right: -40px;
+  [class^="col-"] {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .swiper-slide {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .owl-item .item {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+.fixed-layout-full {
+  height: 100vh;
+}
+.height-100 {
+  height: 100%;
+}
+.fixed-height-grow {
+  flex: 2 0 auto;
+  height: 50%;
+}
+.player-fixed-bottom {
+  height: 120px;
+  flex: 0 0 120px;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: -5px 0 5px 1px $black_10;
+  overflow: hidden;
+}
+.player-fixed-top {
+  height: 120px;
+  flex: 0 0 120px;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: -5px 0 5px 1px $black_10;
+  overflow: hidden;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 3px 2px 4px $black_10;
+}
+.no-padding-left {
+  padding-left: 0;
+}
+.overflow-h {
+  overflow: hidden;
+}
+.overflow-x-h {
+  overflow-x: hidden;
+}
+.overflow-y-h {
+  overflow-y: hidden;
+}
+.no-padding-right {
+  padding-right: 0;
+}
+img {
+  max-width: 100%;
+}
+hr {
+  border-top-color: $color_chicago_approx;
+  &.border-hr {
+    margin: 0;
+    height: 3px;
+    bottom: 0;
+    border: 0;
+    width: 0;
+    position: absolute;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: 0.3s ease-in-out;
+    background: $color_portage_approx;
+    background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+  }
+}
+.pointer {
+  cursor: pointer;
+}
+.inline-preloader {
+  display: inline-block;
+  position: relative;
+  right: 3px;
+  height: 0;
+  width: 0;
+  overflow: visible;
+}
+.no-transition {
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: 0s !important;
+}
+#adonis-popup-menu {
+  z-index: 2000;
+  padding-top: 0;
+  padding-bottom: 0;
+  li {
+    position: relative;
+    .dropdown-menu {
+      right: 100%;
+      top: 0;
+      opacity: 0;
+      display: none;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: opacity 0.3s;
+    }
+    &.has-dropdown::after {
+      content: "";
+      border-width: 5px;
+      border-color: transparent transparent transparent $color_cod_gray_approx;
+      border-style: solid;
+      height: 0;
+      width: 0;
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translateY(-50%);
+    }
+    &.has-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      display: block;
+    }
+  }
+  ul {
+    margin-bottom: 0;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+  .dropdown-item {
+    padding: .32rem 1.8rem;
+  }
+  &.dropdown-reverse .has-dropdown .dropdown-menu {
+    right: auto;
+    left: 100%;
+  }
+}
+.tabs-content {
+  position: relative;
+  > .inactive-hide {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+    transform-origin: top;
+    max-height: 100%;
+    overflow: hidden;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(0.95);
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s ease-out, transform 0.5s ease-out;
+    &.active {
+      z-index: 1;
+      opacity: 1;
+      position: relative;
+      overflow: visible;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: scale(1);
+    }
+  }
+}
+.table {
+  td {
+    border-color: $color_gallery_approx;
+  }
+  th {
+    border-color: $color_gallery_approx;
+  }
+  tbody tr:first-child {
+    th {
+      border-top: none;
+    }
+    td {
+      border-top: none;
+    }
+  }
+}
+tr {
+  &.border-top-0 {
+    td {
+      border-top: none;
+    }
+    th {
+      border-top: none;
+    }
+  }
+  &.border-bottom-0 {
+    td {
+      border-bottom: none;
+    }
+    th {
+      border-bottom: none;
+    }
+  }
+}
+.dropdown-show {
+  opacity: 1;
+  &#adonis-popup-menu {
+    display: block !important;
+  }
+}
+.g-bg {
+  background: $color_portage_approx;
+  background: linear-gradient(39deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+}
+.h-g-bg {
+  .hover-state {
+    background: $color_portage_approx;
+    background: linear-gradient(39deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+  }
+  &:hover {
+    a {
+      color: $white !important;
+      //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+      transition-duration: 0s;
+    }
+    .title {
+      color: $white !important;
+      //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+      transition-duration: 0s;
+      a {
+        color: $white !important;
+        //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+        transition-duration: 0s;
+      }
+    }
+    p {
+      color: $white !important;
+      //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+      transition-duration: 0s;
+    }
+    .des p {
+      color: $white !important;
+      //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+      transition-duration: 0s;
+    }
+    .icon-dots span {
+      background-color: $white;
+    }
+  }
+}
+.navbar {
+  padding: .5rem 0;
+  .navbar-nav {
+    font-size: 0.9368125rem;
+    .menu-item {
+      position: relative;
+    }
+    > li {
+      > a {
+        white-space: nowrap;
+        padding: 0.3rem 1.1rem;
+        color: $white;
+        font-size: 0.9368125rem;
+        font-weight: 400;
+        &:hover {
+          color: $color_portage_approx;
+        }
+        &:active {
+          color: $color_portage_approx;
+        }
+      }
+      &.menu-item {
+        > a {
+          white-space: nowrap;
+          padding: 0.3rem 1.1rem;
+          color: $white;
+          font-size: 0.9368125rem;
+          font-weight: 400;
+          &:hover {
+            color: $color_portage_approx;
+          }
+          &:active {
+            color: $color_portage_approx;
+          }
+        }
+        &.active > a {
+          color: $color_portage_approx;
+        }
+      }
+      &.active > a {
+        color: $color_portage_approx;
+      }
+      &:first-child > a.nav-link {
+        padding-right: 0;
+      }
+      &:last-child > a.nav-link {
+        padding-left: 0;
+      }
+    }
+    .dropdown-menu {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      li.menu-item {
+        a {
+          display: block;
+          color: $color_zeus_approx;
+          font-weight: 400;
+          font-size: 0.8125rem;
+          padding: 0.3rem 0;
+          border-bottom: 1px solid $color_gallery_approx;
+          &:hover {
+            color: $color_portage_approx;
+          }
+          &:active {
+            color: $color_portage_approx;
+          }
+          &.active {
+            color: $color_portage_approx;
+          }
+        }
+        &:last-child a {
+          border-bottom: 0;
+        }
+      }
+    }
+    .dropdown-mega-menu {
+      width: auto;
+      li {
+        &.menu-item a {
+          display: block;
+          color: $color_chicago_approx;
+          font-weight: 400;
+          font-size: 0.8125rem;
+          padding: 0.3rem 0;
+          border-bottom: 1px solid $color_gallery_approx;
+          &:hover {
+            color: $color_biloba_flower_approx;
+            background: none;
+          }
+          &:active {
+            color: $color_biloba_flower_approx;
+            background: none;
+          }
+          &.active {
+            color: $color_biloba_flower_approx;
+            background: none;
+          }
+        }
+        &:last-child .menu-item {
+          border-bottom: none;
+        }
+      }
+      &.show {
+        display: flex;
+      }
+      .col {
+        min-width: 10rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      &.dropdown-bg {
+        padding-left: 8rem;
+      }
+      .bg-col {
+        min-width: 12rem;
+        background-repeat: no-repeat;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        z-index: -1;
+        left: 0;
+        background-size: cover !important;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 4px;
+      }
+      h5 {
+        color: $color_zeus_approx;
+        margin-bottom: .8rem;
+      }
+    }
+  }
+  .brand .logo-play {
+    background: $color_portage_approx;
+    background: linear-gradient(39deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+  }
+}
+.d-shadow {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 4px 4px 15px 0 $color_pigeon_post_20_approx;
+}
+.d-md-shadow {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 4px 4px 15px 0 $color_pigeon_post_20_approx;
+}
+.gradient-adonis {
+  background: $color_portage_approx;
+  background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+}
+.gradient-adonis-hover {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:hover {
+    background: transparent;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+  > div {
+    position: relative;
+    z-index: 10;
+  }
+}
+.gradient-adonis-hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: opacity 0.3s;
+}
+.w-nowrap {
+  white-space: nowrap;
+}
+.rounded-thumb {
+  overflow: hidden;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+}
+.bg-white {
+  background-color: $white;
+}
+.bg-dark {
+  background-color: $color_mine_shaft_approx;
+}
+.bg-light-alt {
+  background-color: $color_gallery_approx;
+}
+.bg-cover {
+  background-size: cover;
+}
+@-webkit-keyframes menuAnimeIn {
+  from {
+    margin-top: 15px;
+    opacity: 0;
+  }
+  to {
+    margin-top: .125rem;
+    opacity: 1;
+  }
+}
+@keyframes menuAnimeIn {
+  from {
+    margin-top: 15px;
+    opacity: 0;
+  }
+  to {
+    margin-top: .125rem;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes menuAnimeOut {
+  from {
+    margin-top: 0.125rem;
+    opacity: 0;
+  }
+  to {
+    margin-top: 2.5rem;
+    opacity: 1;
+  }
+}
+@keyframes menuAnimeOut {
+  from {
+    margin-top: 0.125rem;
+    opacity: 0;
+  }
+  to {
+    margin-top: 2.5rem;
+    opacity: 1;
+  }
+}
+.dropdown-menu {
+  min-width: 13rem;
+  animation-duration: 0.2s;
+  font-size: 0.8125rem;
+  &.show {
+    animation-name: menuAnimeIn;
+  }
+}
+.dropdown-item {
+  white-space: normal;
+  padding: 0.3rem 1.5rem;
+  font-size: 0.8125rem;
+  color: $color_zeus_approx;
+  &:hover {
+    color: $color_biloba_flower_approx;
+    background: transparent;
+  }
+  &.active {
+    background: $color_portage_approx;
+    background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+    color: $color_zeus_approx !important;
+  }
+  &:active {
+    background: $color_portage_approx;
+    background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+    color: $color_zeus_approx !important;
+  }
+}
+.dropdown-lg {
+  min-width: 320px;
+}
+.adonis-highlight-dark {
+  background: $black;
+  color: $white;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0.2rem;
+  padding: 0 3px;
+  vertical-align: super;
+  font-weight: normal;
+}
+.adonis-highlight-active {
+  background: $color_portage_approx;
+  background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+  color: $white;
+  padding: 0 3px;
+  vertical-align: super;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0.2rem;
+  font-weight: normal;
+}
+.off-canvas {
+  height: 100%;
+  position: fixed !important;
+  z-index: 1200;
+  top: 0;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.5s;
+  background: $white;
+  &.off-canvas-static {
+    position: relative !important;
+  }
+  &.off-canvas-right {
+    left: 100%;
+    right: auto;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(0px, 0);
+    width: 580px;
+    max-width: 100%;
+    &.show {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 13px 36px 35px 0 $color_east_side_28_approx;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(-100%, 0);
+    }
+  }
+  &.off-canvas-left {
+    right: 100%;
+    left: auto;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(0px, 0);
+    width: 580px;
+    max-width: 100%;
+    &.show {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 13px 36px 35px 0 $color_east_side_28_approx;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(100%, 0);
+    }
+  }
+  &.off-canvas-left-fixed {
+    right: 100%;
+    left: auto;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(0px, 0);
+    width: 350px;
+    max-width: 100%;
+    &.show {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 13px 36px 35px 0 $color_east_side_28_approx;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(100%, 0);
+    }
+  }
+  &.off-canvas-full {
+    right: 100%;
+    left: auto;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(0px, 0);
+    width: 100%;
+    &.show {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(100%, 0);
+    }
+  }
+  &.show {
+    display: block !important;
+  }
+}
+body {
+  direction: rtl;
+  text-align: right;
+  font-family: $font_0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: $color_silver_sand_approx;
+  background: $color_zeus_approx;
+  &.off-canvas-overlay-on {
+    overflow-x: hidden;
+    .off-canvas-overlay {
+      opacity: 1;
+      z-index: 1100;
+      visibility: visible;
+    }
+  }
+}
+.off-canvas-overlay {
+  background: $black_50;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+.bg-current-color {
+  background-color: currentcolor;
+}
+::selection {
+  background: $color_biloba_flower_approx;
+  color: $white;
+}
+::-moz-selection {
+  background: $color_biloba_flower_approx;
+  color: $white;
+}
+.separator {
+  line-height: 0;
+  > span {
+    width: 30px;
+    display: inline-block;
+    height: 2px;
+    background: $color_zeus_approx;
+    &.separator-sm {
+      width: 25px;
+    }
+    &.separator-md {
+      width: 35px;
+    }
+    &.separator-lg {
+      width: 50px;
+    }
+  }
+}
+#site-content {
+  position: relative;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: height 0.3s ease-in-out;
+}
+.site-content-loading {
+}
+.accordion {
+  .title {
+    position: relative;
+    &.collapsed::after {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: rotate(0deg);
+    }
+  }
+  .title::after {
+    border-width: 6px;
+    display: block;
+    content: "";
+    border-style: solid;
+    position: absolute;
+    left: 0;
+    border-color: $black transparent transparent;
+    top: 0;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.3s ease;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(180deg);
+  }
+  .card {
+    border: none;
+    background: transparent;
+  }
+}
+.bullet-1 {
+  position: relative;
+  padding-right: 25px;
+}
+.bullet-1::before {
+  border-width: 4px;
+  content: '';
+  border-color: $color_oslo_gray_approx;
+  display: block;
+  border-style: solid;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 4px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+  transform: translate(0, -50%);
+}
+.genres-horizontal {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  align-items: center;
+  .hover-state {
+    .play-btn-dark {
+      width: 24px;
+      height: 24px;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 62px;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 0;
+    }
+    .play-btn-light {
+      background: $black_80;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: $color_portage_approx;
+      background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+      filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+    }
+  }
+  &.h-g-bg .hover-state {
+    padding-left: 15px;
+  }
+}
+h1 {
+  color: $color_athens_gray_approx;
+  font-family: $font_1;
+  font-size: 2.250625rem;
+  font-weight: 700;
+}
+.h1 {
+  color: $color_athens_gray_approx;
+  font-family: $font_1;
+  font-size: 2.250625rem;
+  font-weight: 700;
+}
+h2 {
+  color: $color_athens_gray_approx;
+  font-family: $font_1;
+  font-size: 1.86875rem;
+  font-weight: 700;
+}
+.h2 {
+  color: $color_athens_gray_approx;
+  font-family: $font_1;
+  font-size: 1.86875rem;
+  font-weight: 700;
+}
+h3 {
+  color: $color_athens_gray_approx;
+  font-family: $font_1;
+  font-size: 1.37475rem;
+  font-weight: 600;
+}
+.h3 {
+  color: $color_athens_gray_approx;
+  font-family: $font_1;
+  font-size: 1.37475rem;
+  font-weight: 600;
+}
+h4 {
+  color: $color_athens_gray_approx;
+  font-family: $font_1;
+  font-size: 1.1253125rem;
+  font-weight: 600;
+}
+.h4 {
+  color: $color_athens_gray_approx;
+  font-family: $font_1;
+  font-size: 1.1253125rem;
+  font-weight: 600;
+}
+h5 {
+  color: $color_athens_gray_approx;
+  font-family: $font_1;
+  font-size: 0.999375rem;
+  font-weight: 500;
+}
+.h5 {
+  color: $color_athens_gray_approx;
+  font-family: $font_1;
+  font-size: 0.999375rem;
+  font-weight: 500;
+}
+h6 {
+  color: $color_athens_gray_approx;
+  font-family: $font_1;
+  font-size: 0.8750625rem;
+  font-weight: 500;
+}
+.h6 {
+  color: $color_athens_gray_approx;
+  font-family: $font_1;
+  font-size: 0.8750625rem;
+  font-weight: 500;
+}
+@media(max-width: 768px) {
+  .h1-md {
+    font-size: 2.250625rem;
+    font-weight: 700;
+  }
+  .h2-md {
+    font-size: 1.86875rem;
+    font-weight: 700;
+  }
+  .h3-md {
+    font-size: 1.37475rem;
+    font-weight: 600;
+  }
+  .h4-md {
+    font-size: 1.1253125rem;
+    font-weight: 600;
+  }
+  .h5-md {
+    font-size: 0.999375rem;
+    font-weight: 500;
+  }
+  .h6-md {
+    font-size: 0.8750625rem;
+    font-weight: 500;
+  }
+  #search-box-4 .search-inner {
+    &.search-inner-up {
+      height: 10vh;
+    }
+    &.search-inner-down {
+      top: 10vh;
+      bottom: 0;
+      height: auto;
+    }
+  }
+}
+.fs-1 {
+  font-size: 0.7475rem !important;
+}
+.fs-2 {
+  font-size: 0.8125rem !important;
+}
+.fs-3 {
+  font-size: 0.8775rem !important;
+}
+.fs-4 {
+  font-size: 0.9368125rem !important;
+}
+.fs-5 {
+  font-size: 1.0018125rem !important;
+}
+.fs-6 {
+  font-size: 1.1253125rem !important;
+}
+.fs-7 {
+  font-size: 1.2504375rem !important;
+}
+.fs-8 {
+  font-size: 1.38125rem !important;
+}
+.fs-9 {
+  font-size: 1.625rem !important;
+}
+.fs-10 {
+  font-size: 2.03125rem !important;
+}
+.fs-11 {
+  font-size: 2.4375rem !important;
+}
+.fs-12 {
+  font-size: 2.998125rem !important;
+}
+.fs-13 {
+  font-size: 3.7496875rem !important;
+}
+.f-w-100 {
+  font-weight: 100 !important;
+}
+.f-w-200 {
+  font-weight: 200 !important;
+}
+.f-w-300 {
+  font-weight: 300 !important;
+}
+.f-w-400 {
+  font-weight: 400 !important;
+}
+.f-w-500 {
+  font-weight: 500 !important;
+}
+.f-w-600 {
+  font-weight: 600 !important;
+}
+.f-w-700 {
+  font-weight: 700 !important;
+}
+.f-w-800 {
+  font-weight: 800 !important;
+}
+.f-w-900 {
+  font-weight: 900 !important;
+}
+.l-s-1 {
+}
+.l-s-2 {
+}
+a {
+  color: $color_silver_sand_approx;
+  &:hover {
+    text-decoration: none;
+    color: $color_biloba_flower_approx;
+  }
+  &:focus {
+    outline: none;
+  }
+  &.reverse {
+    color: $color_biloba_flower_approx;
+    &:hover {
+      color: $color_silver_sand_approx;
+    }
+  }
+}
+.active-color {
+  color: $color_biloba_flower_approx !important;
+}
+.color-active {
+  color: $color_biloba_flower_approx !important;
+}
+.inactive-color {
+  color: $color_oslo_gray_approx;
+}
+.color-inactive {
+  color: $color_oslo_gray_approx;
+}
+.sidebar {
+  font-size: 13px;
+  position: relative;
+  .inactive-color {
+    color: $color_oslo_gray_approx;
+  }
+  .color-inactive {
+    color: $color_oslo_gray_approx;
+  }
+  .lt-side-menu {
+    a {
+      color: $color_mine_shaft_approx;
+      &:hover {
+        color: $color_biloba_flower_approx;
+      }
+    }
+    li.active a {
+      color: $color_biloba_flower_approx;
+    }
+  }
+  a {
+    color: $white;
+    &:hover {
+      color: $color_biloba_flower_approx;
+    }
+  }
+  .adonis-list {
+    padding-right: 0;
+    margin-right: 0;
+    li {
+      margin-bottom: 6px;
+      padding: 0;
+      list-style: none;
+      ul {
+        padding-right: 20px;
+      }
+    }
+  }
+  .widget {
+    margin-bottom: 2rem;
+    .widget-title {
+      font-size: 1.125rem;
+      padding-bottom: 17px;
+    }
+    &.mb-lg {
+      margin-bottom: 45px;
+    }
+  }
+}
+.inactive-color-two {
+  color: $color_athens_gray_approx;
+}
+.color-inactive-two {
+  color: $color_athens_gray_approx;
+}
+.active-color-2 {
+  color: $color_portage_approx !important;
+}
+.color-active-2 {
+  color: $color_portage_approx !important;
+}
+.color-active-third {
+  color: $color_amethyst_smoke_approx !important;
+}
+.color-active-3 {
+  color: $color_amethyst_smoke_approx !important;
+}
+.color-pink {
+  color: $color_razzmatazz_approx !important;
+}
+.caps {
+  text-transform: uppercase;
+}
+.lh-0 {
+  line-height: 0;
+}
+.text-light::-webkit-input-placeholder {
+  color: $white;
+}
+.text-light::-moz-placeholder {
+  color: $white;
+}
+.black-text {
+  color: $color_zeus_approx !important;
+}
+.color-dark {
+  color: $color_zeus_approx !important;
+}
+.color-white {
+  color: $white;
+  fill: $white;
+}
+.site-header {
+  position: relative;
+  z-index: 1000;
+  a {
+    color: $white;
+    &:hover {
+      color: $color_biloba_flower_approx;
+    }
+  }
+  .header-inner {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  .absolute-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  .navbar-tool {
+    position: relative;
+    .navbar-nav > li > a.nav-link {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+  #top-search {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    &.show {
+      display: block;
+    }
+    .form-control {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .dropdown-item {
+    white-space: normal;
+    padding: 0.3rem 1.5rem;
+    font-size: 0.8125rem;
+    color: $color_zeus_approx;
+    cursor: pointer;
+    &:hover {
+      color: $color_portage_approx;
+      background: transparent;
+    }
+    &.active {
+      background: $color_portage_approx;
+      background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+      filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+      color: $color_zeus_approx !important;
+    }
+    &:active {
+      background: $color_portage_approx;
+      background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+      filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+      color: $color_zeus_approx !important;
+    }
+  }
+  .dropdown-menu {
+    border: none;
+    padding: 1.4rem 0;
+    a {
+      color: $color_zeus_approx;
+      &:hover {
+        color: $color_biloba_flower_approx;
+      }
+    }
+    .title {
+      color: $black;
+    }
+    h5 {
+      color: $black;
+    }
+  }
+  .user-settings-menu {
+    font-size: 0.8125rem;
+    .li {
+      display: block;
+      width: 100%;
+      float: none;
+      clear: both;
+      .adonis-icon {
+        width: 30px;
+        text-align: center;
+        float: right;
+      }
+    }
+  }
+  .dropdown-2x {
+    min-width: 20rem;
+  }
+  .dropdown-md {
+    min-width: 16.125rem;
+  }
+  .brand .logo-play {
+    font-size: 39px;
+    vertical-align: middle;
+    margin-left: 10px;
+  }
+  span.triangle {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translateY(-90%);
+    svg {
+      fill: $white;
+      filter: drop-shadow(0px -5px 6px $black_30);
+    }
+    &.drop-right {
+      right: auto;
+      left: 10px;
+    }
+  }
+  #adonis-popup-menu .dropdown-item {
+    font-size: 14px;
+    padding-right: 15px;
+    [class^="icon-"] {
+      margin-left: 7px;
+    }
+  }
+}
+#dropdownUserSettings::after {
+  vertical-align: baseline;
+}
+.navbar-nav {
+  padding-right: 0;
+  padding-left: auto;
+  .nav-item {
+    display: flex;
+    align-items: center;
+  }
+}
+.navbar-toggler {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid $color_silver_approx !important;
+  min-width: 40px;
+  justify-content: center;
+  align-items: flex-start !important;
+  padding-right: 11px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  .navbar-toggler-icon {
+    display: block;
+    height: 2px;
+    background: currentColor;
+    margin: 2px 0;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 3px;
+    width: 18px;
+    &:nth-child(3) {
+      width: 0.7em;
+    }
+  }
+  &:hover {
+    background-color: $color_alabaster_approx;
+  }
+}
+.top-search-toggle {
+  line-height: 0;
+}
+.side-nav-container {
+  overflow-x: hidden;
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+}
+#primary-menu-offcanvas {
+  background: $color_zeus_approx;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s ease;
+}
+.side-nav {
+  list-style: none;
+  padding: 0;
+  margin-top: 5vmin;
+  width: 100%;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s;
+  a {
+    display: block;
+    position: relative;
+    line-height: 1.1;
+    font-weight: 700;
+    padding: 0.5rem 5vmin 0.5rem 1rem;
+    font-size: 2.3rem;
+    .adonis-icon {
+      left: 1rem;
+      top: 50%;
+      position: absolute;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(0, -50%);
+    }
+  }
+  .sub-level {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(100%, 0, 0);
+    display: none;
+  }
+  .open {
+    &.has-dropdown {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: none !important;
+      .sub-level {
+        display: block;
+      }
+    }
+    .sub-level {
+      opacity: 1;
+    }
+  }
+  .nav-indicator {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translateY(-50%);
+  }
+  &.active-level-2 {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(-100%, 0, 0);
+  }
+  &.active-level-3 {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(-200%, 0, 0);
+  }
+}
+.bordered-round-btn-sm {
+  border: 1px solid inherit;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+}
+.bordered-round-btn-md {
+  border: 2px solid;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  line-height: 0 !important;
+  display: inline-block;
+  text-align: center;
+  padding: 4px;
+}
+.user-settings-dropdown {
+  width: 317px;
+  padding-top: 0 !important;
+  overflow: hidden;
+  .user-profile-image {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    position: relative;
+    right: 50%;
+    margin-bottom: -30px;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(-50%, -50%);
+    border: 3px solid $white;
+  }
+  .user-settings-menu a {
+    display: block;
+    padding: 0.5rem 2rem;
+    border-right: 4px solid transparent;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.3s;
+    &.active {
+      background: $color_aqua_haze_approx;
+      border-color: inherit;
+    }
+    &:hover {
+      background: $color_aqua_haze_approx;
+      border-color: inherit;
+    }
+  }
+}
+#adonis-tabbed-nav {
+  overflow-x: auto;
+}
+.nav-border {
+  .nav-item {
+    font-size: 1.125rem;
+    a {
+      padding: 0.5rem 1rem;
+      color: $color_portage_approx;
+      &.active:after {
+        opacity: 1;
+      }
+    }
+    .nav-link {
+      padding: 0.5rem 1rem;
+      color: $color_portage_approx;
+      &.active:after {
+        opacity: 1;
+      }
+    }
+  }
+  .menu-item {
+    font-size: 1.125rem;
+    a {
+      padding: 0.5rem 1rem;
+      color: $color_portage_approx;
+      &.active:after {
+        opacity: 1;
+      }
+    }
+    .nav-link {
+      padding: 0.5rem 1rem;
+      color: $color_portage_approx;
+      &.active:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+.tab-style-1 {
+  width: 100%;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: nowrap;
+    .menu-item {
+      margin: 0;
+      position: static;
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+      text-align: center;
+      background: $color_zeus_approx;
+      border-left: 1px solid $black;
+      white-space: nowrap;
+      a {
+        padding: 1rem 2rem;
+        position: relative;
+        color: $color_silver_sand_approx;
+        span {
+          position: relative;
+          z-index: 2;
+        }
+        &.active {
+          color: $white;
+          .adonis-icon {
+            color: $white;
+          }
+        }
+        &.active::before {
+          height: 100%;
+          opacity: 1;
+        }
+      }
+      a::before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        height: 0;
+        z-index: 1;
+        opacity: 0;
+        background: $color_portage_approx;
+        background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+        filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: all 0.4s ease-in-out;
+      }
+      &:last-child {
+        border-left: none;
+      }
+    }
+    .nav-item {
+      margin: 0;
+      position: static;
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+      text-align: center;
+      background: $color_zeus_approx;
+      border-left: 1px solid $black;
+      white-space: nowrap;
+      a {
+        padding: 1rem 2rem;
+        position: relative;
+        color: $color_silver_sand_approx;
+        span {
+          position: relative;
+          z-index: 2;
+        }
+        &.active {
+          color: $white;
+          .adonis-icon {
+            color: $white;
+          }
+        }
+        &.active::before {
+          height: 100%;
+          opacity: 1;
+        }
+      }
+      a::before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        height: 0;
+        z-index: 1;
+        opacity: 0;
+        background: $color_portage_approx;
+        background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+        filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: all 0.4s ease-in-out;
+      }
+      &:last-child {
+        border-left: none;
+      }
+    }
+    .menu-item::after {
+      content: '';
+      height: 50%;
+      width: 1px;
+    }
+    .nav-item::after {
+      content: '';
+      height: 50%;
+      width: 1px;
+    }
+  }
+}
+@media(max-width: 576px) {
+  .navbar-secondary .nav-link {
+    display: block;
+    padding: .5rem 0.7rem;
+  }
+  #dropdownUserSettings img {
+    max-width: 30px;
+  }
+}
+.moving-border {
+  position: relative;
+  .m-item {
+    position: relative;
+  }
+}
+.lt-side-menu-title {
+  font-weight: 600;
+}
+@-webkit-keyframes adonis-play-loading {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes adonis-play-loading {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@-webkit-keyframes bounce {
+  from {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translateY(0px);
+  }
+  to {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  from {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translateY(0px);
+  }
+  to {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translateY(-15px);
+  }
+}
+.section-preloader-wrap {
+  min-height: 125px;
+}
+.preloader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+  transform-origin: 50% 200px;
+  &.tab-preloader {
+    display: none;
+    z-index: 800;
+  }
+  &.section-loader {
+    display: none;
+    z-index: 800;
+  }
+  &.site-preloader {
+    z-index: 2000;
+    position: fixed;
+  }
+  .preloader-overlay {
+    background: $color_zeus_approx;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    top: 0;
+  }
+  .center-center {
+    position: fixed;
+    right: 50%;
+    top: 50%;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+  }
+  .animate-loading {
+    position: absolute;
+    animation: adonis-play-loading 5s infinite alternate;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    .adonis-icon {
+      position: absolute;
+      bottom: 0;
+      z-index: 10;
+      right: 0;
+    }
+  }
+  .shadow {
+    width: 200%;
+    height: 20px;
+    display: block;
+    top: 100%;
+    position: absolute;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 27px 20px 0 $color_chicago_approx !important;
+    right: -55%;
+  }
+  .icons {
+    animation: bounce 1s infinite alternate;
+    //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+    transform-origin: center bottom;
+  }
+  .tab-loader {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translateY(20vh);
+  }
+  .top-50-vh {
+    right: 50%;
+    top: 50vh;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(-50%, -50%);
+  }
+  &.negative-overlay .preloader-overlay {
+    top: -200px;
+  }
+  > .loader-icon {
+    position: absolute;
+    right: 50%;
+    top: 0;
+    z-index: 1900;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(-50%, -50%);
+  }
+}
+.preloader-static {
+  min-height: 50px;
+}
+.adonis-rotate {
+  position: relative;
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  display: block;
+  font-size: 0;
+  color: $white;
+  width: 32px;
+  height: 32px;
+  > div {
+    position: relative;
+    //Instead of the line below you could use @include box-sizing($bs)
+    box-sizing: border-box;
+    display: inline-block;
+    float: none;
+    background-color: transparent;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 100%;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 2px $color_alto_approx inset;
+    width: 32px;
+    height: 32px;
+    div {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border-width: 2px;
+      border: 2px solid $black;
+      border-bottom-color: transparent;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 100%;
+      animation: ball-clip-rotate .75s linear infinite;
+      position: absolute;
+      border-right-color: transparent;
+      border-left-color: transparent;
+    }
+  }
+  &.dark {
+    color: $color_mine_shaft_approx;
+  }
+  &.adonis-sm {
+    width: 16px;
+    height: 16px;
+    > div {
+      width: 16px;
+      height: 16px;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 1px $color_alto_approx inset;
+      div {
+        border-width: 1px;
+      }
+    }
+  }
+  &.adonis-2x {
+    width: 64px;
+    height: 64px;
+    > div {
+      width: 64px;
+      height: 64px;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 3px $color_alto_approx inset;
+      div {
+        border-width: 3px;
+      }
+    }
+  }
+  &.adonis-3x {
+    width: 96px;
+    height: 96px;
+    > div {
+      width: 96px;
+      height: 96px;
+      border-width: 6px;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 4px $color_alto_approx inset;
+      div {
+        border-width: 4px;
+      }
+    }
+  }
+}
+@-webkit-keyframes ball-clip-rotate {
+  0% {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(0deg);
+  }
+  50% {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(180deg);
+  }
+  100% {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes ball-clip-rotate {
+  0% {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(0deg);
+  }
+  50% {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(180deg);
+  }
+  100% {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes ball-clip-rotate {
+  0% {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(0deg);
+  }
+  50% {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(180deg);
+  }
+  100% {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(360deg);
+  }
+}
+@keyframes ball-clip-rotate {
+  0% {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(0deg);
+  }
+  50% {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(180deg);
+  }
+  100% {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(360deg);
+  }
+}
+.site-footer {
+  a {
+    color: $color_oslo_gray_approx;
+    &:hover {
+      color: $color_biloba_flower_approx;
+    }
+  }
+  .widget {
+    margin-bottom: 30px;
+    .widget-title {
+      padding: 0;
+      padding-bottom: 20px;
+    }
+    .vertical-list li {
+      padding: 0 0 8px 0;
+    }
+  }
+  .copyright {
+    padding: 10px 0;
+  }
+}
+.social-icons {
+  ul {
+    display: inline-flex;
+    text-decoration: none;
+    margin-bottom: 0;
+  }
+  a {
+    padding: 10px;
+  }
+  li:first-child a {
+    padding-right: 0;
+  }
+}
+.tagcloud {
+  a {
+    padding: 5px 15px;
+    margin: 0 0 10px 10px;
+    display: inline-block;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 3px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    color: $color_athens_gray_approx;
+    background-color: transparent;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.3s;
+    a {
+      color: $color_athens_gray_approx;
+    }
+    p {
+      color: $color_athens_gray_approx;
+    }
+    span {
+      color: $color_athens_gray_approx;
+    }
+    &:hover {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 1px none inset;
+      color: $white !important;
+      background-color: transparent;
+      a {
+        color: $white !important;
+      }
+      p {
+        color: $white !important;
+      }
+      span {
+        color: $white !important;
+      }
+    }
+    &:focus {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 1px none inset;
+      color: $white !important;
+      background-color: transparent;
+      a {
+        color: $white !important;
+      }
+      p {
+        color: $white !important;
+      }
+      span {
+        color: $white !important;
+      }
+    }
+    &:hover::before {
+      opacity: 0;
+    }
+    &:focus::before {
+      opacity: 0;
+    }
+    &:hover::after {
+      opacity: 1;
+    }
+    &:focus::after {
+      opacity: 1;
+    }
+    &:not([disabled]):not(.disabled) {
+      &:active {
+        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: 0 0 0 1px none inset;
+        color: $white !important;
+        background-color: transparent;
+        a {
+          color: $white !important;
+        }
+        p {
+          color: $white !important;
+        }
+        span {
+          color: $white !important;
+        }
+      }
+      &:active::before {
+        opacity: 0;
+      }
+      &:active::after {
+        opacity: 1;
+      }
+    }
+  }
+  a::before {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 1px none inset;
+    background-color: $color_chicago_approx;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    z-index: -1;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s;
+    opacity: 1;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 3px;
+  }
+  a::after {
+    background: $color_portage_approx;
+    background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    z-index: -1;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 3px;
+  }
+}
+.side-menu {
+  font-size: 13px;
+}
+.follower-box {
+  margin-bottom: 1.3rem;
+  .artist {
+    font-size: 0.8125rem;
+    margin-bottom: 0.2rem;
+  }
+}
+.title-box {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  .sub-title {
+    line-height: 1;
+  }
+}
+.color-variable::-webkit-input-placeholder {
+  color: currentColor;
+}
+.color-variable::-moz-placeholder {
+  color: currentColor;
+}
+.color-variable {
+  &:-ms-input-placeholder {
+    color: currentColor;
+  }
+  &:-moz-placeholder {
+    color: currentColor;
+  }
+}
+input[type=checkbox] {
+  vertical-align: middle;
+}
+input[type=radio] {
+  vertical-align: middle;
+}
+label {
+  margin: 0 0 0.6rem 0;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: $color_boulder_approx;
+  background-color: $color_athens_gray_approx;
+  //Instead of the line below you could use @include background-clip($clip)
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  &:focus {
+    border-color: $color_biloba_flower_approx;
+    outline: none;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+  }
+}
+.adonis-checkbox {
+  .label {
+    position: relative;
+    &:after {
+      content: '';
+      right: 5px;
+      top: 4px;
+      width: 9px;
+      height: 9px;
+      position: absolute;
+      z-index: 5;
+      border: 1px solid $white;
+      border-top: none;
+      border-left: none;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: rotate(-45deg);
+    }
+  }
+  .label::before {
+    content: '';
+    border: 2px solid $color_mercury_approx;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 4;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 2px;
+  }
+  input[type="checkbox"] {
+    display: none;
+    &:checked + label .label:before {
+      background-color: $color_biloba_flower_approx;
+      border: none;
+    }
+  }
+  input[type="radio"] {
+    display: none;
+  }
+}
+.adonis-radio {
+  .label {
+    position: relative;
+    &:after {
+      content: '';
+      right: 5px;
+      top: 4px;
+      width: 9px;
+      height: 9px;
+      position: absolute;
+      z-index: 5;
+    }
+  }
+  .label::before {
+    content: '';
+    border: 2px solid $color_mercury_approx;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 4;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="radio"] {
+    display: none;
+    &:checked + label .label {
+      &:before {
+        background-color: $color_biloba_flower_approx;
+        border: none;
+      }
+      &:after {
+        background: $color_biloba_flower_approx;
+        border: 3px solid $white;
+        width: 16px;
+        height: 16px;
+        top: 2px;
+        right: 2px;
+      }
+    }
+  }
+  .label::after {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+  }
+}
+.form-group-g-style {
+  padding-bottom: 16px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  .form-control {
+    border: none;
+    background: transparent;
+    position: relative;
+    bottom: -14px;
+    padding: 4px 0;
+    margin-top: 4px;
+  }
+  .label-control {
+    display: block;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    width: 100%;
+    pointer-events: none;
+    height: 100%;
+    white-space: nowrap;
+    &.no-border::before {
+      display: none;
+    }
+    .label-text {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate3d(0, 20px, 0) scale(1);
+      //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+      transform-origin: left top;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: transform 0.3s;
+      position: absolute;
+    }
+  }
+  .label-control::before {
+    content: "";
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid $color_heather_approx;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: transform 0.3s;
+  }
+  .label-control::after {
+    content: "";
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 2px solid $color_biloba_flower_approx;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate3d(-100%, 0, 0);
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: transform 0.3s;
+  }
+  &.active {
+    .label-control::after {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate3d(0%, 0, 0);
+    }
+    .label-control .label-text {
+      opacity: 1;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: scale(0.9);
+    }
+  }
+  .input-field label:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: 1px solid $color_heather_approx;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: transform 0.3s;
+  }
+}
+.round-input {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50px;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+.btn {
+  font-size: 13px;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s ease;
+  z-index: 1;
+  &:focus {
+    outline: none;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+  }
+  &.rounded-circle {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+  }
+  &.rounded-circle::before {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+  }
+  &.rounded-circle::after {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+  }
+}
+button {
+  font-size: 13px;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s ease;
+  &:focus {
+    outline: none;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+  }
+}
+.btn::before {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 3px;
+}
+.btn::after {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 3px;
+}
+button::before {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 3px;
+}
+button::after {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 3px;
+}
+.rounded-btn {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50px;
+}
+.rounded-btn::before {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50px;
+}
+.rounded-btn::after {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50px;
+}
+.active-border {
+  border-color: $color_biloba_flower_approx !important;
+}
+.btn-sm {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8125rem;
+}
+.btn-sm::before {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 3px;
+}
+.btn-sm::after {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 3px;
+}
+.btn-md {
+  padding: 0.2rem 1rem;
+  font-size: 12px;
+}
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 13px;
+}
+.btn-xl {
+  padding: 1rem 3.5rem;
+  font-size: 16px;
+}
+.btn-sm-wide {
+  font-size: 0.8125rem;
+  padding: .365rem 1.28rem;
+}
+.btn-md-wide {
+  padding: 0.75rem 2.5rem;
+  font-size: 12px;
+}
+.btn-lg-wide {
+  padding: 0.75rem 3.5rem;
+  font-size: 13px;
+}
+.btn-xl-wide {
+  padding: 0.75rem 4.5rem;
+  font-size: 16px;
+}
+.btn-80-60 {
+  width: 80px;
+  height: 60px;
+}
+.btn-120-60 {
+  width: 120px;
+  height: 60px;
+}
+.btn-90-90 {
+  width: 90px;
+  height: 90px;
+}
+.btn-45-45 {
+  width: 45px;
+  height: 45px;
+}
+.btn-40-40 {
+  width: 40px;
+  height: 40px;
+}
+.btn-50-50 {
+  width: 50px;
+  height: 50px;
+}
+.btn-60-60 {
+  width: 60px;
+  height: 60px;
+}
+.btn-light {
+  border: none;
+  position: relative;
+  cursor: pointer;
+  color: $color_silver_chalice_approx;
+  background-color: transparent;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s;
+  a {
+    color: $color_silver_chalice_approx;
+  }
+  p {
+    color: $color_silver_chalice_approx;
+  }
+  span {
+    color: $color_silver_chalice_approx;
+  }
+  &:hover {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 1px none inset;
+    color: $white !important;
+    background-color: transparent;
+    a {
+      color: $white !important;
+    }
+    p {
+      color: $white !important;
+    }
+    span {
+      color: $white !important;
+    }
+  }
+  &:focus {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 1px none inset;
+    color: $white !important;
+    background-color: transparent;
+    a {
+      color: $white !important;
+    }
+    p {
+      color: $white !important;
+    }
+    span {
+      color: $white !important;
+    }
+  }
+  &:hover::before {
+    opacity: 0;
+  }
+  &:focus::before {
+    opacity: 0;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+  &:focus::after {
+    opacity: 1;
+  }
+  &:not([disabled]):not(.disabled) {
+    &:active {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 1px none inset;
+      color: $white !important;
+      background-color: transparent;
+      a {
+        color: $white !important;
+      }
+      p {
+        color: $white !important;
+      }
+      span {
+        color: $white !important;
+      }
+    }
+    &:active::before {
+      opacity: 0;
+    }
+    &:active::after {
+      opacity: 1;
+    }
+  }
+}
+.btn-light::before {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 0 0 1px none inset;
+  background-color: $color_catskill_white_approx;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+.btn-light::after {
+  background: $color_portage_approx;
+  background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: opacity 0.3s;
+}
+.btn-primary {
+  border: none;
+  position: relative;
+  cursor: pointer;
+  color: $white;
+  background-color: transparent;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s;
+  a {
+    color: $white;
+  }
+  p {
+    color: $white;
+  }
+  span {
+    color: $white;
+  }
+  &:hover {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 1px none inset;
+    color: $white !important;
+    background-color: transparent;
+    a {
+      color: $white !important;
+    }
+    p {
+      color: $white !important;
+    }
+    span {
+      color: $white !important;
+    }
+  }
+  &:focus {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 1px none inset;
+    color: $white !important;
+    background-color: transparent;
+    a {
+      color: $white !important;
+    }
+    p {
+      color: $white !important;
+    }
+    span {
+      color: $white !important;
+    }
+  }
+  &:hover::before {
+    opacity: 0;
+  }
+  &:focus::before {
+    opacity: 0;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+  &:focus::after {
+    opacity: 1;
+  }
+  &:not([disabled]):not(.disabled) {
+    &:active {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 1px none inset;
+      color: $white !important;
+      background-color: transparent;
+      a {
+        color: $white !important;
+      }
+      p {
+        color: $white !important;
+      }
+      span {
+        color: $white !important;
+      }
+    }
+    &:active::before {
+      opacity: 0;
+    }
+    &:active::after {
+      opacity: 1;
+    }
+  }
+  &:not(:disabled):not(.disabled) {
+    &.active:focus {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: none;
+    }
+    &:active:focus {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: none;
+    }
+  }
+}
+.btn-primary::before {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 0 0 1px none inset;
+  background: $color_portage_approx;
+  background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+.btn-primary::after {
+  background: $color_portage_approx;
+  background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: opacity 0.3s;
+}
+.btn-secondary {
+  border: none;
+  position: relative;
+  cursor: pointer;
+  color: $color_dorado_approx;
+  background-color: transparent;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s;
+  a {
+    color: $color_dorado_approx;
+  }
+  p {
+    color: $color_dorado_approx;
+  }
+  span {
+    color: $color_dorado_approx;
+  }
+  &:hover {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 1px none inset;
+    color: $white !important;
+    background-color: transparent;
+    a {
+      color: $white !important;
+    }
+    p {
+      color: $white !important;
+    }
+    span {
+      color: $white !important;
+    }
+  }
+  &:focus {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 1px none inset;
+    color: $white !important;
+    background-color: transparent;
+    a {
+      color: $white !important;
+    }
+    p {
+      color: $white !important;
+    }
+    span {
+      color: $white !important;
+    }
+  }
+  &:hover::before {
+    opacity: 0;
+  }
+  &:focus::before {
+    opacity: 0;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+  &:focus::after {
+    opacity: 1;
+  }
+  &:not([disabled]):not(.disabled) {
+    &:active {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 1px none inset;
+      color: $white !important;
+      background-color: transparent;
+      a {
+        color: $white !important;
+      }
+      p {
+        color: $white !important;
+      }
+      span {
+        color: $white !important;
+      }
+    }
+    &:active::before {
+      opacity: 0;
+    }
+    &:active::after {
+      opacity: 1;
+    }
+  }
+}
+.btn-secondary::before {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 0 0 1px none inset;
+  background-color: $color_mercury_approx;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+.btn-secondary::after {
+  background: $color_portage_approx;
+  background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: opacity 0.3s;
+}
+.btn-outline {
+  border: none;
+  position: relative;
+  cursor: pointer;
+  color: $color_silver_sand_approx;
+  background-color: transparent;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s;
+  a {
+    color: $color_silver_sand_approx;
+  }
+  p {
+    color: $color_silver_sand_approx;
+  }
+  span {
+    color: $color_silver_sand_approx;
+  }
+  &:hover {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 1px $color_chicago_approx inset;
+    color: $white !important;
+    background-color: transparent;
+    a {
+      color: $white !important;
+    }
+    p {
+      color: $white !important;
+    }
+    span {
+      color: $white !important;
+    }
+  }
+  &:focus {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 1px $color_chicago_approx inset;
+    color: $white !important;
+    background-color: transparent;
+    a {
+      color: $white !important;
+    }
+    p {
+      color: $white !important;
+    }
+    span {
+      color: $white !important;
+    }
+  }
+  &:hover::before {
+    opacity: 0;
+  }
+  &:focus::before {
+    opacity: 0;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+  &:focus::after {
+    opacity: 1;
+  }
+  &:not([disabled]):not(.disabled) {
+    &:active {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 1px $color_chicago_approx inset;
+      color: $white !important;
+      background-color: transparent;
+      a {
+        color: $white !important;
+      }
+      p {
+        color: $white !important;
+      }
+      span {
+        color: $white !important;
+      }
+    }
+    &:active::before {
+      opacity: 0;
+    }
+    &:active::after {
+      opacity: 1;
+    }
+  }
+}
+.btn-outline::before {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 0 0 1px $color_chicago_approx inset;
+  background-color: transparent;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+.btn-outline::after {
+  background: $color_portage_approx;
+  background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: opacity 0.3s;
+}
+.btn-transparent {
+  border: none;
+  position: relative;
+  cursor: pointer;
+  color: $color_silver_chalice_approx;
+  background-color: transparent;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s;
+  a {
+    color: $color_silver_chalice_approx;
+  }
+  p {
+    color: $color_silver_chalice_approx;
+  }
+  span {
+    color: $color_silver_chalice_approx;
+    color: $color_oslo_gray_approx;
+  }
+  &:hover {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 1px none inset;
+    color: $white !important;
+    background-color: transparent;
+    a {
+      color: $white !important;
+    }
+    p {
+      color: $white !important;
+    }
+    span {
+      color: $white !important;
+      color: $white;
+    }
+  }
+  &:focus {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 1px none inset;
+    color: $white !important;
+    background-color: transparent;
+    a {
+      color: $white !important;
+    }
+    p {
+      color: $white !important;
+    }
+    span {
+      color: $white !important;
+      color: $white;
+    }
+  }
+  &:hover::before {
+    opacity: 0;
+  }
+  &:focus::before {
+    opacity: 0;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+  &:focus::after {
+    opacity: 1;
+  }
+  .dark {
+    color: $color_zeus_approx;
+  }
+  &:not([disabled]):not(.disabled) {
+    &:active {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 0 0 1px none inset;
+      color: $white !important;
+      background-color: transparent;
+      a {
+        color: $white !important;
+      }
+      p {
+        color: $white !important;
+      }
+      span {
+        color: $white !important;
+        color: $white;
+      }
+    }
+    &:active::before {
+      opacity: 0;
+    }
+    &:active::after {
+      opacity: 1;
+    }
+  }
+}
+.btn-transparent::before {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 0 0 1px none inset;
+  background-color: transparent;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+.btn-transparent::after {
+  background: $color_portage_approx;
+  background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: opacity 0.3s;
+}
+.btn-blank {
+  background: transparent;
+}
+.btn-outline-secondary {
+  color: $color_silver_chalice_approx;
+  border-color: $color_mercury_approx;
+  &.focus {
+    background: $color_portage_approx;
+    background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+    border-color: transparent;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+    color: $white;
+  }
+  &:focus {
+    background: $color_portage_approx;
+    background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+    border-color: transparent;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+    color: $white;
+  }
+  &:hover {
+    border-color: transparent;
+  }
+  &:not([disabled]):not(.disabled) {
+    &.active {
+      background: $color_portage_approx;
+      background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+      filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+      border-color: transparent;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: none;
+      color: $white;
+    }
+    &:active {
+      background: $color_portage_approx;
+      background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+      filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+      border-color: transparent;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: none;
+      color: $white;
+    }
+  }
+}
+.lt-side-btn {
+  text-align: right;
+  &.gradient-adonis-hover:hover {
+    color: $white;
+  }
+}
+.input-group {
+  .form-control {
+    border: 1px solid $color_iron_approx;
+  }
+  .input-group-text {
+    padding: .375rem .75rem;
+    background-color: $color_athens_gray_approx;
+    border: 1px solid $color_iron_approx;
+    height: 100%;
+    align-items: center;
+    display: inline-flex;
+    &.right-edge {
+      //Instead of the line below you could use @include border-top-left-radius($radius)
+      border-top-left-radius: 3px;
+      //Instead of the line below you could use @include border-bottom-left-radius($radius)
+      border-bottom-left-radius: 3px;
+      //Instead of the line below you could use @include border-top-right-radius($radius)
+      border-top-right-radius: 0;
+      //Instead of the line below you could use @include border-bottom-right-radius($radius)
+      border-bottom-right-radius: 0;
+      border-left: 0;
+    }
+  }
+}
+.round-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  &.gradient-adonis-hover:hover {
+    color: $white;
+    p {
+      color: $white !important;
+    }
+  }
+}
+.round-btn::before {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+}
+.round-btn::after {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+}
+.btn-close-round {
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  background: $color_gallery_approx;
+  text-align: center;
+  border: none;
+}
+@-webkit-keyframes adonisShadowOut {
+  from {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 0 $color_biloba_flower_approx;
+  }
+  to {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 1rem 0.5rem rgba(166, 140, 248, 0);
+  }
+}
+@keyframes adonisShadowOut {
+  from {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 0 0 $color_biloba_flower_approx;
+  }
+  to {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 1rem 0.5rem rgba(166, 140, 248, 0);
+  }
+}
+.shadow-out {
+  animation: adonisShadowOut .5s linear;
+}
+.btn-search {
+  background: none;
+  border: none;
+  padding: 0;
+}
+.album-cover-bg {
+  position: absolute;
+  width: 100%;
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  &.blur-bottom::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20vh;
+  }
+}
+.album-spacer {
+  height: 40vmin;
+}
+.adonis-album-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  > li {
+    padding: 1.3rem 0;
+    margin: 0;
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid $color_alto_approx;
+    align-items: center;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.3s ease;
+    > div {
+      min-height: 20px;
+    }
+    &:first-child {
+      padding-top: 0;
+    }
+    a {
+      color: $black;
+    }
+    .hover-bg {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      right: 0;
+      top: 0;
+      z-index: -1;
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all 0.3s ease;
+    }
+    .hover-show {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 50%;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translateY(-50%);
+    }
+    .hover-hide {
+      position: absolute;
+      top: 50%;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translateY(-50%);
+    }
+    .item-number {
+      width: 4%;
+      min-width: 20px;
+      padding-right: 0;
+    }
+    .item-title {
+      width: 40%;
+      max-width: 40%;
+      min-width: 60px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .item-genre {
+      width: 25%;
+      max-width: 25%;
+      padding: 0 0.2rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-right: auto;
+      position: relative;
+      overflow: hidden;
+      min-width: 20%;
+      span {
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+    .item-duration {
+      width: 60px;
+      min-width: 40px;
+      margin-right: auto;
+      text-align: center;
+      position: relative;
+      margin-right: auto;
+      .hover-show {
+        width: 100%;
+        text-align: center;
+        right: 0;
+      }
+      .hover-hide {
+        width: 100%;
+        text-align: center;
+        right: 0;
+      }
+    }
+    .item-tools {
+      width: 60px;
+      min-width: 50px;
+      text-align: center;
+      margin-right: auto;
+      text-align: center;
+      position: relative;
+      margin-right: auto;
+      .hover-show {
+        width: 100%;
+        text-align: center;
+        right: 0;
+      }
+      .hover-hide {
+        width: 100%;
+        text-align: center;
+        right: 0;
+      }
+    }
+    .item-price {
+      width: 170px;
+      min-width: 170px;
+      margin-right: auto;
+      text-align: left;
+    }
+    .hover-tools {
+      left: 1.5rem;
+      right: auto !important;
+      width: auto !important;
+      align-items: center;
+    }
+    &.item:hover {
+      &.hover-bg-item {
+        color: $white;
+      }
+      .hover-bg {
+        opacity: 1;
+      }
+      .hover-hide {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .hover-show {
+        opacity: 1;
+        visibility: visible;
+      }
+      a:not([class^="btn"]) {
+        color: $color_biloba_flower_approx;
+      }
+    }
+  }
+}
+@media(max-width: 767px) {
+  .album-spacer {
+    height: 70vmin;
+  }
+  .adonis-player-wrap {
+    .adonis-playlist {
+      .adonis-player {
+        padding: 15px;
+        padding-top: 25px;
+      }
+      .jp-playlist {
+        padding: 15px;
+      }
+      &.off-canvas-right.show {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translate(-100%, 0);
+      }
+    }
+    .playlist-player-control {
+      width: 100% !important;
+      flex: 100% !important;
+      flex-grow: 0;
+    }
+    .player-controls a {
+      padding: 8px;
+    }
+  }
+  .adonis-playlist {
+    overflow: auto;
+    .jp-playlist {
+      overflow: initial !important;
+    }
+    .player-details .jp-title {
+      font-size: 5vw;
+    }
+  }
+  .adonis-album-list > li {
+    .item-genre {
+      display: none;
+    }
+    .item-duration {
+      display: none;
+    }
+  }
+  .current-item .song-poster {
+    min-width: 40px !important;
+  }
+}
+.adonis-star-rating {
+  margin-bottom: 0.7rem;
+  .star-full {
+    background: $url_0 no-repeat 0 0;
+    width: 5rem;
+    height: 1rem;
+    display: inline-flex;
+    vertical-align: middle;
+    .star-active {
+      background: $url_1 no-repeat 0 0;
+      display: block;
+      height: 100%;
+      background-size: 5rem;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(1px, 0);
+    }
+  }
+}
+.adonis-cart-table {
+  td {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+  th {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+  .product-image {
+    width: auto;
+    max-width: 150px;
+  }
+  .product-description {
+    width: 70%;
+  }
+  .unit-price {
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: none;
+  }
+  .product-buttons {
+    text-align: left;
+    vertical-align: middle;
+  }
+  thead th {
+    border-bottom: none;
+    border-top: none;
+  }
+}
+.cart-total {
+  background: $color_white_lilac_approx;
+  td {
+    padding: 0.75rem 0;
+    &.product-name {
+      border-top: none;
+      padding: 0.45rem 0;
+    }
+    &.product-total {
+      border-top: none;
+      padding: 0.45rem 0;
+    }
+  }
+  th {
+    padding: 0.75rem 0;
+  }
+  .title {
+    border-bottom: 1px solid $color_mercury_approx;
+  }
+  tbody tr {
+    &:first-child {
+      td {
+        padding-top: 1.2rem;
+      }
+      th {
+        padding-top: 1.2rem;
+      }
+    }
+    &:last-child {
+      td {
+        padding-bottom: 1.2rem;
+      }
+      th {
+        padding-bottom: 1.2rem;
+      }
+    }
+  }
+  thead th {
+    border-bottom-width: 1px;
+    border-top: none;
+  }
+}
+.borderless {
+  td {
+    border: none;
+    padding-right: 0;
+  }
+  th {
+    border: none;
+    padding-right: 0;
+  }
+}
+.adonis-player-wrap {
+  &.fixed-player {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1200;
+  }
+  &.player-fixed-top {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: 1200;
+  }
+  &.player-fixed-bottom {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: 1200;
+  }
+  a {
+    cursor: pointer;
+    color: $white;
+    &:hover {
+      color: $color_biloba_flower_approx;
+    }
+    &.inactive-color {
+      color: $color_silver_chalice_approx;
+      &:hover {
+        color: $color_biloba_flower_approx;
+      }
+    }
+  }
+  .jp-play {
+    width: auto;
+    height: auto;
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-state-playing {
+    .jp-play {
+      background: none;
+      &:focus {
+        background: none;
+      }
+    }
+    .icon-pause {
+      display: block;
+    }
+    .icon-play {
+      display: none;
+    }
+  }
+  .jp-stop {
+    background: none;
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    background: none;
+    margin-right: 10px;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-previous {
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-next {
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-progress {
+    overflow: visible;
+    height: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: -17px;
+    width: 100%;
+    &.jp-progress-pos-top {
+      top: 18px;
+    }
+    &.inner {
+      margin: 0 10px;
+    }
+  }
+  .jp-audio {
+    .jp-progress {
+      position: absolute;
+      top: 32px;
+      height: 15px;
+    }
+    .jp-type-single {
+      .jp-progress {
+        right: 110px;
+        width: 186px;
+      }
+      .jp-toggles {
+        width: 25px;
+      }
+    }
+    .jp-type-playlist {
+      .jp-progress {
+        right: 166px;
+        width: 130px;
+      }
+      .jp-toggles {
+        width: 55px;
+        margin: 0;
+        position: absolute;
+        right: 325px;
+        top: 50px;
+      }
+    }
+  }
+  .jp-video {
+    .jp-progress {
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 10px;
+    }
+    .jp-volume-controls {
+      top: inherit;
+      right: inherit;
+    }
+    .jp-current-time {
+      margin-right: 20px;
+    }
+    .jp-duration {
+      margin-left: 20px;
+    }
+    .jp-toggles {
+      position: absolute;
+      left: 16px;
+      margin: 0;
+      margin-top: 10px;
+      width: 100px;
+    }
+  }
+  .jp-seek-bar {
+    background: none;
+    position: relative;
+    width: 0;
+    height: 3px;
+    cursor: pointer;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $color_chicago_approx;
+    }
+  }
+  .jp-play-bar {
+    //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+    transition-duration: 0s !important;
+    overflow: visible !important;
+    position: absolute;
+    background: $color_portage_approx;
+    background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+    width: 0;
+    height: 100%;
+    position: relative;
+  }
+  .jp-seeking-bg {
+    background: none;
+  }
+  .jp-volume-controls {
+    position: inherit;
+    top: inherit;
+    right: inherit;
+    width: auto;
+    button {
+      display: block;
+      position: inherit;
+      overflow: hidden;
+      text-indent: 0;
+      border: inherit;
+      cursor: pointer;
+    }
+    a {
+      display: inline-block;
+      line-height: 0;
+    }
+    div {
+      line-height: 0;
+    }
+    .jp-volume-bar {
+      width: 110px;
+      overflow: visible;
+      position: relative;
+      height: 30px;
+      top: -1px;
+    }
+    .jp-volume-bar::before {
+      content: "";
+      height: 4px;
+      width: 100%;
+      background: $color_alto_approx;
+      position: absolute;
+      display: inline-block;
+    }
+    .jp-volume-bar-value {
+      justify-content: flex-end;
+      display: flex;
+      align-items: center;
+    }
+    .icon-mute {
+      display: none;
+    }
+  }
+  .jp-mute {
+    width: auto;
+    height: auto;
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-volume-max {
+    width: auto;
+    height: auto;
+    right: 74px;
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-state-muted {
+    .jp-mute {
+      background: none;
+      &:focus {
+        background: none;
+      }
+    }
+    .jp-volume-controls {
+      .icon-mute {
+        display: block;
+      }
+      .icon-volume {
+        display: none;
+      }
+    }
+  }
+  .jp-volume-bar {
+    position: inherit;
+    overflow: hidden;
+    background: none;
+    width: 46px;
+    height: 4px;
+    cursor: pointer;
+    right: 0;
+  }
+  .jp-volume-bar-value {
+    background: $color_portage_approx;
+    background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+    width: 0;
+    height: 3px;
+    position: relative;
+  }
+  .jp-current-time {
+    width: 45px;
+    font-size: inherit;
+    font-style: inherit;
+    float: none;
+    display: inline;
+    cursor: default;
+    opacity: 0.7;
+  }
+  .jp-duration {
+    width: 45px;
+    font-size: inherit;
+    font-style: inherit;
+    float: none;
+    display: inline;
+    text-align: left;
+    cursor: pointer;
+  }
+  .jp-details {
+    font-weight: bold;
+    text-align: inherit;
+    cursor: default;
+    width: auto;
+    background-color: transparent;
+    border-top: none;
+    .jp-title {
+      margin: 0;
+      padding: 0;
+      font-size: inherit;
+      font-weight: bold;
+    }
+  }
+  .jp-playlist {
+    width: auto;
+    background-color: transparent;
+    border-top: none;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-size: inherit;
+    }
+    li {
+      padding: 0;
+      border-bottom: none;
+      div {
+        display: inherit;
+      }
+    }
+  }
+  .jp-video-play {
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  .jp-jplayer {
+    background-color: $black;
+  }
+  .jp-toggles {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    button {
+      float: none;
+      width: auto;
+      display: inherit;
+      height: 18px;
+      text-indent: 0;
+      line-height: 100%;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  .jp-full-screen {
+    background: $color_mine_shaft_approx;
+    margin-right: 20px;
+    &:focus {
+      background: $color_mine_shaft_approx;
+    }
+  }
+  .jp-repeat {
+    background: none;
+    &:focus {
+      background: none;
+      color: $color_biloba_flower_approx;
+    }
+  }
+  .jp-shuffle {
+    background: none;
+    margin-right: 5px;
+    &:focus {
+      background: none;
+      color: $color_biloba_flower_approx;
+    }
+  }
+  .jp-no-solution {
+    padding: 5px;
+    font-size: .8em;
+    background-color: $color_gallery_approx;
+    border: 2px solid $color_cerulean_approx;
+    color: $black;
+    display: none;
+    a {
+      color: $black;
+    }
+    span {
+      font-size: 1em;
+      display: block;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+  .adonis-player-horizontal {
+    background: $color_zeus_approx;
+    z-index: 900;
+    position: relative;
+  }
+  h1 {
+    color: $white;
+  }
+  .h1 {
+    color: $white;
+  }
+  h2 {
+    color: $white;
+  }
+  .h2 {
+    color: $white;
+  }
+  h3 {
+    color: $white;
+  }
+  .h3 {
+    color: $white;
+  }
+  h4 {
+    color: $white;
+  }
+  .h4 {
+    color: $white;
+  }
+  h5 {
+    color: $white;
+  }
+  .h5 {
+    color: $white;
+  }
+  h6 {
+    color: $white;
+  }
+  .h6 {
+    color: $white;
+  }
+  .player-top {
+    padding-top: 15px;
+  }
+  .icon-pause {
+    display: none;
+  }
+  .jp-volume-bar-value::after {
+    content: "";
+    height: 9px;
+    width: 9px;
+    background: $color_biloba_flower_approx;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(-50%, -50%);
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+  }
+  .jp-play-bar::after {
+    content: "";
+    height: 9px;
+    width: 9px;
+    background: $color_biloba_flower_approx;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(-50%, -50%);
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+  }
+  .music-thumb {
+    max-width: 40px;
+  }
+  .song-poster {
+    position: relative;
+    cursor: pointer;
+    z-index: 100;
+    &.sm {
+      max-width: 40px;
+      max-height: 40px;
+      min-width: 40px;
+    }
+  }
+  .adonis-playlist {
+    z-index: 1200;
+    width: 595px;
+    max-width: 100%;
+    background: $color_zeus_approx;
+    position: absolute;
+    height: 100vh;
+    color: $color_oslo_gray_approx;
+    a {
+      color: $color_athens_gray_approx;
+      &:hover {
+        color: $color_biloba_flower_approx;
+      }
+    }
+    &.off-canvas-right {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(595px, 0);
+      &.show {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translate(-595px, 0);
+      }
+    }
+    .jp-title {
+      color: $white;
+    }
+    .adonis-player {
+      padding: 40px;
+      position: relative;
+      background: $color_zeus_approx;
+      .song-poster {
+        flex-grow: 0;
+        img {
+          width: 100%;
+        }
+      }
+      .playlist-player-control {
+        flex-grow: 0;
+        img {
+          width: 100%;
+        }
+      }
+      .jp-progress {
+        flex-basis: auto;
+        display: flex;
+        flex-grow: 1;
+      }
+    }
+    .control-ext {
+      flex-grow: 1;
+    }
+    .jp-time {
+      width: 40px;
+    }
+    .jp-progress {
+      top: 8px;
+    }
+    .jp-playlist {
+      padding: 40px;
+      overflow: hidden;
+      .song-poster {
+        width: 50px;
+        margin-left: 15px;
+        float: right;
+        margin-bottom: 25px;
+        img {
+          height: auto;
+          //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+          border-radius: 3px;
+        }
+      }
+      li {
+        margin-bottom: 0;
+        width: 100%;
+        clear: both;
+        position: relative;
+        &:hover {
+          .hover-state {
+            display: block;
+            opacity: 1;
+          }
+          .jp-time {
+            display: none;
+          }
+          .playlist-animate {
+            display: none;
+          }
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .meta {
+        float: left;
+      }
+      .description {
+        flex: 100%;
+        a.jp-playlist-item {
+          margin-top: 5px;
+          display: block;
+          margin-bottom: 3px;
+        }
+      }
+      .jp-artist {
+        display: block;
+        a {
+          color: $color_oslo_gray_approx;
+        }
+      }
+      .play-btn-dark {
+        width: 100%;
+        height: 100%;
+        line-height: 55px;
+        text-align: center;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+    }
+    .player-details {
+      flex: auto;
+    }
+    .blurred-bg-wrap {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+      z-index: 1;
+      .blurred-bg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+        background-size: cover;
+        background-position: center;
+        filter: blur(30px);
+        filter: blur(32px);
+        opacity: 0.2;
+      }
+    }
+    .current-item {
+      z-index: 10;
+      position: relative;
+    }
+    .controls {
+      z-index: 10;
+      position: relative;
+    }
+  }
+  .auto-progress-width-50 {
+    flex-basis: 40%;
+    flex-grow: 50;
+  }
+  .close-offcanvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+  }
+  .jp-state-no-volume .jp-volume-controls {
+    display: none;
+  }
+  .jp-audio-stream .jp-volume-controls {
+    right: inherit;
+  }
+  .jp-type-single .jp-details {
+    border-top: none;
+  }
+  .jp-type-playlist .jp-details {
+    border-top: none;
+  }
+  div.jp-type-playlist div.jp-playlist {
+    li {
+      &:last-child {
+        padding: 5px 20px 5px 0;
+        border-bottom: none;
+      }
+      &.jp-playlist-current {
+        list-style-type: square;
+        list-style-position: inside;
+        padding-right: 7px;
+      }
+    }
+    a {
+      color: $color_mine_shaft_approx;
+      text-decoration: none;
+      &:hover {
+        color: $color_lochmara_approx;
+      }
+      &.jp-playlist-current {
+        color: $color_lochmara_approx;
+      }
+      &.jp-playlist-item-remove {
+        float: left;
+        display: inline;
+        text-align: left;
+        margin-left: 10px;
+        font-weight: bold;
+        color: $color_dove_gray_approx;
+        &:hover {
+          color: $color_lochmara_approx;
+        }
+      }
+    }
+    span.jp-free-media {
+      float: left;
+      display: inline;
+      text-align: left;
+      margin-left: 10px;
+      a {
+        color: $color_dove_gray_approx;
+        &:hover {
+          color: $color_lochmara_approx;
+        }
+      }
+    }
+  }
+  span.jp-artist {
+    font-size: .8em;
+    color: $color_dove_gray_approx;
+  }
+  .jp-state-full-screen .jp-full-screen {
+    background: $color_mine_shaft_approx;
+    &:focus {
+      background: $color_mine_shaft_approx;
+    }
+  }
+  .jp-state-looped .jp-repeat {
+    background: none;
+    color: $color_biloba_flower_approx;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-state-shuffled .jp-shuffle {
+    background: none;
+    color: $color_biloba_flower_approx;
+    &:focus {
+      background: none;
+    }
+  }
+  .player-controls a {
+    padding: 7px 10px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .artist-name a {
+    color: $color_oslo_gray_approx;
+  }
+}
+.adonis-playlist-player {
+  &.fixed-player {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1200;
+  }
+  &.player-fixed-top {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: 1200;
+  }
+  &.player-fixed-bottom {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: 1200;
+  }
+  a {
+    cursor: pointer;
+  }
+  .jp-play {
+    width: auto;
+    height: auto;
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-stop {
+    background: none;
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    background: none;
+    margin-right: 10px;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-previous {
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-next {
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-progress {
+    overflow: visible;
+    height: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: -17px;
+    width: 100%;
+    &.jp-progress-pos-top {
+      top: 18px;
+    }
+    &.inner {
+      margin: 0 10px;
+    }
+  }
+  .jp-audio {
+    .jp-progress {
+      position: absolute;
+      top: 32px;
+      height: 15px;
+    }
+    .jp-type-single {
+      .jp-progress {
+        right: 110px;
+        width: 186px;
+      }
+      .jp-toggles {
+        width: 25px;
+      }
+    }
+    .jp-type-playlist {
+      .jp-progress {
+        right: 166px;
+        width: 130px;
+      }
+      .jp-toggles {
+        width: 55px;
+        margin: 0;
+        position: absolute;
+        right: 325px;
+        top: 50px;
+      }
+    }
+  }
+  .jp-video {
+    .jp-progress {
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 10px;
+    }
+    .jp-volume-controls {
+      top: inherit;
+      right: inherit;
+    }
+    .jp-current-time {
+      margin-right: 20px;
+    }
+    .jp-duration {
+      margin-left: 20px;
+    }
+    .jp-toggles {
+      position: absolute;
+      left: 16px;
+      margin: 0;
+      margin-top: 10px;
+      width: 100px;
+    }
+  }
+  .jp-seek-bar {
+    background: none;
+    position: relative;
+    width: 0;
+    height: 3px;
+    cursor: pointer;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $color_chicago_approx;
+    }
+  }
+  .jp-play-bar {
+    //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+    transition-duration: 0s !important;
+    overflow: visible !important;
+    position: absolute;
+    background: $color_portage_approx;
+    background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+    width: 0;
+    height: 100%;
+  }
+  .jp-seeking-bg {
+    background: none;
+  }
+  .jp-volume-controls {
+    position: inherit;
+    top: inherit;
+    right: inherit;
+    width: auto;
+    button {
+      display: block;
+      position: inherit;
+      overflow: hidden;
+      text-indent: 0;
+      border: inherit;
+      cursor: pointer;
+    }
+  }
+  .jp-mute {
+    width: auto;
+    height: auto;
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-volume-max {
+    width: auto;
+    height: auto;
+    right: 74px;
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-volume-bar {
+    position: inherit;
+    overflow: hidden;
+    background: none;
+    width: 46px;
+    height: 4px;
+    cursor: pointer;
+    right: 0;
+  }
+  .jp-volume-bar-value {
+    background: $color_portage_approx;
+    background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+    width: 0;
+    height: 3px;
+  }
+  .jp-current-time {
+    width: 45px;
+    font-size: inherit;
+    font-style: inherit;
+    float: none;
+    display: inline;
+    cursor: default;
+  }
+  .jp-duration {
+    width: 45px;
+    font-size: inherit;
+    font-style: inherit;
+    float: none;
+    display: inline;
+    text-align: left;
+    cursor: pointer;
+  }
+  .jp-details {
+    font-weight: bold;
+    text-align: inherit;
+    cursor: default;
+    width: auto;
+    background-color: transparent;
+    border-top: none;
+    .jp-title {
+      margin: 0;
+      padding: 0;
+      font-size: inherit;
+      font-weight: bold;
+    }
+  }
+  .jp-playlist {
+    width: auto;
+    background-color: transparent;
+    border-top: none;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-size: inherit;
+    }
+    li {
+      padding: 0;
+      border-bottom: none;
+      div {
+        display: inherit;
+      }
+    }
+  }
+  .jp-video-play {
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  .jp-jplayer {
+    background-color: $black;
+  }
+  .jp-toggles {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    button {
+      float: none;
+      width: auto;
+      display: inherit;
+      height: 18px;
+      text-indent: 0;
+      line-height: 100%;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  .jp-full-screen {
+    background: $color_mine_shaft_approx;
+    margin-right: 20px;
+    &:focus {
+      background: $color_mine_shaft_approx;
+    }
+  }
+  .jp-repeat {
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-shuffle {
+    background: none;
+    margin-right: 5px;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-no-solution {
+    padding: 5px;
+    font-size: .8em;
+    background-color: $color_gallery_approx;
+    border: 2px solid $color_cerulean_approx;
+    color: $black;
+    display: none;
+    a {
+      color: $black;
+    }
+    span {
+      font-size: 1em;
+      display: block;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+  .jp-state-playing .jp-play {
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-state-no-volume .jp-volume-controls {
+    display: none;
+  }
+  .jp-audio-stream .jp-volume-controls {
+    right: inherit;
+  }
+  .jp-state-muted .jp-mute {
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-type-single .jp-details {
+    border-top: none;
+  }
+  .jp-type-playlist .jp-details {
+    border-top: none;
+  }
+  div.jp-type-playlist div.jp-playlist {
+    li {
+      &:last-child {
+        padding: 5px 20px 5px 0;
+        border-bottom: none;
+      }
+      &.jp-playlist-current {
+        list-style-type: square;
+        list-style-position: inside;
+        padding-right: 7px;
+      }
+    }
+    a {
+      color: $color_mine_shaft_approx;
+      text-decoration: none;
+      &:hover {
+        color: $color_lochmara_approx;
+      }
+      &.jp-playlist-current {
+        color: $color_lochmara_approx;
+      }
+      &.jp-playlist-item-remove {
+        float: left;
+        display: inline;
+        text-align: left;
+        margin-left: 10px;
+        font-weight: bold;
+        color: $color_dove_gray_approx;
+        &:hover {
+          color: $color_lochmara_approx;
+        }
+      }
+    }
+    span.jp-free-media {
+      float: left;
+      display: inline;
+      text-align: left;
+      margin-left: 10px;
+      a {
+        color: $color_dove_gray_approx;
+        &:hover {
+          color: $color_lochmara_approx;
+        }
+      }
+    }
+  }
+  span.jp-artist {
+    font-size: .8em;
+    color: $color_dove_gray_approx;
+  }
+  .jp-state-full-screen .jp-full-screen {
+    background: $color_mine_shaft_approx;
+    &:focus {
+      background: $color_mine_shaft_approx;
+    }
+  }
+  .jp-state-looped .jp-repeat {
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+  .jp-state-shuffled .jp-shuffle {
+    background: none;
+    &:focus {
+      background: none;
+    }
+  }
+}
+#adonis-playlist::-webkit-scrollbar {
+  display: none;
+}
+.jp-progress {
+  position: relative;
+}
+.playlist-animate {
+  display: none;
+  &.playing {
+    position: relative;
+    width: auto;
+    height: 30px;
+    float: right;
+    margin-left: 40px;
+    &:after {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  .n1 {
+    animation-delay: 0.5s;
+  }
+  .n2 {
+    animation-delay: 0.2s;
+  }
+  .n3 {
+    animation-delay: .8s;
+  }
+  &.now.playing .bar {
+    display: inline-block;
+    position: relative;
+    margin-left: 4px;
+    width: 3px;
+    height: 1px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, $color_pizazz_approx, $color_outrageous_orange_approx);
+    color: transparent;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  &.paused.playing .bar {
+    animation-iteration-count: 1;
+  }
+}
+@keyframes pulse {
+  0% {
+    height: 1px;
+    margin-top: 0;
+  }
+  10% {
+    height: 15px;
+    margin-top: -15px;
+  }
+  50% {
+    height: 12px;
+    margin-top: -12px;
+  }
+  60% {
+    height: 17px;
+    margin-top: -17px;
+  }
+  80% {
+    height: 15px;
+    margin-top: -15px;
+  }
+  100% {
+    height: 1px;
+    margin-top: 0;
+  }
+}
+@media(max-width: 550px) {
+  .adonis-playlist .jp-playlist {
+    display: block !important;
+  }
+}
+@media(max-width: 750px) and(orientation: landscape) {
+  .adonis-playlist .jp-playlist {
+    display: block !important;
+  }
+}
+#tabbed-browse-content-overview {
+  overflow: hidden;
+}
+.music-img-box {
+  position: relative;
+  .img-box {
+    margin-bottom: 13px;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+  .adonis-price {
+    color: $color_biloba_flower_approx;
+  }
+  .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    margin-bottom: 5px;
+    color: $color_silver_sand_approx;
+    a {
+      color: currentColor;
+    }
+    &.h2 {
+      margin-bottom: 9px;
+    }
+    &.h3 {
+      margin-bottom: 9px;
+    }
+    &.h4 {
+      margin-bottom: 9px;
+    }
+    &.multi-line {
+      white-space: inherit;
+    }
+  }
+  .sub-title {
+    margin-bottom: 8px;
+    color: $color_chicago_approx;
+    color: $color_chicago_approx;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    a {
+      color: $color_chicago_approx;
+    }
+  }
+  .h-underline {
+    display: inline-block;
+    border: 1px solid transparent;
+  }
+  .hover-show {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translateY(-50%);
+    opacity: 0;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s ease;
+  }
+  &:hover {
+    .h-underline {
+      border-bottom-color: currentColor;
+    }
+    .title {
+      color: $color_biloba_flower_approx;
+    }
+    .hover-hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .hover-show {
+      visibility: visible;
+      opacity: 1;
+    }
+    .hover-state {
+      opacity: 1;
+    }
+    .hover-style-2 a {
+      border-bottom: 1px solid currentColor;
+    }
+    a.adonis-icon {
+      color: $color_biloba_flower_approx;
+    }
+  }
+  &.img-box-horizontal {
+    &:hover .title {
+      width: calc(100% - 80px);
+    }
+    &.shop-item:hover .title {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+  &.show {
+    .hover-state {
+      opacity: 1;
+    }
+    a.adonis-icon {
+      color: $color_biloba_flower_approx;
+    }
+  }
+  .icon-dots span {
+    background: $color_biloba_flower_approx;
+  }
+  .hover-style-2 a {
+    border-bottom: 1px solid transparent;
+    display: inline-block;
+  }
+  .dropdown-menu-toggle .adonis-icon {
+    color: $color_biloba_flower_approx;
+  }
+  .hover-state a {
+    color: $white;
+  }
+  &.music-img-box-bg-light .hover-state a {
+    color: $color_biloba_flower_approx;
+  }
+}
+.hover-state-parent {
+  &:hover {
+    .hover-state {
+      opacity: 1;
+    }
+    .h-opacity-0 {
+      opacity: 0;
+    }
+  }
+  &.show .hover-state {
+    opacity: 1;
+  }
+}
+.img-box-sm {
+  max-width: 50px;
+}
+.hover-state {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  &.show {
+    opacity: 1;
+  }
+  &.absolute-info {
+    opacity: 1;
+  }
+  .absolute-top {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .absolute-bottom {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .absolute-bottom-left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .absolute-top-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .absolute-top-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .absolute-bottom-right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .absolute-center {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(50%, -50%);
+  }
+}
+.absolute-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  &.show {
+    opacity: 1;
+  }
+  &.absolute-info {
+    opacity: 1;
+  }
+  .absolute-top {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .absolute-bottom {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .absolute-bottom-left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .absolute-top-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .absolute-top-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .absolute-bottom-right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .absolute-center {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(50%, -50%);
+  }
+}
+.img-box-text-over {
+  position: relative;
+  &.lg {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 10px;
+    .absolute-info {
+      .up-left {
+        position: absolute;
+        padding: 8%;
+        top: 0;
+        left: 0;
+      }
+      .bottom-right {
+        position: absolute;
+        padding: 25px;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}
+.owl-theme-adonis {
+  .owl-nav {
+    margin-top: 10px;
+    text-align: center;
+    [class*='owl-'] {
+      color: $color_dove_gray_approx;
+      font-size: 14px;
+      margin: 5px;
+      padding: 8px 7px;
+      background: transparent;
+      display: inline-block;
+      cursor: pointer;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 3px;
+      &:hover {
+        background: $black;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+    .disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+    &.disabled + .owl-dots {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+  }
+  .owl-stage-outer {
+    margin-bottom: 35px;
+  }
+  .owl-dots {
+    text-align: center;
+    .owl-dot {
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+      span {
+        width: 8px;
+        height: 8px;
+        margin: 5px 7px;
+        background: $color_alto_approx;
+        display: block;
+        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: opacity 200ms ease;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 30px;
+        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: all 0.3s;
+      }
+      &.active span {
+        background: $color_portage_approx;
+        background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+        filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+        width: 38px;
+      }
+      &:hover span {
+        background: $color_portage_approx;
+        background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+        filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+      }
+    }
+  }
+  .music-img-box:last-child {
+    margin-bottom: 0;
+  }
+  &.stage-margin-0 .owl-stage-outer {
+    margin-bottom: 0;
+  }
+}
+.box-rounded-lg {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+.box-rounded-md {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 5px !important;
+  overflow: hidden;
+}
+.box-rounded-sm {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 3px !important;
+  overflow: hidden;
+}
+.play-btn-dark {
+  background: $black_80;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &.play-btn-md {
+    width: 70px;
+    height: 70px;
+  }
+  &.full-w-h {
+    width: 100%;
+    height: 100%;
+  }
+  &.round-btn {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+  }
+  &.round-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: $color_portage_approx;
+    background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+    opacity: 0;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(1.02);
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+  .play-icon {
+    display: inline-block;
+    position: relative;
+    width: 18px;
+    height: 20px;
+    background: $url_3 no-repeat;
+  }
+  &:hover {
+    .play-icon::before {
+      opacity: 0;
+    }
+    .play-icon::after {
+      opacity: 1;
+    }
+  }
+}
+.img-box-horizontal {
+  display: inline-flex;
+  width: 100%;
+  margin-bottom: 1rem;
+  .des {
+    padding-right: 15px;
+    padding-top: 7px;
+    position: relative;
+    max-width: calc(100% - 50px);
+    flex-wrap: wrap;
+    flex-grow: 1;
+    z-index: 500;
+    p {
+      margin-bottom: 0;
+    }
+    .left-description {
+      width: 50%;
+      flex: 0 0 100px;
+      flex-grow: 3;
+      padding-right: 1rem;
+    }
+    .right-btn {
+      width: auto;
+      flex: 0 0 auto;
+      flex-grow: 0;
+    }
+  }
+  .hover-state {
+    .play-btn-dark {
+      width: 50px;
+      height: 50px;
+      top: 0;
+      align-items: center;
+      justify-content: center;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 0;
+    }
+    a {
+      z-index: 600;
+      position: relative;
+    }
+  }
+  &.img-box-horizontal-style-2 {
+    .title a {
+      border-bottom: 1px solid transparent;
+      display: inline-block;
+    }
+    &:hover .title a {
+      border-bottom-color: inherit;
+    }
+  }
+  .pointer {
+    z-index: 600;
+    position: relative;
+  }
+  .img-box-sm.img-box {
+    max-width: 50px;
+    min-width: 50px;
+    margin-bottom: 0;
+  }
+  &.h-g-bg .hover-state {
+    padding-left: 15px;
+  }
+  &:hover .h-opacity-0 {
+    opacity: 0;
+  }
+}
+.album-listener {
+  position: relative;
+  .album-listerer-overlay {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    top: -200px;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+  .owl-stage-outer {
+    padding-bottom: 0 !important;
+  }
+}
+.dot-horizontal-icon {
+  background: $url_4 100% no-repeat;
+  width: 26px;
+  height: 20px;
+  display: inline-block;
+  background-size: 100%;
+}
+.genres {
+  list-style: none;
+  padding-right: 0;
+  li {
+    padding-right: 0;
+    a {
+      color: $color_tiara_approx;
+    }
+  }
+}
+.color-primary {
+  color: $color_deep_sea_green_approx;
+}
+.adonis-carousel {
+  overflow: hidden;
+  &.nav-middle {
+    .owl-carousel {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .owl-prev {
+      position: absolute;
+      right: 0;
+      top: 35%;
+    }
+    .owl-next {
+      position: absolute;
+      right: 0;
+      top: 35%;
+      right: auto;
+      left: 0;
+    }
+  }
+  &.padding-top .owl-item .item {
+    padding-top: 15px;
+  }
+}
+.album-listener-lg {
+  height: 30vmin;
+  max-height: 40vh;
+}
+.playlist-table {
+  tr {
+    display: table-row;
+  }
+  td {
+    vertical-align: middle;
+    border: none;
+    padding: 0;
+  }
+}
+.adonis-album-button {
+  .icon-pause {
+    display: none;
+  }
+  &.jp-playing {
+    .icon-play {
+      display: none;
+    }
+    .icon-pause {
+      display: block;
+    }
+  }
+}
+.img-box-sm-holder {
+  .hover-state {
+    padding-left: 15px;
+    .play-btn-dark {
+      width: 50px;
+      height: 50px;
+      top: 0;
+      display: inline-block;
+      line-height: 62px;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 0;
+    }
+  }
+  .music-img-box .des {
+    padding-right: 15px;
+    padding-top: 7px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1300;
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+.play-button {
+  margin-right: 2px;
+}
+.adonis-carousel-swiper {
+  overflow: hidden;
+}
+[class^="gutter-"] {
+  width: auto;
+}
+.horizontal-icons {
+  display: inline-flex;
+  text-decoration: none;
+  margin-bottom: 20px;
+  li > a {
+    padding: 10px;
+  }
+  > li > a:first-child {
+    padding-right: 0;
+  }
+}
+.adonis-svg-library {
+  height: 0;
+  width: 0;
+}
+.adonis-icon {
+  line-height: 0;
+  display: inline-block;
+  vertical-align: middle;
+  height: auto;
+  svg {
+    fill: currentColor;
+    height: auto;
+  }
+  &.icon-arrow {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translateY(-1px);
+  }
+  &.icon-ssm svg {
+    width: 8px;
+    max-height: 8px;
+  }
+  &.icon-sm svg {
+    width: 12px;
+    max-height: 14px;
+  }
+  &.icon-1x svg {
+    width: 16px;
+    max-height: 18px;
+  }
+  &.icon-0x svg {
+    width: 17px;
+    max-height: 18px;
+  }
+  &.icon-2x svg {
+    width: 18px;
+    max-height: 20px;
+  }
+  &.icon-3x svg {
+    width: 20px;
+    max-height: 22px;
+  }
+  &.icon-4x svg {
+    width: 25px;
+    max-height: 27px;
+  }
+  &.icon-5x svg {
+    width: 30px;
+    max-height: 32px;
+  }
+  &.icon-6x svg {
+    width: 35px;
+    max-height: 38px;
+  }
+  &.icon-7x svg {
+    width: 40px;
+    max-height: 45px;
+  }
+  &.icon-8x svg {
+    width: 50px;
+    max-height: 55px;
+  }
+  &.icon-9x svg {
+    width: 60px;
+    max-height: 65px;
+  }
+  &.icon-10x svg {
+    width: 70px;
+    max-height: 75px;
+  }
+}
+.icon-dot-nav-horizontal {
+  width: 5px;
+  height: 5px;
+  background: currentColor;
+  display: inline-block;
+  position: relative;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  margin: 5px 12px 2px 12px !important;
+  &.white {
+    background: $white;
+  }
+}
+.icon-dot-nav-horizontal::before {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background: inherit;
+  content: "";
+  position: absolute;
+  right: -200%;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+}
+.icon-dot-nav-horizontal::after {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background: inherit;
+  content: "";
+  position: absolute;
+  right: -200%;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  right: 200%;
+}
+.icon-dot-nav-vertical {
+  width: 4px;
+  height: 4px;
+  background: $color_dull_lavender_approx;
+  display: block;
+  position: relative;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  margin: 10px;
+}
+.icon-dot-nav-vertical::before {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: inherit;
+  content: "";
+  position: absolute;
+  top: -200%;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+}
+.icon-dot-nav-vertical::after {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: inherit;
+  content: "";
+  position: absolute;
+  top: -200%;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  top: 200%;
+}
+#top-search {
+  z-index: 1200;
+}
+.z-index-100 {
+  z-index: 100;
+  position: relative;
+}
+.ps__rail-x {
+  z-index: 900;
+}
+.scroll-y {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  position: relative;
+  .ps__rail-x {
+    display: none;
+  }
+}
+.scroll-x {
+  overflow: auto;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: .2s linear left;
+  overflow-y: hidden;
+  position: relative;
+}
+.scroll-x-alt {
+  overflow: auto;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: .2s linear left;
+  overflow-y: hidden;
+  position: relative;
+}
+.ps__rail-y {
+  z-index: 1300;
+}
+#search-box-4 {
+  #btn-search-close {
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(0.8);
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.3s;
+  }
+  .search-inner {
+    width: 100%;
+    right: 0;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1000;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.3s;
+    &.search-inner-up {
+      height: 30vh;
+      top: 0;
+      background: $color_zeus_approx;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate3d(0, -100%, 0);
+      .search-input {
+        font-size: 7vw;
+        line-height: 1;
+        display: inline-block;
+        padding: 0 0 0.1em 0;
+        color: $white;
+        border: 0;
+        border-bottom: 0;
+        background: transparent;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 0;
+      }
+    }
+    &.search-inner-down {
+      height: 70vh;
+      top: 30vh;
+      background: $color_zeus_approx;
+      color: $color_athens_gray_approx;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate3d(0, 100%, 0);
+      > div {
+        height: 100%;
+      }
+      nav a {
+        color: $color_athens_gray_approx;
+        &:hover {
+          color: $color_biloba_flower_approx;
+        }
+      }
+    }
+    .navbar-expand {
+      min-height: 50px;
+    }
+  }
+  &.search-active {
+    #btn-search-close {
+      z-index: 1010;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: scale(1);
+      opacity: 1;
+    }
+    .search-inner {
+      &.search-inner-up {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translate3d(0, 0, 0);
+      }
+      &.search-inner-down.open {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}
+.search-style-absolute {
+  position: relative;
+  width: 40px;
+  overflow: visible;
+  .form-control {
+    position: absolute;
+    z-index: 5;
+    height: 45px;
+    width: 45px;
+    padding-left: 28px;
+    padding-right: 15px;
+    left: 0;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 30px;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: 0.3s ease-in-out;
+  }
+  .search-icon {
+    position: relative;
+    z-index: 10;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    top: 2px;
+    left: 2px;
+  }
+  &:hover .form-control {
+    width: 250px;
+  }
+  &.active .form-control {
+    width: 250px;
+  }
+}
+.modal-ex-lg {
+  max-width: 1030px;
+}
+.artist-bg-1 {
+  background-image: $url_6;
+}
+.artist-bg-2 {
+  background-image: $url_7;
+}
+.listener-banner-1 {
+  background-image: $url_8;
+  top: -200px;
+}
+.sidebar-bg {
+  background-size: cover !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+  img {
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+.dropdown-menu-right {
+  left: 0;
+  right: auto !important;
+}
+.jp-next {
+  margin-right: 0.5rem;
+}
+.notification-desc {
+  width: 100%;
+}
+.fluid-reverse-l.preloader {
+  min-width: 100%;
+  width: auto;
+  margin-right: 0;
+  margin-left: 0;
+}
+.fluid-reverse-r.preloader {
+  min-width: 100%;
+  width: auto;
+  margin-right: 0;
+  margin-left: 0;
+}
+.columns-1 > * {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.columns-2 > * {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.columns-3 > * {
+  flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
+}
+.columns-4 > * {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.columns-5 > * {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+.columns-6 > * {
+  flex: 0 0 16.6666666667%;
+  max-width: 16.6666666667%;
+}
+.columns-7 > * {
+  flex: 0 0 14.2857142857%;
+  max-width: 14.2857142857%;
+}
+.columns-8 > * {
+  flex: 0 0 12.5%;
+  max-width: 12.5%;
+}
+.columns-9 > * {
+  flex: 0 0 11.1111111111%;
+  max-width: 11.1111111111%;
+}
+.columns-10 > * {
+  flex: 0 0 10%;
+  max-width: 10%;
+}
+.columns-11 > * {
+  flex: 0 0 9.0909090909%;
+  max-width: 9.0909090909%;
+}
+.columns-12 > * {
+  flex: 0 0 8.3333333333%;
+  max-width: 8.3333333333%;
+}
+.h-d-shadow:hover {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 4px 4px 15px 0 $color_pigeon_post_20_approx;
+}
+.h-d-md-shadow:hover {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 4px 4px 15px 0 $color_pigeon_post_20_approx;
+}
+.pagination .page-item {
+  .page-link {
+    color: $color_tiara_approx;
+    background-color: $color_chicago_approx;
+    border: 1px solid $color_zeus_approx;
+    &:focus {
+      color: $color_iron_approx;
+      text-decoration: none;
+      background-color: $color_oslo_gray_approx;
+      border-color: $color_zeus_approx;
+    }
+    &:hover {
+      color: $color_iron_approx;
+      text-decoration: none;
+      background-color: $color_oslo_gray_approx;
+      border-color: $color_zeus_approx;
+    }
+    &:not([disabled]):not(.disabled) {
+      cursor: pointer;
+    }
+  }
+  &.active .page-link {
+    z-index: 1;
+    color: $white;
+    background-color: $color_biloba_flower_approx;
+    border-color: $color_zeus_approx;
+  }
+}
+.d-flex.show {
+  display: flex !important;
+}
+.genres-list-item .play-btn-light {
+  .play-icon {
+    position: relative;
+    width: 18px;
+    height: 20px;
+  }
+  &:hover {
+    .play-icon::before {
+      opacity: 0;
+    }
+    .play-icon::after {
+      opacity: 1;
+    }
+  }
+}
+.h-color-black:hover {
+  color: $black;
+}
+.inactive-colored-links a {
+  color: $color_oslo_gray_approx;
+  &:hover {
+    color: $color_biloba_flower_approx;
+  }
+}
+.text-light:-ms-input-placeholder {
+  color: $white;
+}
+.brand .icon-brand-play {
+  background: $color_portage_approx;
+  background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+}
+.notification-toggle.has-notification .notification {
+  position: relative;
+  &:after {
+    display: inline-block;
+    content: "";
+    width: 9px;
+    height: 9px;
+    background: $color_biloba_flower_approx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+  }
+}
+.notifications.dropdown-menu {
+  width: 324px;
+}
+.notification.media {
+  border-bottom: 1px solid $color_alto_approx;
+  padding: 0.8rem 0;
+  font-size: 0.8125rem;
+  &:last-child {
+    border-bottom: 0;
+  }
+  .user-thumb {
+    max-width: 45px;
+  }
+  p {
+    margin-bottom: 0.3rem;
+  }
+  a {
+    color: $color_mine_shaft_approx;
+    &:hover {
+      color: $color_biloba_flower_approx;
+    }
+  }
+  .notification-desc {
+    position: relative;
+    padding-left: 30px;
+    padding-left: 45px;
+    .close-notification {
+      position: absolute;
+      left: 0;
+      top: 5px;
+      border: 1px solid $color_martini_approx;
+      color: $color_martini_approx;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+}
+#dropdownUserSettings img {
+  max-width: 35px;
+}
+.header-light .color-variable {
+  color: $white !important;
+}
+.adonis-tabbed-nav.tab-style-2 {
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  overflow: visible;
+  .nav-item {
+    padding: 0 1rem;
+    .nav-link {
+      padding: 0.3rem 0;
+      display: block;
+    }
+    &:first-child .nav-link {
+      padding-right: 0;
+    }
+  }
+}
+.off-canvas-full .side-nav {
+  font-weight: 700;
+  .adonis-icon svg {
+    height: auto;
+  }
+}
+.align-items-center.align-items-stretch {
+  .nav-item > a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  > div > a.nav-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+input:focus {
+  outline: none;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none;
+}
+select.form-control {
+  &:focus::-ms-value {
+    color: $color_boulder_approx;
+    background-color: $color_athens_gray_approx;
+  }
+  &:not([size]):not([multiple]) {
+    height: 45px;
+  }
+}
+.btn-group-sm > .btn {
+  padding: .16rem .5rem;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0.15rem;
+  font-size: 0.75rem;
+}
+.show > {
+  .btn-outline-secondary.dropdown-toggle {
+    background: $color_portage_approx;
+    background: linear-gradient(135deg, $color_portage_approx 0, $color_biloba_flower_approx 86%);
+    filter: progid:dximagetransform.microsoft.gradient(startcolorstr='$color_portage_approx', endcolorstr='$color_biloba_flower_approx', gradienttype=1);
+    border-color: transparent;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+    color: $white;
+  }
+  .btn-primary.dropdown-toggle:focus {
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+  }
+}
+.customer-rating .rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  .star-number {
+    width: 3.5rem;
+    margin-left: 0.3rem;
+  }
+  .progress {
+    width: 50%;
+    flex: 0 0 50%;
+    max-width: 20rem;
+    flex-grow: 3;
+    height: 3px;
+    background-color: $color_mercury_approx;
+    .progress-bar {
+      height: 100%;
+      background-color: $color_biloba_flower_approx;
+    }
+  }
+  .star-percent {
+    width: 3.5rem;
+    text-align: center;
+  }
+}
+.customer-review img {
+  max-width: 35px;
+}
+.shop-attributes th {
+  width: 20%;
+  min-width: 10rem;
+}
+#payment label {
+  font-weight: bold;
+  color: $color_zeus_approx;
+  img {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+.product-tabs a {
+  padding: 0.2rem 1rem;
+  color: $color_silver_chalice_approx;
+  border: 1px solid transparent;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50px;
+  &:hover {
+    color: $color_biloba_flower_approx;
+  }
+  &.active {
+    color: $color_biloba_flower_approx;
+    border-color: $color_biloba_flower_approx;
+    color: $color_mine_shaft_approx;
+    background: none;
+  }
+}
+.adonis-news-articles .news-box {
+  position: relative;
+  .info-box {
+    padding: 0.5rem 0;
+  }
+  .img-box img {
+    width: 100%;
+  }
+}
+.jp-state-playing .jp-playlist-current .playlist-animate {
+  display: block;
+}
+.album-scroller .img-scroller-wrap {
+  padding-top: 30%;
+  padding-bottom: 30%;
+  .music-img-box {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(0, 0);
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.4s ease-in-out;
+  }
+  .desc {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(-10%, -10%);
+    position: absolute;
+    opacity: 0;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.4s ease-in-out;
+    &.top-sm {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(0, -10%);
+    }
+  }
+  .img-box {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(0, 0);
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.4s ease-in-out;
+  }
+  &:hover {
+    .music-img-box {
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(0, -30%);
+      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all 0.4s ease-in-out;
+    }
+    .desc {
+      opacity: 1;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(-10%, -50%);
+      &.top-sm {
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translate(0, -10px);
+      }
+    }
+    .img-box {
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 7px 30px 80px 0 $black_50;
+      &.light-shadow {
+        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: 7px 30px 80px 0 $color_bud_50_approx;
+      }
+    }
+  }
+}
+.music-img-box-cont-lg .music-img-box .desc {
+  min-height: 75px;
+}
+.music-img-box-cont-md .music-img-box {
+  margin-bottom: 40px;
+}
+.music-img-box-cont-sm .music-img-box {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 3px;
+}
+.watch-album .watch-img-box {
+  position: relative;
+  margin-bottom: 40px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.adonis-browse-tabs .scrollbar {
+  height: 20px;
+  background: $color_alto_approx;
+  .draggable-scroll {
+    cursor: all-scroll;
+    width: 10%;
+    background: $color_dorado_approx;
+    height: 100%;
+  }
+}
+.owl-carousel .owl-item .item {
+  max-width: 100%;
+  .preloader .position-absolute {
+    top: calc(50% - 30px);
+  }
+  &.adonis-lazy-item .music-img-box {
+    opacity: 0;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.3s ease-in;
+  }
+}
+.dark-theme .owl-theme-adonis .owl-dots .owl-dot.active span {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none;
+}
+.dropdown-mega-menu .bg-col {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 70%, $white 100%), $url_5 no-repeat;
+  background-position: 0 0, -220px 0;
+}
