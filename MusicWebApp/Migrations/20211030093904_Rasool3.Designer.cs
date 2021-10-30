@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MusicWebApp.Areas.Identity.Data;
 
 namespace MusicWebApp.Migrations
 {
     [DbContext(typeof(MusicAppContext))]
-    partial class MusicAppContextModelSnapshot : ModelSnapshot
+    [Migration("20211030093904_Rasool3")]
+    partial class Rasool3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -240,6 +242,10 @@ namespace MusicWebApp.Migrations
                     b.Property<string>("Bio")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
@@ -252,6 +258,8 @@ namespace MusicWebApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Artists");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Artist");
                 });
 
             modelBuilder.Entity("MusicWebApp.Models.Music", b =>
@@ -270,9 +278,6 @@ namespace MusicWebApp.Migrations
                     b.Property<int?>("SingerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SongWriterId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Text")
                         .HasColumnType("nvarchar(max)");
 
@@ -289,9 +294,14 @@ namespace MusicWebApp.Migrations
 
                     b.HasIndex("SingerId");
 
-                    b.HasIndex("SongWriterId");
-
                     b.ToTable("Musics");
+                });
+
+            modelBuilder.Entity("MusicWebApp.Models.Singer", b =>
+                {
+                    b.HasBaseType("MusicWebApp.Models.Artist");
+
+                    b.HasDiscriminator().HasValue("Singer");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -347,24 +357,16 @@ namespace MusicWebApp.Migrations
 
             modelBuilder.Entity("MusicWebApp.Models.Music", b =>
                 {
-                    b.HasOne("MusicWebApp.Models.Artist", "Singer")
+                    b.HasOne("MusicWebApp.Models.Singer", "Singer")
                         .WithMany("SingleMusics")
                         .HasForeignKey("SingerId");
 
-                    b.HasOne("MusicWebApp.Models.Artist", "SongWriter")
-                        .WithMany("SongsWrited")
-                        .HasForeignKey("SongWriterId");
-
                     b.Navigation("Singer");
-
-                    b.Navigation("SongWriter");
                 });
 
-            modelBuilder.Entity("MusicWebApp.Models.Artist", b =>
+            modelBuilder.Entity("MusicWebApp.Models.Singer", b =>
                 {
                     b.Navigation("SingleMusics");
-
-                    b.Navigation("SongsWrited");
                 });
 #pragma warning restore 612, 618
         }
