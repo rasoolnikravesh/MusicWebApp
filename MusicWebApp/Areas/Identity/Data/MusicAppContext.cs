@@ -5,15 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-
+using MusicWebApp.Models;
 namespace MusicWebApp.Areas.Identity.Data
 {
     public class MusicAppContext : IdentityDbContext<AspNetUser>
     {
-        public MusicAppContext()
-        {
-            
-        }
+        public DbSet<Singer> singers { get; set; }
+        public DbSet<Music> Musics { get; set; }
         public MusicAppContext(DbContextOptions<MusicAppContext> options)
             : base(options)
         {
@@ -22,6 +20,7 @@ namespace MusicWebApp.Areas.Identity.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            builder.Entity<Singer>().ToTable("Singer");
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
