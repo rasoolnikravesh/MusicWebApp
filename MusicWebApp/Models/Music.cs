@@ -20,6 +20,7 @@ namespace MusicWebApp.Models
         [ForeignKey("Genre")]
         public int GenreId { get; set;}
         public Genre Genre { get; set; }
+        public List<Subject> Subjects { get; set; }
         public Artist Singer { get; set; }
 
         public Artist SongWriter { get; set; }
