@@ -11,8 +11,8 @@ namespace MusicWebApp.Models
         public string LastName { get; set; }
         public string Bio { get; set; }
         public string WebSite { get; set; }
-        public List<Music> SingleMusics { get; set; }
+        public  List<Music> SingleMusics { get; set; }
         public List<Music> SongsWrited { get; set; }
-
+        public List<Music> SongsComposed { get; set; }
     }
 }
