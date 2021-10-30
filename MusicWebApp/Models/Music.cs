@@ -14,6 +14,7 @@ namespace MusicWebApp.Models
         public string Title { get; set; }
 
         public string Url128 { get; set; }      
-        public string Url320 { get; set; }      
+        public string Url320 { get; set; }     
+        public Singer Singer { get; set;} 
     }
 }
