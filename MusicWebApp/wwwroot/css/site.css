@@ -1,71 +1,47 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿.login-Register-info {
+	background: #ffffff none repeat scroll 100% 0;
+	border: 1px solid #d3ced2;
+	border-radius: 5px;
+	margin: 2em 0;
+	padding: 20px;
 }
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+.customer-login-register > h3 {
+	line-height: 28px;
 }
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.bg-gray {
+	background: #F5F7FA;
 }
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.login-register-area {
+	padding: 60px 0 30px;
 }
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
+.coupon-input > input,
+.checkout-coupon > input,
+.single-form-row > input,
+.single-form-row textarea {
+	border: 1px solid #e5e5e5;
+	height: 42px;
+	padding: 0 10px 0 0;
+	width: 100%;
 }
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.coupon-info p.form-row-first {
+	float: right;
+	width: 47%;
 }
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
+.coupon-info p.form-row-last {
+	float: left;
+	width: 47%;
 }
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+.login-Register-info .button-login {
+    background: #333333 none repeat scroll 100% 0;
+    border: medium none;
+    border-radius: 3px;
+    color: #ffffff;
+    height: 40px;
+    padding: 0 20px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+label {
+    line-height: 1.85;
 }

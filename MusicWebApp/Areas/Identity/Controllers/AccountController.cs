@@ -13,6 +13,7 @@ namespace MusicWebApp.Areas.Identity.Controllers
         {
             _CONTEXT = Context;
         }
+        public IActionResult LoginRegiser()=> View();
         public IActionResult test()
         {
 
