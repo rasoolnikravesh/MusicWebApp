@@ -1,0 +1,43 @@
+@model RegisterUserViewModel
+
+<div class="customer-login-register">
+    <h3>ثبت نام</h3>
+    <div class="login-Register-info">
+        <form asp-controller="AccountController" asp-action="Register">
+            <div class="coupon-input form-group form-row-first">
+                <label>نام <span class="required">*</span></label>
+                <input class="form-control bg-white" asp-for="Name" type="text" name="Name">
+            </div>
+            <div class="coupon-input form-group form-row-first">
+                <label> نام خانوادگی <span class="required">*</span></label>
+                <input class="form-control bg-white" asp-for="Name" type="text" name="Name">
+            </div>
+            <div class="coupon-input form-group form-row-first">
+                <label>نام کاربری <span class="required">*</span></label>
+                <input class="form-control" type="text" asp-for="UserName">
+                <span asp-validation-for="UserName"></span>
+
+            </div>
+            <div class="coupon-input form-row-last">
+                <label>ایمیل<span class="required">*</span></label>
+                <input type="text" asp-for="Email">
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="coupon-input form-row-last">
+                <label>رمز عبور <span class="required">*</span></label>
+                <input type="password" asp-for="Password"></input>
+                <span asp-validation-for="Password"></span>
+
+            </div>
+            <div class="coupon-input form-row-last">
+                <label>تکرار رمز<span class="required">*</span></label>
+                <input type="password" asp-for="ConfirmPassword" />
+                <span asp-validation-for="ConfirmPassword"></span>
+            </div>
+            
+            
+                <button class="btn btn-primary" type="submit">ثبت نام</button>
+            
+        </form>
+    </div>
+</div>
