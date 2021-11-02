@@ -3,18 +3,18 @@
 <div class="customer-login-register">
     <h3>ثبت نام</h3>
     <div class="login-Register-info">
-        <form asp-controller="AccountController" asp-action="Register">
+        <form asp-controller="account" asp-action="register">
             <div class="coupon-input form-group form-row-first">
                 <label>نام <span class="required">*</span></label>
-                <input class="form-control bg-white" asp-for="Name" type="text" name="Name">
+                <input class="form-control bg-white" asp-for="Name" type="text">
             </div>
-            <div class="coupon-input form-group form-row-first">
+            <div class="coupon-input form-row-first">
                 <label> نام خانوادگی <span class="required">*</span></label>
-                <input class="form-control bg-white" asp-for="Name" type="text" name="Name">
+                <input asp-for="LastName" type="text" >
             </div>
-            <div class="coupon-input form-group form-row-first">
+            <div class="coupon-input  form-row-first">
                 <label>نام کاربری <span class="required">*</span></label>
-                <input class="form-control" type="text" asp-for="UserName">
+                <input type="text" asp-for="UserName">
                 <span asp-validation-for="UserName"></span>
 
             </div>

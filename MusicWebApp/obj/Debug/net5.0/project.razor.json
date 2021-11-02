@@ -15634,11 +15634,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Account/LoginRegiser.cshtml",
-      "TargetPath": "Views\\Account\\LoginRegiser.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -15671,6 +15666,11 @@
     {
       "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Account/LoginRegister.cshtml",
+      "TargetPath": "Views\\Account\\LoginRegister.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -10,16 +10,15 @@ namespace MusicWebApp.Controllers
     public class AccountController : Controller
     {
         private readonly MusicAppContext _CONTEXT;
-        public AccountController()
-        {
-            _
-        }
-        public IActionResult LoginRegiser() => View();
+        
+        public IActionResult LoginRegister() => View();
 
         public IActionResult Register(RegisterUserViewModel model)
         {
-            return RedirectToAction("Login");
+
+            return RedirectToAction("LoginRegister");
         }
+        
 
     }
 }
