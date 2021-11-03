@@ -19,7 +19,7 @@ namespace MusicWebApp.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("MusicWebAppIdentityDbContextConnection")));
                 
-                services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                services.AddDefaultIdentity<AspNetUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<MusicAppContext>()
                     .AddDefaultTokenProviders();
             });
