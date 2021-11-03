@@ -45,7 +45,7 @@
 label {
     line-height: 1.85;
 }
-.input-validation-error{
+.field-validation-error{
 	color: red;
 	
 }
