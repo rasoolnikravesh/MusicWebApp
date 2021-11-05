@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MusicWebApp.Areas.Identity.Data;
 
 namespace MusicWebApp.Migrations
 {
     [DbContext(typeof(MusicAppContext))]
-    partial class MusicAppContextModelSnapshot : ModelSnapshot
+    [Migration("20211030104225_Rasool5")]
+    partial class Rasool5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -154,21 +156,6 @@ namespace MusicWebApp.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("MusicSubject", b =>
-                {
-                    b.Property<int>("MusicsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SubjectsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("MusicsId", "SubjectsId");
-
-                    b.HasIndex("SubjectsId");
-
-                    b.ToTable("MusicSubject");
-                });
-
             modelBuilder.Entity("MusicWebApp.Areas.Identity.Data.AspNetUser", b =>
                 {
                     b.Property<string>("Id")
@@ -281,7 +268,7 @@ namespace MusicWebApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genres");
+                    b.ToTable("Genre");
                 });
 
             modelBuilder.Entity("MusicWebApp.Models.Music", b =>
@@ -334,21 +321,6 @@ namespace MusicWebApp.Migrations
                     b.ToTable("Musics");
                 });
 
-            modelBuilder.Entity("MusicWebApp.Models.Subject", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("subjectName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Subjects");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -396,21 +368,6 @@ namespace MusicWebApp.Migrations
                     b.HasOne("MusicWebApp.Areas.Identity.Data.AspNetUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("MusicSubject", b =>
-                {
-                    b.HasOne("MusicWebApp.Models.Music", null)
-                        .WithMany()
-                        .HasForeignKey("MusicsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MusicWebApp.Models.Subject", null)
-                        .WithMany()
-                        .HasForeignKey("SubjectsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

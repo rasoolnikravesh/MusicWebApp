@@ -35,3 +35,5 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
+MusicWebApp/obj/Debug/net5.0/MusicWebApp.AssemblyInfoInputs.cache
+MusicWebApp/obj/Debug/net5.0/MusicWebApp.csproj.AssemblyReference.cache

@@ -15629,8 +15629,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Footer_BACKUP_6094.cshtml",
+      "TargetPath": "Views\\Shared\\_Footer_BACKUP_6094.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Footer_REMOTE_5995.cshtml",
+      "TargetPath": "Views\\Shared\\_Footer_REMOTE_5995.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Footer_LOCAL_5995.cshtml",
+      "TargetPath": "Views\\Shared\\_Footer_LOCAL_5995.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_LoginUserPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginUserPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Footer_BASE_6094.cshtml",
+      "TargetPath": "Views\\Shared\\_Footer_BASE_6094.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15644,6 +15664,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Footer_BASE_5995.cshtml",
+      "TargetPath": "Views\\Shared\\_Footer_BASE_5995.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -15654,6 +15679,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Footer_BACKUP_5995.cshtml",
+      "TargetPath": "Views\\Shared\\_Footer_BACKUP_5995.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Footer.cshtml",
       "TargetPath": "Views\\Shared\\_Footer.cshtml",
       "FileKind": "mvc"
@@ -15661,6 +15691,11 @@
     {
       "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Footer_REMOTE_6094.cshtml",
+      "TargetPath": "Views\\Shared\\_Footer_REMOTE_6094.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15676,6 +15711,11 @@
     {
       "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Footer_LOCAL_6094.cshtml",
+      "TargetPath": "Views\\Shared\\_Footer_LOCAL_6094.cshtml",
       "FileKind": "mvc"
     },
     {
