@@ -14,14 +14,25 @@ namespace MusicWebApp.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
-            builder.ConfigureServices((context, services) => {
+            builder.ConfigureServices((context, services) =>
+            {
                 services.AddDbContext<MusicAppContext>(options =>
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("MusicWebAppIdentityDbContextConnection")));
-                
+
                 services.AddDefaultIdentity<AspNetUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<MusicAppContext>()
                     .AddDefaultTokenProviders();
+                services.Configure<IdentityOptions>(options =>
+                {
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireDigit = true;
+                    options.Password.RequireLowercase = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequiredLength = 4;
+
+
+                });
             });
         }
     }

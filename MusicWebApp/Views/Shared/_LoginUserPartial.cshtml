@@ -1,19 +1,22 @@
+@model LoginUserViewModel
 <div class="customer-login-register">
     <h3>ورود</h3>
     <div class="login-Register-info">
-        <form action="#">
+        <form asp-controller="Account" asp-action="Login">
             <p class="coupon-input form-row-first">
-                <label>نام کاربری یا ایمیل <span class="required">*</span></label>
-                <input type="text" name="email">
+                <label>نام کاربری <span class="required">*</span></label>
+                <input type="text" asp-for="UserName"/>
+                <span asp-validation-for="UserName" ></span>
             </p>
             <p class="coupon-input form-row-last">
                 <label>رمز عبور <span class="required">*</span></label>
-                <input type="password" name="password">
+                <input type="password" asp-for="Password"/>
+                <span asp-validation-for="Password" ></span>
             </p>
-            <div class="clear"></div>
+            
             <p>
-                <button value="Login" name="login" class="button-login" type="submit">ورود</button>
-                <label><input type="checkbox" value="1"><span>به خاطر سپاری</span></label>
+                <button class="button-login" type="submit">ورود</button>
+                <label><input type="checkbox" value="1" asp-for="RememberMe"><span>به خاطر سپاری</span></label>
                 <a href="#" class="lost-password">رمز عبور خود را فراموش کرده اید؟</a>
             </p>
         </form>

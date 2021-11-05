@@ -39,8 +39,9 @@ namespace MusicWebApp.Controllers
                         EmailConfirmed = true,
                         PhoneNumberConfirmed = true
                     };
-                    await userManager.CreateAsync(u, model.Password);
-                    TempData["LoginRegisterMessage"] = "کاربر با موفقیت ثبت شد";
+                    var r = await userManager.CreateAsync(u, model.Password);
+                    TempData["LoginRegisterMessage"] = r.Succeeded ? "ok" : "error";
+                    //TempData["LoginRegisterEMessage"] = r.Errors.ToString();
                 }
                 else
                 {
@@ -48,9 +49,25 @@ namespace MusicWebApp.Controllers
 
                 }
             }
-            return RedirectToAction("LoginRegister");
+            return RedirectToAction(nameof(LoginRegister));
         }
 
+        public async Task<IActionResult> LoginAsync(LoginUserViewModel model)
+        {
+            
 
+                var user = await userManager.FindByNameAsync(model.UserName);
+                if (user != null)
+                {
+                    var result = await signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, true);
+                    TempData["LoginRegisterMessage"] = result.Succeeded ? "وارد شدید" : "رمز عبور نادرست است";
+                }
+                else
+                {
+                    TempData["LoginRegisterMessage"] = "نام کاربری وجود ندارد";
+                }
+            
+            return RedirectToAction(nameof(LoginRegister));
+        }
     }
 }
