@@ -54,8 +54,6 @@ namespace MusicWebApp.Controllers
 
         public async Task<IActionResult> LoginAsync(LoginUserViewModel model)
         {
-
-
             var user = await userManager.FindByNameAsync(model.UserName);
             if (user != null)
             {

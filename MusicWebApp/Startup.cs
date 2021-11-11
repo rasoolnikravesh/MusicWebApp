@@ -70,6 +70,13 @@ namespace MusicWebApp
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "AdminDefault",
+                    pattern: "{area=admin}/{controller=AdminPanel}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
+            });
             IdentityinitializerAsync(userManager, roleManager).Wait();
         }
 
