@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MusicWebApp.Areas.Identity.Data;
 
 namespace MusicWebApp
 {
@@ -33,7 +34,8 @@ namespace MusicWebApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+        UserManager<AspNetUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             if (env.IsDevelopment())
             {
@@ -55,12 +57,12 @@ namespace MusicWebApp
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
-                        {
-                            endpoints.MapControllerRoute(
-                                name: "arearoute",
-                                pattern: "{area:exists}/{controller}/{action}");
-                            endpoints.MapRazorPages();
-                        });
+            {
+                endpoints.MapControllerRoute(
+                    name: "arearoute",
+                    pattern: "{area:exists}/{controller}/{action}");
+                endpoints.MapRazorPages();
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -68,6 +70,40 @@ namespace MusicWebApp
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+            IdentityinitializerAsync(userManager, roleManager).Wait();
+        }
+
+        private async Task IdentityinitializerAsync(UserManager<AspNetUser> userManager, RoleManager<IdentityRole> roleManager)
+        {
+            List<string> roles = new() { "admin", "user" };
+            foreach (var item in roles)
+            {
+                if (await roleManager.RoleExistsAsync(item) == false)
+                {
+                    IdentityRole role = new IdentityRole(item);
+                    await roleManager.CreateAsync(role);
+                }
+            }
+            AspNetUser user = await userManager.FindByNameAsync("root");
+            if (user is null)
+            {
+                user = new AspNetUser()
+                {
+                    UserName = "root",
+                    Email = "root@example.com",
+                    Name = "root",
+                    LastName = "root",
+                    EmailConfirmed = true,
+
+
+                };
+                await userManager.CreateAsync(user, "root123");
+
+            }
+            if (await userManager.IsInRoleAsync(user, "admin") == false)
+            {
+                await userManager.AddToRoleAsync(user, "admin");
+            }
         }
     }
 }

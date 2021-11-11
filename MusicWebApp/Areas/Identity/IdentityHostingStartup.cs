@@ -21,8 +21,10 @@ namespace MusicWebApp.Areas.Identity
                         context.Configuration.GetConnectionString("MusicWebAppIdentityDbContextConnection")));
 
                 services.AddDefaultIdentity<AspNetUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                    .AddRoles<IdentityRole>()
                     .AddEntityFrameworkStores<MusicAppContext>()
                     .AddDefaultTokenProviders();
+
                 services.Configure<IdentityOptions>(options =>
                 {
                     options.Password.RequireNonAlphanumeric = false;
@@ -30,6 +32,7 @@ namespace MusicWebApp.Areas.Identity
                     options.Password.RequireLowercase = false;
                     options.Password.RequireUppercase = false;
                     options.Password.RequiredLength = 4;
+                    
                     options.Lockout.AllowedForNewUsers = true;
                     options.Lockout.MaxFailedAccessAttempts = 3;
                     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
