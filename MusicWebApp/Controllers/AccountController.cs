@@ -5,7 +5,7 @@ using MusicWebApp.Areas.Identity.Data;
 using MusicWebApp.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
-
+using System.Text.Json;
 namespace MusicWebApp.Controllers
 {
 
@@ -27,7 +27,7 @@ namespace MusicWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var u = await userManager.FindByNameAsync(model.Name); 
+                var u = await userManager.FindByNameAsync(model.Name);
                 if (u == null)
                 {
                     u = new AspNetUser()
@@ -78,6 +78,22 @@ namespace MusicWebApp.Controllers
             }
             return RedirectToAction(nameof(LoginRegister));
 
+        }
+        public async Task<IActionResult> CheckUserNameAsync(string userName)
+        {
+            var user = await userManager.FindByNameAsync(userName);
+            if (user == null)
+                return Json(true);
+            else
+                return Json(false);
+        }
+        public async Task<IActionResult> CheckEmailAsync(string Email)
+        {
+            var user = await userManager.FindByEmailAsync(email: Email);
+            if (user == null)
+                return Json(true);
+            else
+                return Json(false);
         }
         public void Logout()
         {
