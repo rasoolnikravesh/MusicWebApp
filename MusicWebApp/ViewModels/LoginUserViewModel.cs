@@ -4,10 +4,6 @@ namespace MusicWebApp.ViewModels
 {
     public class LoginUserViewModel
     {
-        [Required(ErrorMessage = "ایمیل را وارد کنید")]
-        [Display(Name = "ایمیل")]
-        [DataType(DataType.EmailAddress, ErrorMessage = "ایمیل معتبر نیست")]
-        public string Email { get; set; }
 
         [Required(ErrorMessage = "نام کاربری زا وارد کنید")]
         [Display(Name = "نام کاربری")]

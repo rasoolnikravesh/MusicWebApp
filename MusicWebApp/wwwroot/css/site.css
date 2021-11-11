@@ -49,3 +49,24 @@ label {
 	color: red;
 	
 }
+.breadcrumb-item + .breadcrumb-item:before {
+	color: #6c757d;
+	content: "\f104";
+	display: inline-block;
+	font-family: fontawesome;
+	padding-right: 8px;
+	padding-right: 0.5rem;
+	padding-left: 8px;
+	padding-left: 0.5rem;
+	vertical-align: middle;
+}
+.breadcrumb-item {
+	display: inline-block;
+}
+.breadcrumb-area {
+	border-bottom: 1px solid #dddddd;
+	padding: 18px 0;
+}
+.breadcrumb-item.active {
+	color: #0879C9;
+}

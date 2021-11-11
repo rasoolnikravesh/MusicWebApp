@@ -27,7 +27,7 @@ namespace MusicWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var u = await userManager.FindByEmailAsync(model.Email);
+                var u = await userManager.FindByNameAsync(model.Name); 
                 if (u == null)
                 {
                     u = new AspNetUser()
@@ -60,19 +60,29 @@ namespace MusicWebApp.Controllers
             if (user != null)
             {
                 var result = await signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, true);
-                TempData["LoginRegisterMessage"] = result.Succeeded ? "وارد شدید" : "رمز عبور نادرست است";
-            }
-            else
-            {
-                TempData["LoginRegisterMessage"] = "نام کاربری وجود ندارد";
-            }
+                if (result.Succeeded)
+                {
+                    TempData["LoginRegisterMessage"] = "ورود موفق";
+                    return RedirectToAction(nameof(LoginRegister));
 
+                }
+                else if (result.IsLockedOut)
+                {
+                    TempData["LoginRegisterMessage"] = "نام کاربری شما به مدت 1 دقیقه قفل شد";
+                }
+                else
+                {
+                    TempData["LoginRegisterMessage"] = "نام کاربری یا روز ورود نا درست میباشد";
+                }
+                //TempData["LoginRegisterMessage"] = result.Succeeded ? "وارد شدید" : "رمز عبور نادرست است";
+            }
             return RedirectToAction(nameof(LoginRegister));
+
         }
         public void Logout()
         {
             signInManager.SignOutAsync();
-            
+
         }
     }
 }

@@ -30,6 +30,9 @@ namespace MusicWebApp.Areas.Identity
                     options.Password.RequireLowercase = false;
                     options.Password.RequireUppercase = false;
                     options.Password.RequiredLength = 4;
+                    options.Lockout.AllowedForNewUsers = true;
+                    options.Lockout.MaxFailedAccessAttempts = 3;
+                    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
 
 
                 });
