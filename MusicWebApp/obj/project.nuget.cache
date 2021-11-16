@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "t1Yty0K6sCsMZ+GygfjHXskzI6K8RxX7FG068kaTU7et/jIOzST7NelpSrEvTK51PVXroD1E0qKREHu6152IMA==",
+  "dgSpecHash": "bKtiYlcCVJpx2pljx78gQ1hZgrpdIKpaenrouDbAzcibkjMQ4Xrym80ejkGMCjIR4eMytcaVcyFyb0dNDgjGjQ==",
   "success": true,
   "projectFilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/MusicWebApp.csproj",
   "expectedPackageFiles": [
@@ -145,7 +145,8 @@
     "/home/rasool/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/home/rasool/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/home/rasool/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "/home/rasool/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "/home/rasool/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "/home/rasool/.nuget/packages/microsoft.netcore.app.host.linux-x64/5.0.12/microsoft.netcore.app.host.linux-x64.5.0.12.nupkg.sha512"
   ],
   "logs": []
 }

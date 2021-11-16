@@ -18,13 +18,14 @@ namespace MusicWebApp.Models
         public string Url320 { get; set; }
         //singer// 
         [ForeignKey("Genre")]
-        public int GenreId { get; set;}
+        public int GenreId { get; set; }
         public Genre Genre { get; set; }
         public List<Subject> Subjects { get; set; }
-        public Artist Singer { get; set; }
 
-        public Artist SongWriter { get; set; }
-
-        public Artist Composer { get; set; }
+        public virtual Singer Singer { get; set; }
+        
+        public virtual SongWriter SongWriter { get; set; }
+        public virtual Composer Composer { get; set; }
     }
+
 }

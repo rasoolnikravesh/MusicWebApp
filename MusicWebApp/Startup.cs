@@ -58,24 +58,16 @@ namespace MusicWebApp
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "arearoute",
-                    pattern: "{area:exists}/{controller}/{action}");
-                endpoints.MapRazorPages();
-            });
-            app.UseEndpoints(endpoints =>
-            {
+                endpoints.MapAreaControllerRoute(
+                     name: "MyAreaSystemAdmin",
+                     areaName: "Admin",
+                     pattern: "Admin/{controller=AdminPanel}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
-            });
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "AdminDefault",
-                    pattern: "{area=admin}/{controller=AdminPanel}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
+
             });
             IdentityinitializerAsync(userManager, roleManager).Wait();
         }

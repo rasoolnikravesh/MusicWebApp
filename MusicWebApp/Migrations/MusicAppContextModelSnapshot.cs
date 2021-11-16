@@ -269,6 +269,16 @@ namespace MusicWebApp.Migrations
                     b.ToTable("Artists");
                 });
 
+            modelBuilder.Entity("MusicWebApp.Models.Composer", b =>
+                {
+                    b.Property<int>("ArtistId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ArtistId");
+
+                    b.ToTable("Composer");
+                });
+
             modelBuilder.Entity("MusicWebApp.Models.Genre", b =>
                 {
                     b.Property<int>("Id")
@@ -279,7 +289,12 @@ namespace MusicWebApp.Migrations
                     b.Property<string>("GenreName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("SingerArtistId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("SingerArtistId");
 
                     b.ToTable("Genres");
                 });
@@ -291,7 +306,7 @@ namespace MusicWebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ComposerId")
+                    b.Property<int?>("ComposerArtistId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -303,10 +318,10 @@ namespace MusicWebApp.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SingerId")
+                    b.Property<int?>("SingerArtistId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SongWriterId")
+                    b.Property<int?>("SongWriterArtistId")
                         .HasColumnType("int");
 
                     b.Property<string>("Text")
@@ -323,15 +338,38 @@ namespace MusicWebApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ComposerId");
+                    b.HasIndex("ComposerArtistId");
 
                     b.HasIndex("GenreId");
 
-                    b.HasIndex("SingerId");
+                    b.HasIndex("SingerArtistId");
 
-                    b.HasIndex("SongWriterId");
+                    b.HasIndex("SongWriterArtistId");
 
                     b.ToTable("Musics");
+                });
+
+            modelBuilder.Entity("MusicWebApp.Models.Singer", b =>
+                {
+                    b.Property<int>("ArtistId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ArtistId");
+
+                    b.ToTable("Singers");
+                });
+
+            modelBuilder.Entity("MusicWebApp.Models.SongWriter", b =>
+                {
+                    b.Property<int>("ArtistId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NikName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ArtistId");
+
+                    b.ToTable("SongWriters");
                 });
 
             modelBuilder.Entity("MusicWebApp.Models.Subject", b =>
@@ -415,11 +453,29 @@ namespace MusicWebApp.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MusicWebApp.Models.Composer", b =>
+                {
+                    b.HasOne("MusicWebApp.Models.Artist", "Artist")
+                        .WithOne("Composer")
+                        .HasForeignKey("MusicWebApp.Models.Composer", "ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Artist");
+                });
+
+            modelBuilder.Entity("MusicWebApp.Models.Genre", b =>
+                {
+                    b.HasOne("MusicWebApp.Models.Singer", null)
+                        .WithMany("Genres")
+                        .HasForeignKey("SingerArtistId");
+                });
+
             modelBuilder.Entity("MusicWebApp.Models.Music", b =>
                 {
-                    b.HasOne("MusicWebApp.Models.Artist", "Composer")
-                        .WithMany("SongsComposed")
-                        .HasForeignKey("ComposerId");
+                    b.HasOne("MusicWebApp.Models.Composer", "Composer")
+                        .WithMany("Musics")
+                        .HasForeignKey("ComposerArtistId");
 
                     b.HasOne("MusicWebApp.Models.Genre", "Genre")
                         .WithMany("Musics")
@@ -427,13 +483,13 @@ namespace MusicWebApp.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MusicWebApp.Models.Artist", "Singer")
+                    b.HasOne("MusicWebApp.Models.Singer", "Singer")
                         .WithMany("SingleMusics")
-                        .HasForeignKey("SingerId");
+                        .HasForeignKey("SingerArtistId");
 
-                    b.HasOne("MusicWebApp.Models.Artist", "SongWriter")
-                        .WithMany("SongsWrited")
-                        .HasForeignKey("SongWriterId");
+                    b.HasOne("MusicWebApp.Models.SongWriter", "SongWriter")
+                        .WithMany("Lyrics")
+                        .HasForeignKey("SongWriterArtistId");
 
                     b.Navigation("Composer");
 
@@ -444,18 +500,57 @@ namespace MusicWebApp.Migrations
                     b.Navigation("SongWriter");
                 });
 
+            modelBuilder.Entity("MusicWebApp.Models.Singer", b =>
+                {
+                    b.HasOne("MusicWebApp.Models.Artist", "Artist")
+                        .WithOne("Singer")
+                        .HasForeignKey("MusicWebApp.Models.Singer", "ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Artist");
+                });
+
+            modelBuilder.Entity("MusicWebApp.Models.SongWriter", b =>
+                {
+                    b.HasOne("MusicWebApp.Models.Artist", "Artist")
+                        .WithOne("SongWriter")
+                        .HasForeignKey("MusicWebApp.Models.SongWriter", "ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Artist");
+                });
+
             modelBuilder.Entity("MusicWebApp.Models.Artist", b =>
                 {
-                    b.Navigation("SingleMusics");
+                    b.Navigation("Composer");
 
-                    b.Navigation("SongsComposed");
+                    b.Navigation("Singer");
 
-                    b.Navigation("SongsWrited");
+                    b.Navigation("SongWriter");
+                });
+
+            modelBuilder.Entity("MusicWebApp.Models.Composer", b =>
+                {
+                    b.Navigation("Musics");
                 });
 
             modelBuilder.Entity("MusicWebApp.Models.Genre", b =>
                 {
                     b.Navigation("Musics");
+                });
+
+            modelBuilder.Entity("MusicWebApp.Models.Singer", b =>
+                {
+                    b.Navigation("Genres");
+
+                    b.Navigation("SingleMusics");
+                });
+
+            modelBuilder.Entity("MusicWebApp.Models.SongWriter", b =>
+                {
+                    b.Navigation("Lyrics");
                 });
 #pragma warning restore 612, 618
         }

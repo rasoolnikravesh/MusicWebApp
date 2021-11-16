@@ -1,6 +1,11 @@
 @inject UserManager<AspNetUser> userManager
 <div class="master-container-fluid header-inner">
     <div class="row">
+
+        <h1>
+            <a asp-area="Admin" asp-controller="AdminPanel" asp-action="Index"> Ehsan Shahsevani </a>
+        </h1>
+
         <div class="col-auto col-md-5 col-xl-5 d-flex align-items-center">
             <div class="d-block d-lg-none">
                 <a href="#" class="navbar-toggler toggle-off-canvas-main-menu" data-target="#primary-menu-offcanvas">
@@ -131,7 +136,7 @@
                 </div>
             </nav>
         </div>
-        
+
         <div class="col-auto col-md-2 col-xl-2 d-flex align-items-center justify-content-center p-0">
             <div class="brand">
                 <a class="brand d-flex align-items-center" href="home.html"> <span
@@ -170,7 +175,7 @@
                                 d="M19.286 25.607c-0.395 0-0.714 0.32-0.714 0.714v0 0c0 2.367-1.919 4.286-4.286 4.286s-4.286-1.919-4.286-4.286v0 0c0-0.395-0.32-0.714-0.714-0.714s-0.714 0.32-0.714 0.714v0 0c0 3.156 2.558 5.714 5.714 5.714s5.714-2.558 5.714-5.714v0 0c0-0.395-0.32-0.714-0.714-0.714v0zM27.857 23.464h-2.857v-9.179c0-5.917-4.797-10.714-10.714-10.714s-10.714 4.797-10.714 10.714v0 9.214h-2.857c-0.395 0-0.714 0.32-0.714 0.714s0.32 0.714 0.714 0.714v0h27.143c0.395 0 0.714-0.32 0.714-0.714s-0.32-0.714-0.714-0.714v0zM23.571 23.464h-18.571v-9.221c0.024-5.11 4.172-9.243 9.286-9.243 0 0 0 0 0 0v0c5.128 0 9.286 4.157 9.286 9.286v0zM14.286 2.857c0.789 0 1.429-0.64 1.429-1.429v0c0-0.789-0.64-1.429-1.429-1.429s-1.429 0.64-1.429 1.429v0c0 0.789 0.64 1.429 1.429 1.429v0z">
                             </path>
                         </svg></span>
-                    <!--<span class="icon-bell fs-8"></span>-->
+
                 </a>
                 <div class="dropdown-menu dropdown-menu-right p-4 notifications clearfix" role="menu">
                     <h5>نوتیفیکیشن ها</h5>
@@ -276,7 +281,7 @@
                             @{
                                 if (User.Identity.IsAuthenticated)
                                 {
-                                    <li><a href="#" class="inactive-color"><span
+                                    <li><a asp-area="ََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََAdmin" asp-controller="AdminPanel" asp-action="index" class="inactive-color"><span
                                             class="adonis-icon notification ml-3 icon-3x"><svg version="1.1"
                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                                                     <path
@@ -318,9 +323,9 @@
                                 }
                                 else
                                 {
-                                    <li><a asp-controller="Account" asp-action="LoginRegister" class="inactive-color"><span class="adonis-icon ml-3 icon-2x"><svg
-                                                version="1.1" xmlns="http://www.w3.org/2000/svg" height="32"
-                                                viewBox="0 0 32 32">
+                                    <li><a asp-controller="Account" asp-action="LoginRegister" class="inactive-color"><span
+                                            class="adonis-icon ml-3 icon-2x"><svg version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 32 32">
                                                     <path
                                                     d="M24 20v-4h-10v-4h10v-4l6 6zM22 18v8h-10v6l-12-6v-26h22v10h-2v-8h-16l8 4v18h8v-6z">
                                                     </path>
