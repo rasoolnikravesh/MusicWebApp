@@ -23,9 +23,11 @@ namespace MusicWebApp.Models
         public List<Subject> Subjects { get; set; }
 
         public virtual Singer Singer { get; set; }
-        
+
         public virtual SongWriter SongWriter { get; set; }
         public virtual Composer Composer { get; set; }
+        public virtual MixMaster MixMaster { get; set; }
+
     }
 
 }

@@ -24,7 +24,7 @@ namespace MusicWebApp.Areas.Identity.Data
             builder.Entity<SongWriter>().HasKey(k => k.ArtistId);
             builder.Entity<SongWriter>().HasOne<Artist>(s => s.Artist)
             .WithOne(a => a.SongWriter).HasForeignKey<SongWriter>(s => s.ArtistId);
-            builder.Entity<SongWriter>().HasMany<Music>(s => s.Lyrics).WithOne(m=> m.SongWriter);
+            builder.Entity<SongWriter>().HasMany<Music>(s => s.Lyrics).WithOne(m => m.SongWriter);
             //Singer table
             builder.Entity<Singer>().HasKey(k => k.ArtistId);
             builder.Entity<Singer>().HasOne<Artist>(s => s.Artist)
@@ -38,7 +38,12 @@ namespace MusicWebApp.Areas.Identity.Data
             .WithOne(a => a.Compos).HasForeignKey<Composer>(c => c.ArtistId);
 
             builder.Entity<Composer>().HasMany<Music>(c => c.Musics)
-            .WithOne(m=> m.Composer);
+            .WithOne(m => m.Composer);
+            //mixmaster
+            builder.Entity<MixMaster>().HasKey(k => k.ArtistId);
+            builder.Entity<MixMaster>().HasOne<Artist>(m => m.Artist)
+            .WithOne(a => a.RemixMusics).HasForeignKey<MixMaster>(m => m.ArtistId);
+            builder.Entity<MixMaster>().HasMany<Music>(m=> m.RemixMusics).WithOne(x=>x.MixMaster);
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
@@ -47,6 +52,8 @@ namespace MusicWebApp.Areas.Identity.Data
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Singer> Singers { get; set; }
         public DbSet<SongWriter> SongWriters { get; set; }
+        public DbSet<MixMaster> MixMasters { get; set; }
+        public DbSet<Composer> Composers { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Subject> Subjects { get; set; }
     }
