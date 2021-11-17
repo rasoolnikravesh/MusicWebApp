@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
@@ -32,12 +33,29 @@ namespace MusicWebApp.Areas.Identity
                     options.Password.RequireLowercase = false;
                     options.Password.RequireUppercase = false;
                     options.Password.RequiredLength = 4;
-                    
+
                     options.Lockout.AllowedForNewUsers = true;
                     options.Lockout.MaxFailedAccessAttempts = 3;
                     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
 
 
+                });
+                services.AddAuthorization(x =>
+                {
+                    x.AddPolicy("MusicPolicy", y => y.RequireRole("admin"));
+
+                });
+                services.ConfigureApplicationCookie(x =>
+                {
+                    x.Events = new Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationEvents
+                    {
+                        OnRedirectToLogin = y =>
+                        {
+
+                            y.Response.Redirect("/account/loginregister");
+                            return Task.CompletedTask;
+                        }
+                    };
                 });
             });
         }

@@ -34,17 +34,22 @@
   <link rel="stylesheet" href="~/Admin-Layout/dist/css/bootstrap-rtl.min.css">
   <!-- template rtl version -->
   <link rel="stylesheet" href="~/Admin-Layout/dist/css/custom-style.css">
+  <link rel="stylesheet" href="~/Admin-Layout/Site.css">
+  
 
   <!-- jQuery -->
   <script src="~/Admin-Layout/plugins/jquery/jquery.min.js"></script>
   <!-- jQuery UI 1.11.4 -->
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+  <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
   <script>
     $.widget.bridge('uibutton', $.ui.button)
   </script>
   <!-- Bootstrap 4 -->
   <script src="~/Admin-Layout/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
   <!-- Morris.js charts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
   <script src="~/Admin-Layout/plugins/morris/morris.min.js"></script>
@@ -79,13 +84,13 @@
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
-      <partial name="_Header"/>
+      <partial name="_Header" />
     </nav>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-      <partial name="_Sidebar"/>
+      <partial name="_Sidebar" />
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
@@ -95,7 +100,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-dark">داشبورد</h1>
+              <h1 class="m-0 text-dark">@TempData["PageName"]</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-left">
@@ -107,7 +112,7 @@
         </div><!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
-      
+
       <!-- Main content -->
       <section class="content">
         @RenderBody()

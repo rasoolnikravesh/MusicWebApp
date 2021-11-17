@@ -1,3 +1,67 @@
 @{
-    ViewData["Title"] = "InsertMusic";
+    TempData["Title"] = "ثبت موزیک";
+    TempData["PageName"] = "ثبت موزیک";
 }
+@model InsertMusicViewModel
+
+<div class="card card-success m-3 ">
+    <form asp-area="admin" asp-controller="Music" asp-action="InsertMusicConfirm">
+        <div class="card-header">
+            <h3 class="card-title">@TempData["Title"]</h3>
+        </div>
+        <div class="card-body p-2">
+
+            <div class="row">
+                <div class="col-md">
+                    <div clas="form-group">
+                        <label for="Name">نام موزیک</label>
+                        <input type="text" id="Name" class="form-control" asp-for="Name" class="form-control">
+                        <span asp-validation-for="Name"></span>
+                    </div>
+
+
+                </div>
+                <div class="col-md">
+                    <div class="form-group">
+                        <label for="Title">موزیک</label>
+                        <input type="text" asp-for="Title" class="form-control" id="Title">
+                        <span asp-validation-for="Title"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <div class="form-group">
+                        <label for="Date">تاریخ</label>
+                        <input type="datetime" asp-for="Date" class="form-control" id="Date">
+                        <span asp-validation-for="Date"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <div class="form-group">
+                        <label>لینک 128</label>
+                        <input type="text" asp-for="url128" class="form-control ">
+                        <span asp-validation-for="url128"></span>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-group">
+                        <label>لینک 320</label>
+                        <input type="text" asp-for="url320" class="form-control ">
+                        <span asp-validation-for="url320"></span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">ارسال</button>
+        </div>
+    </form>
+    <!-- /.card-body -->
+</div>
