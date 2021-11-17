@@ -32,6 +32,10 @@ namespace MusicWebApp.Areas.Identity.Data
 
             builder.Entity<Singer>().HasMany<Music>(s => s.SingleMusics)
             .WithOne(m => m.Singer);
+            //Arrangement table 
+            builder.Entity<Arrangement>().HasKey(k => k.ArtistId);
+            builder.Entity<Arrangement>().HasOne<Artist>(s => s.Artist).WithOne(a=> a.Arrangement).HasForeignKey<Arrangement>(s => s.ArtistId);
+            builder.Entity<Arrangement>().HasMany<Music>(a=> a.Arrangements).WithOne(m=> m.Arrangement);
             //Composer Table
             builder.Entity<Composer>().HasKey(k => k.ArtistId);
             builder.Entity<Composer>().HasOne<Artist>(s => s.Artist)

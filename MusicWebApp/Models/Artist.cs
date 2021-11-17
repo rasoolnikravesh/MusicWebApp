@@ -16,5 +16,6 @@ namespace MusicWebApp.Models
         public virtual Singer Singer { get; set; }
         public virtual Composer Compos { get; set; }
         public virtual MixMaster RemixMusics { get; set; }
+        public virtual Arrangement Arrangement { get; set; }
     }
 }
