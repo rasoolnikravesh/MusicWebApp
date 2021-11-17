@@ -61,7 +61,7 @@ namespace MusicWebApp
                 endpoints.MapAreaControllerRoute(
                      name: "MyAreaSystemAdmin",
                      areaName: "Admin",
-                     pattern: "Admin/{controller=AdminPanel}/{action=Index}/{id?}");
+                     pattern: "Panel/{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(
                     name: "default",
