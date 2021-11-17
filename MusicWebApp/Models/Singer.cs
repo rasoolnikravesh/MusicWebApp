@@ -11,6 +11,7 @@ namespace MusicWebApp.Models
         public Artist Artist { get; set; }
         public virtual List<Genre> Genres { get; set; }
         public virtual List<Music> SingleMusics { get; set; }
+        public virtual List<Album> Albums { get; set; }
 
     }
 }

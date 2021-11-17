@@ -8,6 +8,7 @@ namespace MusicWebApp.Models
 
         public string GenreName { get; set; }
 
-        public List<Music> Musics { get; set; }     
+        public virtual List<Music> Musics { get; set; }
+        public virtual List<Album> Albums { get; set; }
     }
 }

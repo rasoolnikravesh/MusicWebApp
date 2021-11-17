@@ -27,6 +27,7 @@ namespace MusicWebApp.Models
         public virtual SongWriter SongWriter { get; set; }
         public virtual Composer Composer { get; set; }
         public virtual MixMaster MixMaster { get; set; }
+        public virtual Album Album { get; set; }
 
     }
 

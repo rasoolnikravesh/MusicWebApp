@@ -6,7 +6,8 @@ namespace MusicWebApp.Models
     {
         public int Id { get; set; }
         public string subjectName { get; set; }
-        public List<Music> Musics { get; set; }
+        public virtual List<Music> Musics { get; set; }
+        public virtual List<Album> Albums { get; set; }
 
     }
 }
