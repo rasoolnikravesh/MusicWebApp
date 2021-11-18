@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MusicWebApp.Areas.Identity.Data;
 
 namespace MusicWebApp.Migrations
 {
     [DbContext(typeof(MusicAppContext))]
-    partial class MusicAppContextModelSnapshot : ModelSnapshot
+    [Migration("20211118084051_addcoverimage")]
+    partial class addcoverimage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

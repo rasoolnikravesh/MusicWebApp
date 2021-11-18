@@ -13,11 +13,12 @@ namespace MusicWebApp.Models
 
         public string Title { get; set; }
         public string Text { get; set; }
+        public byte[] CoverImage { get; set; }
         public DateTime Date { get; set; }
         public string Url128 { get; set; }
         public string Url320 { get; set; }
         //singer// 
-        
+
         public Genre Genre { get; set; }
         public List<Subject> Subjects { get; set; }
 
