@@ -29,8 +29,13 @@ namespace MusicWebApp
         {
 
             services.AddDatabaseDeveloperPageExceptionFilter();
-
-
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,9 +57,9 @@ namespace MusicWebApp
             app.UseStaticFiles();
 
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
@@ -74,7 +79,7 @@ namespace MusicWebApp
 
         private async Task IdentityinitializerAsync(UserManager<AspNetUser> userManager, RoleManager<IdentityRole> roleManager)
         {
-            List<string> roles = new() { "admin", "user" };
+            List<string> roles = new() { "superadmin", "admin", "editor", "user" };
             foreach (var item in roles)
             {
                 if (await roleManager.RoleExistsAsync(item) == false)
@@ -99,9 +104,9 @@ namespace MusicWebApp
                 await userManager.CreateAsync(user, "root123");
 
             }
-            if (await userManager.IsInRoleAsync(user, "admin") == false)
+            if (await userManager.IsInRoleAsync(user, "superadmin") == false)
             {
-                await userManager.AddToRoleAsync(user, "admin");
+                await userManager.AddToRoleAsync(user, "superadmin");
             }
         }
     }

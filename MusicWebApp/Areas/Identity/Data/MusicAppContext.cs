@@ -19,7 +19,10 @@ namespace MusicWebApp.Areas.Identity.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            //subject table
             builder.Entity<Subject>().HasMany(s => s.Musics).WithMany(m => m.Subjects);
+            //Genre table 
+            builder.Entity<Genre>().HasMany<Music>(g=> g.Musics).WithOne(m=> m.Genre).IsRequired(false);
             //songwriter table 
             builder.Entity<SongWriter>().HasKey(k => k.ArtistId);
             builder.Entity<SongWriter>().HasOne<Artist>(s => s.Artist)

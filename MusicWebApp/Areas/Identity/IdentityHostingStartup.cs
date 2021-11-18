@@ -42,7 +42,7 @@ namespace MusicWebApp.Areas.Identity
                 });
                 services.AddAuthorization(x =>
                 {
-                    x.AddPolicy("MusicPolicy", y => y.RequireRole("admin"));
+                    x.AddPolicy("MusicPolicy", y => y.RequireRole("superadmin"));
 
                 });
                 services.ConfigureApplicationCookie(x =>
@@ -54,7 +54,14 @@ namespace MusicWebApp.Areas.Identity
 
                             y.Response.Redirect("/account/loginregister");
                             return Task.CompletedTask;
+                        },
+                        OnRedirectToAccessDenied = z =>
+                        {   
+                            z.Response.Redirect("/account/loginregister");
+                            return Task.CompletedTask;
                         }
+
+
                     };
                 });
             });

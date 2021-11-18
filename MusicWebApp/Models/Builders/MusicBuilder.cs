@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MusicWebApp.Models
+namespace MusicWebApp.Models.Builders
 {
   public class MusicBuilder
   {
@@ -12,7 +12,6 @@ namespace MusicWebApp.Models
     private DateTime _date = new DateTime(1970, 1, 1);
     private string _url128 = "";
     private string _url320 = "";
-    private int _genreId = 0;
     private Genre _genre = null;
     private List<Subject> _subjects = new List<Subject>();
     private Singer _singer = null;
@@ -32,7 +31,6 @@ namespace MusicWebApp.Models
         Date = _date,
         Url128 = _url128,
         Url320 = _url320,
-        GenreId = _genreId,
         Genre = _genre,
         Subjects = _subjects,
         Singer = _singer,
@@ -85,11 +83,7 @@ namespace MusicWebApp.Models
       return this;
     }
 
-    public MusicBuilder WithGenreId(int value)
-    {
-      _genreId = value;
-      return this;
-    }
+    
 
     public MusicBuilder WithGenre(Genre value)
     {

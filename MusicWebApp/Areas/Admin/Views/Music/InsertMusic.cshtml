@@ -5,7 +5,7 @@
 @model InsertMusicViewModel
 
 <div class="card card-success m-3 ">
-    <form asp-area="admin" asp-controller="Music" asp-action="InsertMusicConfirm">
+    <form asp-area="admin" asp-controller="Music" asp-route-returnurl=@ViewData["returnurl"] asp-action="InsertMusicConfirm">
         <div class="card-header">
             <h3 class="card-title">@TempData["Title"]</h3>
         </div>

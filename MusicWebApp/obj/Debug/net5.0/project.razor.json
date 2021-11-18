@@ -15679,6 +15679,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Areas/Admin/Views/Music/InsertMusicImage.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Music\\InsertMusicImage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Footer.cshtml",
       "TargetPath": "Views\\Shared\\_Footer.cshtml",
       "FileKind": "mvc"
