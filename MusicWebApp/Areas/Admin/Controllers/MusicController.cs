@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Security.Policy;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -19,6 +20,15 @@ namespace MusicWebApp.Areas.Admin.Controllers
         {
             context = _context;
         }
+        public IActionResult Musics()
+        {
+            return View();
+        }
+
+        public IActionResult Genres()
+        {
+            return View();
+        }
         public IActionResult InsertMusic()
         {
             ViewData["returnurl"] = "/Panel/Music/InsertMusic";
@@ -33,6 +43,7 @@ namespace MusicWebApp.Areas.Admin.Controllers
 
                 await context.Musics.AddAsync(m);
                 await context.SaveChangesAsync();
+                HttpContext.Session.SetInt32("MusicId", m.Id);
             }
             HttpContext.Session.SetString("returnurl", returnurl);
             return RedirectToAction("InsertMusicImage", "Music");
@@ -40,8 +51,37 @@ namespace MusicWebApp.Areas.Admin.Controllers
         public IActionResult InsertMusicImage()
         {
             var returnurl = HttpContext.Session.GetString("returnurl");
+            var musicid = HttpContext.Session.GetInt32("MusicId");
             ViewData["returnurl"] = returnurl;
+            ViewData["musicid"] = musicid;
             return View();
         }
+        public async Task<IActionResult> InsertMusicImageConfirmAsync(ViewModels.Music.InsertMusicImageViewModel model, int musicid, string returnurl = "")
+        {
+            if (ModelState.IsValid)
+            {
+                byte[] img = new byte[model.image.Length];
+                model.image.OpenReadStream().Read(img, 0, img.Length);
+
+                var m = context.Musics.SingleOrDefault(x => x.Id == musicid);
+                if (m != null)
+                {
+
+                    m.CoverImage = img;
+                    await context.SaveChangesAsync();
+                    return RedirectToAction("Musics", "Music");
+                }
+                else
+                {
+                    TempData["Message"] = "موزیک پیدا نشد";
+                    return RedirectToAction("Musics", "Music");
+                }
+
+
+            }
+            else
+                return RedirectToAction("Index", "Home");
+        }
+
     }
 }

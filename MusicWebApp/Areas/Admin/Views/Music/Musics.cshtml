@@ -1,0 +1,116 @@
+@{
+    TempData["Title"] = "موزیک ها";
+    TempData["PageName"] = "موزیک ها";
+
+}
+@inject MusicAppContext Context;
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">موزیک ها</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <div id="example2_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <button class="btn btn-success">
+
+                        <a asp-area="admin" asp-controller="Music" asp-action="InsertMusic">افزودن آهنگ</a>
+                    </button>
+                </div>
+                <div class="col-sm-12 col-md-6"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="example2" class="table table-bordered table-hover dataTable" role="grid">
+                        <thead>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="موتور رندر: activate to sort column descending">
+                                    نام</th>
+                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                    aria-label="مرورگر: activate to sort column ascending">تایتل</th>
+                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                    aria-label="سیستم عامل: activate to sort column ascending">تاریخ</th>
+                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                    aria-label="ورژن: activate to sort column ascending">لینک</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var music = Context.Musics.ToList();
+                                if (music.Count > 0)
+                                {
+                                    foreach (var item in music)
+                                    {
+
+                                        <tr role="row" class="odd">
+                                            <td>@item.Name</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Date</td>
+                                            <td>@item.Url128</td>
+                                            <td>
+                                                <a asp-area="admin" asp-controller="music" asp-action="Delete" asp-route-Id="@item.Id">
+                                                 <button button class="btn btn-outline-danger">  delete</button> </a></td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+
+                                    <tr role="row" class="even">
+                                        <td class="sorting_1">Gecko</td>
+                                        <td>Firefox ۱.۵</td>
+                                        <td>Win ۹۸+ / OSX.۲+</td>
+                                        <td>۱.۸</td>
+                                        <td>A</td>
+                                    </tr>
+                                }
+                            }
+
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th rowspan="1" colspan="1">نام</th>
+                                <th rowspan="1" colspan="1">تایتل</th>
+                                <th rowspan="1" colspan="1">تاریخ</th>
+                                <th rowspan="1" colspan="1">لینک</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-5"></div>
+                <div class="col-sm-12 col-md-7">
+                    <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                        <ul class="pagination">
+                            <li class="paginate_button page-item previous disabled" id="example2_previous"><a href="#"
+                                    aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">قبلی</a>
+                            </li>
+                            <li class="paginate_button page-item active"><a href="#" aria-controls="example2"
+                                    data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="2"
+                                    tabindex="0" class="page-link">2</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="3"
+                                    tabindex="0" class="page-link">3</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="4"
+                                    tabindex="0" class="page-link">4</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="5"
+                                    tabindex="0" class="page-link">5</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="6"
+                                    tabindex="0" class="page-link">6</a></li>
+                            <li class="paginate_button page-item next" id="example2_next"><a href="#"
+                                    aria-controls="example2" data-dt-idx="7" tabindex="0" class="page-link">بعدی</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>

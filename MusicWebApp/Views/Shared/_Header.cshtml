@@ -2,9 +2,6 @@
 <div class="master-container-fluid header-inner">
     <div class="row">
 
-        <h1>
-            <a asp-area="Admin" asp-controller="AdminPanel" asp-action="Index"> Ehsan Shahsevani </a>
-        </h1>
 
         <div class="col-auto col-md-5 col-xl-5 d-flex align-items-center">
             <div class="d-block d-lg-none">
@@ -281,7 +278,7 @@
                             @{
                                 if (User.Identity.IsAuthenticated)
                                 {
-                                    <li><a asp-area="ََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََََAdmin" asp-controller="AdminPanel" asp-action="index" class="inactive-color"><span
+                                    <li><a onclick='window.location.replace("/Panel");' class="inactive-color"><span
                                             class="adonis-icon notification ml-3 icon-3x"><svg version="1.1"
                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                                                     <path
