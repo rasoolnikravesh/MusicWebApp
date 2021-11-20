@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 
-namespace MusicWebApp.Areas.Admin.ViewModels.Music
+namespace MusicWebApp.Areas.Admin.ViewModels
 {
     public class InsertMusicImageViewModel
     {

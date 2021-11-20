@@ -1,4 +1,4 @@
-namespace MusicWebApp.Areas.Admin.ViewModels.genre
+namespace MusicWebApp.Areas.Admin.ViewModels
 {
     public class InsertGenreViewModel
     {

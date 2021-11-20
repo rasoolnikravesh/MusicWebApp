@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MusicWebApp.Areas.Admin.ViewModels;
-using MusicWebApp.Areas.Admin.ViewModels.genre;
 using MusicWebApp.Areas.Identity.Data;
 using MusicWebApp.Models;
 using MusicWebApp.Models.Builders;
@@ -50,6 +49,8 @@ namespace MusicWebApp.Areas.Admin.Controllers
         }
         public IActionResult InsertMusic()
         {
+            var Genres = context.Genres.ToList();
+            ViewData["Genres"] = Genres;
             ViewData["returnurl"] = "/Panel/Music/InsertMusic";
             return View();
         }
@@ -59,7 +60,8 @@ namespace MusicWebApp.Areas.Admin.Controllers
             {
                 var m = new MusicBuilder().WithName(model.Name).WithTitle(model.Title)
                 .WithDate(model.Date).WithUrl128(model.url128).WithUrl320(model.url320).Build();
-
+                var q = context.Genres.SingleOrDefault(x => x.GenreName == model.Genre);
+                m.Genre = q;
                 await context.Musics.AddAsync(m);
                 await context.SaveChangesAsync();
                 HttpContext.Session.SetInt32("MusicId", m.Id);
@@ -75,7 +77,7 @@ namespace MusicWebApp.Areas.Admin.Controllers
             ViewData["musicid"] = musicid;
             return View();
         }
-        public async Task<IActionResult> InsertMusicImageConfirmAsync(ViewModels.Music.InsertMusicImageViewModel model, int musicid, string returnurl = "")
+        public async Task<IActionResult> InsertMusicImageConfirmAsync(InsertMusicImageViewModel model, int musicid, string returnurl = "")
         {
             if (ModelState.IsValid)
             {
