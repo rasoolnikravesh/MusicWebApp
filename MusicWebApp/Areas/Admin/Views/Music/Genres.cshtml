@@ -4,6 +4,7 @@
 
 }
 @inject MusicAppContext Context;
+@model InsertGenreViewModel
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">موزیک ها</h3>
@@ -13,10 +14,14 @@
         <div id="example2_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
-                    <button class="btn btn-light">
+                    <form asp-area="admin" asp-controller="Music" asp-action="InsertGenre">
+                        <div class="form-group">
+                            <label>نام</label>
+                            <input asp-for="GenreName" type="text" class="form-control">
+                        </div>
+                        <button class="btn btn-primary">ثبت</button>
+                    </form>
 
-                        <a href="/Panel/Music/InsertMusic">افزودن آهنگ</a>
-                    </button>
                 </div>
                 <div class="col-sm-12 col-md-6"></div>
             </div>
@@ -30,7 +35,7 @@
                                     آیدی</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                     aria-label="نام: activate to sort column ascending">نام</th>
-                                
+
 
                             </tr>
                         </thead>
@@ -47,7 +52,9 @@
                                         </tr>
                                     }
 
-                                }else{
+                                }
+                                else
+                                {
 
                                 }
                             }

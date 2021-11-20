@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MusicWebApp.Areas.Admin.ViewModels;
+using MusicWebApp.Areas.Admin.ViewModels.genre;
 using MusicWebApp.Areas.Identity.Data;
 using MusicWebApp.Models;
 using MusicWebApp.Models.Builders;
@@ -28,6 +29,24 @@ namespace MusicWebApp.Areas.Admin.Controllers
         public IActionResult Genres()
         {
             return View();
+        }
+        public async Task<IActionResult> InsertGenreAsync(InsertGenreViewModel model)
+        {
+            var genre = context.Genres.SingleOrDefault(x => x.GenreName == model.GenreName);
+            if (genre == null)
+            {
+                genre = new()
+                {
+                    GenreName = model.GenreName,
+                };
+            }
+            else
+                return RedirectToAction("Genres");
+            context.Add(genre);
+            await context.SaveChangesAsync();
+
+            return RedirectToAction("Genres");
+
         }
         public IActionResult InsertMusic()
         {
