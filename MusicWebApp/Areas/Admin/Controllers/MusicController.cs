@@ -22,7 +22,8 @@ namespace MusicWebApp.Areas.Admin.Controllers
         }
         public IActionResult Musics()
         {
-            return View();
+            var con = context.Musics.ToList();
+            return View(con);
         }
 
         public IActionResult Genres()
@@ -103,6 +104,27 @@ namespace MusicWebApp.Areas.Admin.Controllers
             else
                 return RedirectToAction("Index", "Home");
         }
+        public IActionResult DeleteGenre(int Id)
+        {
+            // var q = context.Genres.SingleOrDefault(x => x.Id == Id);
+            // if (q != null)
+            // {
 
+            //     var r = context.Genres.Remove(q);
+            //     var rd = await context.SaveChangesAsync();
+            // }
+            return RedirectToAction("Genres");
+        }
+        public async Task<IActionResult> DeleteMusicAsync(int Id)
+        {
+            var music = context.Musics.SingleOrDefault(x => x.Id == Id);
+            if (music != null)
+            {
+                var result = context.Remove(music);
+                var r = await context.SaveChangesAsync();
+            }
+            return RedirectToAction("Musics");
+        }
+        
     }
 }

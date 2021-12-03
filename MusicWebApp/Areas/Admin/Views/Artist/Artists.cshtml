@@ -1,0 +1,173 @@
+@{
+    ViewData["Title"] = "هنرمندان";
+}
+@model List<Artist>
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">@ViewData["Title"]</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <div id="example1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+            <div>
+                @{
+
+                    string mint = (string)TempData["message"];
+                    if (mint == "0")
+                    {
+
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h5><i class="icon fa fa-ban"></i> توجه!</h5>
+                            با موفقیت ثبت شد
+                        </div>
+                    }
+                    else if (mint == "2")
+                    {
+
+                        <div class="alert alert-info alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h5><i class="icon fa fa-ban"></i> توجه!</h5>
+                            قبلا ثبت شده است
+                        </div>
+                    }
+                    else if (mint == "-1")
+                    {
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h5><i class="icon fa fa-ban"></i> توجه!</h5>
+                            هنرمند یافت نشد
+                        </div>
+                    }
+                }
+
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <a asp-area="admin" asp-controller="Artist" asp-action="InsertArtist">
+                        <button class="btn btn-primary">افزودن</button>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                @* <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_length" id="example1_length"><label>Show <select name="example1_length"
+                    aria-controls="example1" class="form-control form-control-sm">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    </select> entries</label></div>
+                    </div> *@
+                @* <div class="col-sm-12 col-md-6">
+                    <div id="example1_filter" class="dataTables_filter"><label>Search:<input type="search"
+                    class="form-control form-control-sm" placeholder="" aria-controls="example1"></label>
+                    </div>
+                    </div> *@
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="example1" class="table table-bordered table-striped dataTable" role="grid">
+                        <thead>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="نام: activate to sort column descending"
+                                    style="width: 239.547px;">نام</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                    aria-label="نام خانوادگی: activate to sort column ascending"
+                                    style="width: 429.656px;">
+                                    نام خانوادگی</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                    aria-label="بیو گرافی: activate to sort column ascending" style="width: 391.469px;">
+                                    بیو گرافی</th>
+
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                    aria-label="وب سایت: activate to sort column ascending" style="width: 116.312px;">
+                                    وب سایت</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var Artists = Model;
+                                for (int i = 0; i < Artists.Count; i++)
+                                {
+                                    var oe = i % 2;
+                                    string clas = "";
+                                    if (oe == 0)
+                                        clas = "even";
+                                    else
+                                        clas = "odd";
+                                    var item = Artists[i];
+                                    <tr role="row" class="@clas">
+                                        <td>@item.Name</td>
+                                        <td>@item.LastName</td>
+                                        <td>@item.Bio</td>
+                                        <td>@item.WebSite</td>
+                                        <td>
+                                            <a asp-area="admin" asp-controller="Artist" asp-action="AddSingerToArtist"
+                                        asp-route-id="@item.Id">
+
+                                                <button class="btn btn-primary">افزودن خواننده</button>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a asp-area="admin" asp-controller="Artist" asp-action="Edit"
+                                        asp-route-id="@item.Id">
+
+                                                <button class="btn btn-success">ویرایش</button>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a asp-area="admin" asp-controller="Artist" asp-action="Delete"
+                                        asp-route-id="@item.Id">
+
+                                                <button class="btn btn-outline-danger">حذف</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th rowspan="1" colspan="1">نام</th>
+                                <th rowspan="1" colspan="1">نام خانوادگی</th>
+                                <th rowspan="1" colspan="1">بیو گرافی</th>
+                                <th rowspan="1" colspan="1">وب سایت</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-5"></div>
+                <div class="col-sm-12 col-md-7">
+                    <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                        <ul class="pagination">
+                            <li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#"
+                                    aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">قبلی</a>
+                            </li>
+                            <li class="paginate_button page-item active"><a href="#" aria-controls="example1"
+                                    data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="2"
+                                    tabindex="0" class="page-link">2</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="3"
+                                    tabindex="0" class="page-link">3</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="4"
+                                    tabindex="0" class="page-link">4</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="5"
+                                    tabindex="0" class="page-link">5</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="6"
+                                    tabindex="0" class="page-link">6</a></li>
+                            <li class="paginate_button page-item next" id="example1_next"><a href="#"
+                                    aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">بعدی</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>

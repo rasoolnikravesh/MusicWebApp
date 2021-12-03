@@ -3,7 +3,7 @@
     TempData["PageName"] = "موزیک ها";
 
 }
-@inject MusicAppContext Context;
+@model List<Music>
 
 <div class="card">
     <div class="card-header">
@@ -40,7 +40,7 @@
                         </thead>
                         <tbody>
                             @{
-                                var music = Context.Musics.ToList();
+                                var music = Model;
                                 if (music.Count > 0)
                                 {
                                     foreach (var item in music)
@@ -52,7 +52,7 @@
                                             <td>@item.Date</td>
                                             <td>@item.Url128</td>
                                             <td>
-                                                <a asp-area="admin" asp-controller="music" asp-action="Delete" asp-route-Id="@item.Id">
+                                                <a asp-area="admin" asp-controller="music" asp-action="DeleteMusic" asp-route-Id="@item.Id">
                                                  <button button class="btn btn-outline-danger">  delete</button> </a></td>
                                         </tr>
                                     }

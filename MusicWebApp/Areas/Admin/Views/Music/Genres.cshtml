@@ -49,6 +49,12 @@
                                         <tr role="row" class="even">
                                             <td>@genre.Id</td>
                                             <td>@genre.GenreName</td>
+                                            <td>
+                                                <a asp-area="admin" asp-controller="Music" asp-action="DeleteGenre"
+                                        asp-route-Id="@genre.Id">
+                                                    <button type="button" class="btn btn-outline-danger">حذف</button>
+                                                </a>
+                                            </td>
                                         </tr>
                                     }
 

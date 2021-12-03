@@ -22,7 +22,8 @@ namespace MusicWebApp.Areas.Identity.Data
             //subject table
             builder.Entity<Subject>().HasMany(s => s.Musics).WithMany(m => m.Subjects);
             //Genre table 
-            builder.Entity<Genre>().HasMany<Music>(g=> g.Musics).WithOne(m=> m.Genre).IsRequired(false);
+            builder.Entity<Genre>().HasMany<Music>(g => g.Musics).WithOne(m => m.Genre)
+            .IsRequired(false).OnDelete(deleteBehavior: DeleteBehavior.Cascade);
             //songwriter table 
             builder.Entity<SongWriter>().HasKey(k => k.ArtistId);
             builder.Entity<SongWriter>().HasOne<Artist>(s => s.Artist)
@@ -37,8 +38,8 @@ namespace MusicWebApp.Areas.Identity.Data
             .WithOne(m => m.Singer);
             //Arrangement table 
             builder.Entity<Arrangement>().HasKey(k => k.ArtistId);
-            builder.Entity<Arrangement>().HasOne<Artist>(s => s.Artist).WithOne(a=> a.Arrangement).HasForeignKey<Arrangement>(s => s.ArtistId);
-            builder.Entity<Arrangement>().HasMany<Music>(a=> a.Arrangements).WithOne(m=> m.Arrangement);
+            builder.Entity<Arrangement>().HasOne<Artist>(s => s.Artist).WithOne(a => a.Arrangement).HasForeignKey<Arrangement>(s => s.ArtistId);
+            builder.Entity<Arrangement>().HasMany<Music>(a => a.Arrangements).WithOne(m => m.Arrangement);
             //Composer Table
             builder.Entity<Composer>().HasKey(k => k.ArtistId);
             builder.Entity<Composer>().HasOne<Artist>(s => s.Artist)
@@ -50,18 +51,18 @@ namespace MusicWebApp.Areas.Identity.Data
             builder.Entity<MixMaster>().HasKey(k => k.ArtistId);
             builder.Entity<MixMaster>().HasOne<Artist>(m => m.Artist)
             .WithOne(a => a.RemixMusics).HasForeignKey<MixMaster>(m => m.ArtistId);
-            builder.Entity<MixMaster>().HasMany<Music>(m=> m.RemixMusics).WithOne(x=>x.MixMaster);
+            builder.Entity<MixMaster>().HasMany<Music>(m => m.RemixMusics).WithOne(x => x.MixMaster);
             //album table 
             builder.Entity<Album>().HasKey(k => k.Id);
 
-            builder.Entity<Album>().HasMany<Music>(a=> a.Musics)
-            .WithOne(m=>m.Album);
-            builder.Entity<Album>().HasMany<Subject>(a=> a.Subjects)
-            .WithMany(s=> s.Albums);
-            builder.Entity<Album>().HasOne<Genre>(a=> a.Genre)
-            .WithMany(g=> g.Albums);
-            builder.Entity<Album>().HasOne<Singer>(a=> a.Singer)
-            .WithMany(s=> s.Albums);
+            builder.Entity<Album>().HasMany<Music>(a => a.Musics)
+            .WithOne(m => m.Album);
+            builder.Entity<Album>().HasMany<Subject>(a => a.Subjects)
+            .WithMany(s => s.Albums);
+            builder.Entity<Album>().HasOne<Genre>(a => a.Genre)
+            .WithMany(g => g.Albums);
+            builder.Entity<Album>().HasOne<Singer>(a => a.Singer)
+            .WithMany(s => s.Albums);
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
