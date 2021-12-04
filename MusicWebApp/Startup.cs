@@ -12,7 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MusicWebApp.Areas.Identity.Data;
-
+using AutoMapper;
+using MusicWebApp.Mapers;
 namespace MusicWebApp
 {
     public class Startup
@@ -36,6 +37,10 @@ namespace MusicWebApp
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
+            var mapperconfig = new MapperConfiguration(x => x.AddProfile(new MuiscAppMaperProfile()));
+            IMapper mapper = mapperconfig.CreateMapper();
+            services.AddSingleton(mapper);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

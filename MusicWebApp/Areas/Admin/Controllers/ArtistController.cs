@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using MusicWebApp.Areas.Identity.Data;
 using MusicWebApp.Areas.Admin.ViewModels.Artist;
 using MusicWebApp.Models;
+using AutoMapper;
 
 namespace MusicWebApp.Areas.Admin.Controllers
 {
@@ -51,25 +52,12 @@ namespace MusicWebApp.Areas.Admin.Controllers
         [HttpGet()]
         public IActionResult InsertArtist() => View();
         [HttpPost()]
-        public IActionResult InsertArtist(InsertArtistViewModel model)
+        public IActionResult InsertArtist(InsertArtistViewModel model, [FromServices] IMapper maper)
         {
             if (ModelState.IsValid)
             {
-                var artist = new Artist
-                {
-                    Name = model.Name,
-                    LastName = model.LastName,
-                    Bio = model.Bio,
-                    WebSite = model.WebSite,
-
-
-                };
-                if (model.IsSinger)
-                {
-                    artist.Singer = new Singer();
-                }
-                if (model.IsSongWriter)
-                    artist.SongWriter = new SongWriter();
+                var artist = maper.Map<Artist>(model);
+                
                 db.Add(artist);
                 db.SaveChangesAsync();
 
