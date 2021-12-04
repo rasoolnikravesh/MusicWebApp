@@ -57,7 +57,6 @@ namespace MusicWebApp.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var artist = maper.Map<Artist>(model);
-                
                 db.Add(artist);
                 db.SaveChangesAsync();
 

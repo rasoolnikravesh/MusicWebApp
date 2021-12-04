@@ -10,22 +10,11 @@ namespace MusicWebApp.Mapers
 {
     public class MuiscAppMaperProfile : Profile
     {
-        private Singer singer(bool issinger)
-        {
-            if (issinger)
-            {
-                return new Singer();
-            }
-            else
-                return null;
-        }
-        private SongWriter writer(bool isSong)
-        {
-            if (isSong)
-                return new SongWriter();
-            else
-                return null;
-        }
+        private Singer singer(bool issinger) => (issinger) ? new Singer() : null;
+        private SongWriter writer(bool isSong) => (isSong) ? new SongWriter() : null;
+        private object mix(bool isMixAndMaster) => (isMixAndMaster) ? new MixMaster() : null;
+        private Composer comp(bool isComposer) => (isComposer) ? new Composer() : null;
+        private Arrangement areng(bool isArrengement) => (isArrengement) ? new Arrangement() : null;
         public MuiscAppMaperProfile()
         {
             CreateMap<InsertArtistViewModel, Artist>()
@@ -38,22 +27,5 @@ namespace MusicWebApp.Mapers
 
         }
 
-        private object mix(bool isMixAndMaster)
-        {
-            if (isMixAndMaster) return new MixMaster();
-            else return null;
-        }
-
-        private Composer comp(bool isComposer)
-        {
-            if (isComposer) return new Composer();
-            else return null;
-        }
-
-        private Arrangement areng(bool isArrengement)
-        {
-            if (isArrengement) return new Arrangement();
-            else return null;
-        }
     }
 }
