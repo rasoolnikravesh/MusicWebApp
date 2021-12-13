@@ -5,8 +5,8 @@
 @model InsertMusicViewModel
 
 <div class="card card-success m-3 ">
-    <form asp-area="admin" asp-controller="Music" asp-route-returnurl=@ViewData["returnurl"]
-        asp-action="InsertMusicConfirm">
+    <form enctype="multipart/form-data" asp-area="admin" asp-controller="Music"
+        asp-route-returnurl="@ViewData["returnurl"]" asp-action="InsertMusicConfirm">
         <div class="card-header">
             <h3 class="card-title">@TempData["Title"]</h3>
         </div>
@@ -43,22 +43,34 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         @{
-                            var tmp = ViewData["Genres"];
-                            if (tmp is List<Genre> genres)
-                            {
-                                <label>سبک</label>
-                                <select asp-for="Genre" class="form-control">
-                                    <option selected>انتخاب کنید</option>
-                                    @foreach (var item in genres)
-                                    {
-                                        <option>@item.GenreName</option>
-                                    }
-                                </select>
-                            }
+                            var genres = ViewData["Genres"] as List<Genre>;
+                            <label>سبک</label>
+                            <select asp-for="Genre" class="form-control">
+                                <option selected>انتخاب کنید</option>
+                                @foreach (var item in genres)
+                                {
+                                    <option>@item.GenreName</option>
+                                }
+                            </select>
+
 
                         }
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+
+                    <div class="form-group">
+                        <label asp-for="Image" class="control-label"></label>
+                        <div class="custom-file">
+                            <input asp-for="Image" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                </div>
+
             </div>
             <div class="row">
                 <div class="col-md">

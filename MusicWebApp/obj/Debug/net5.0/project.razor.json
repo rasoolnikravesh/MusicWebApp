@@ -15634,6 +15634,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Areas/Admin/Views/Artist/Update.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Artist\\Update.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Areas/Admin/Views/_ViewImports.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -15691,11 +15696,6 @@
     {
       "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Views/Shared/_Header.cshtml",
       "TargetPath": "Views\\Shared\\_Header.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/Areas/Admin/Views/Music/InsertMusicImage.cshtml",
-      "TargetPath": "Areas\\Admin\\Views\\Music\\InsertMusicImage.cshtml",
       "FileKind": "mvc"
     },
     {

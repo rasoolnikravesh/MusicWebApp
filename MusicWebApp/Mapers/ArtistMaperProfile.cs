@@ -8,14 +8,14 @@ using MusicWebApp.Areas.Admin.ViewModels.Artist;
 
 namespace MusicWebApp.Mapers
 {
-    public class MuiscAppMaperProfile : Profile
+    public class ArtistAppMaperProfile : Profile
     {
         private Singer singer(bool issinger) => (issinger) ? new Singer() : null;
         private SongWriter writer(bool isSong) => (isSong) ? new SongWriter() : null;
         private object mix(bool isMixAndMaster) => (isMixAndMaster) ? new MixMaster() : null;
         private Composer comp(bool isComposer) => (isComposer) ? new Composer() : null;
         private Arrangement areng(bool isArrengement) => (isArrengement) ? new Arrangement() : null;
-        public MuiscAppMaperProfile()
+        public ArtistAppMaperProfile()
         {
             CreateMap<InsertArtistViewModel, Artist>()
             .ForMember(x => x.Singer, y => y.MapFrom(z => singer(z.IsSinger)))
@@ -24,7 +24,7 @@ namespace MusicWebApp.Mapers
             .ForMember(x => x.Compos, y => y.MapFrom(z => comp(z.IsComposer)))
             .ForMember(x => x.RemixMusics, y => y.MapFrom(z => mix(z.IsMixAndMaster)))
             .ReverseMap();
-
+        
         }
 
     }

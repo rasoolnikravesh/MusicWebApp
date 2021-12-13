@@ -104,19 +104,13 @@
                                         <td>@item.Bio</td>
                                         <td>@item.WebSite</td>
                                         <td>
-                                            <a asp-area="admin" asp-controller="Artist" asp-action="AddSingerToArtist"
-                                        asp-route-id="@item.Id">
-
-                                                <button class="btn btn-primary">افزودن خواننده</button>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a asp-area="admin" asp-controller="Artist" asp-action="Edit"
+                                            <a asp-area="admin" asp-controller="Artist" asp-action="Update"
                                         asp-route-id="@item.Id">
 
                                                 <button class="btn btn-success">ویرایش</button>
                                             </a>
                                         </td>
+                                        
                                         <td>
                                             <a asp-area="admin" asp-controller="Artist" asp-action="Delete"
                                         asp-route-id="@item.Id">

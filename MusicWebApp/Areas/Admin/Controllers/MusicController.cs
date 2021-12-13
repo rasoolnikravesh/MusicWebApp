@@ -8,6 +8,7 @@ using MusicWebApp.Areas.Admin.ViewModels;
 using MusicWebApp.Areas.Identity.Data;
 using MusicWebApp.Models;
 using MusicWebApp.Models.Builders;
+using AutoMapper;
 
 namespace MusicWebApp.Areas.Admin.Controllers
 {
@@ -48,6 +49,7 @@ namespace MusicWebApp.Areas.Admin.Controllers
             return RedirectToAction("Genres");
 
         }
+        
         public IActionResult InsertMusic()
         {
             var Genres = context.Genres.ToList();
@@ -55,55 +57,18 @@ namespace MusicWebApp.Areas.Admin.Controllers
             ViewData["returnurl"] = "/Panel/Music/InsertMusic";
             return View();
         }
-        public async Task<IActionResult> InsertMusicConfirmAsync(InsertMusicViewModel model, string returnurl = "")
+        
+        public async Task<IActionResult> InsertMusicConfirmAsync(InsertMusicViewModel model, [FromServices] IMapper maper, string returnurl = "")
         {
             if (ModelState.IsValid)
             {
-                var m = new MusicBuilder().WithName(model.Name).WithTitle(model.Title)
-                .WithDate(model.Date).WithUrl128(model.url128).WithUrl320(model.url320).Build();
-                var q = context.Genres.SingleOrDefault(x => x.GenreName == model.Genre);
-                m.Genre = q;
-                await context.Musics.AddAsync(m);
+                var music = maper.Map<InsertMusicViewModel, Music>(model);
+                context.Add(music);
                 await context.SaveChangesAsync();
-                HttpContext.Session.SetInt32("MusicId", m.Id);
             }
-            HttpContext.Session.SetString("returnurl", returnurl);
-            return RedirectToAction("InsertMusicImage", "Music");
+            return RedirectToAction("InsertMusic", "Music");
         }
-        public IActionResult InsertMusicImage()
-        {
-            var returnurl = HttpContext.Session.GetString("returnurl");
-            var musicid = HttpContext.Session.GetInt32("MusicId");
-            ViewData["returnurl"] = returnurl;
-            ViewData["musicid"] = musicid;
-            return View();
-        }
-        public async Task<IActionResult> InsertMusicImageConfirmAsync(InsertMusicImageViewModel model, int musicid, string returnurl = "")
-        {
-            if (ModelState.IsValid)
-            {
-                byte[] img = new byte[model.image.Length];
-                model.image.OpenReadStream().Read(img, 0, img.Length);
 
-                var m = context.Musics.SingleOrDefault(x => x.Id == musicid);
-                if (m != null)
-                {
-
-                    m.CoverImage = img;
-                    await context.SaveChangesAsync();
-                    return RedirectToAction("Musics", "Music");
-                }
-                else
-                {
-                    TempData["Message"] = "موزیک پیدا نشد";
-                    return RedirectToAction("Musics", "Music");
-                }
-
-
-            }
-            else
-                return RedirectToAction("Index", "Home");
-        }
         public IActionResult DeleteGenre(int Id)
         {
             // var q = context.Genres.SingleOrDefault(x => x.Id == Id);
@@ -125,6 +90,6 @@ namespace MusicWebApp.Areas.Admin.Controllers
             }
             return RedirectToAction("Musics");
         }
-        
+
     }
 }

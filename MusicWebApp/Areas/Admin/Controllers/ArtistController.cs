@@ -25,43 +25,30 @@ namespace MusicWebApp.Areas.Admin.Controllers
             var r = db.Artists.ToList();
             return View(r);
         }
-        public async Task<IActionResult> AddSingerToArtistAsync(int id)
-        {
-            var artist = db.Artists.Include(x => x.Singer).SingleOrDefault(x => x.Id == id);
-            if (artist != null)
-            {
-                if (artist.Singer == null)
-                {
-                    artist.Singer = new Models.Singer();
-                    await db.SaveChangesAsync();
-                    TempData["message"] = "0";
-                    return RedirectToAction(nameof(Artists));
-                }
-                else
-                {
-                    TempData["message"] = "2";
-                    return RedirectToAction(nameof(Artists));
-                }
-            }
-            else
-            {
-                TempData["message"] = "-1";
-                return RedirectToAction(nameof(Artists));
-            }
-        }
+
         [HttpGet()]
         public IActionResult InsertArtist() => View();
         [HttpPost()]
-        public IActionResult InsertArtist(InsertArtistViewModel model, [FromServices] IMapper maper)
+        public async Task<IActionResult> InsertArtistAsync(InsertArtistViewModel model, [FromServices] IMapper maper)
         {
             if (ModelState.IsValid)
             {
                 var artist = maper.Map<Artist>(model);
                 db.Add(artist);
-                db.SaveChangesAsync();
+                await db.SaveChangesAsync();
 
             }
             return RedirectToAction(nameof(Artists));
+        }
+        [HttpGet]
+        public async Task<IActionResult> Update(int id)
+        {
+            var d = await db.Artists.Include(x => x.Singer)
+            .Include(x => x.Arrangement).Include(x => x.Compos)
+            .Include(x => x.SongWriter).Include(x => x.RemixMusics)
+            .SingleOrDefaultAsync(x => x.Id == id);
+            ViewData["Data"] = d;
+            return View();
         }
         public async Task<IActionResult> DeleteAsync(int id)
         {

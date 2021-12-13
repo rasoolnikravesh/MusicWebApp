@@ -33,13 +33,21 @@ namespace MusicWebApp
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
             {
-                
+
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
-            var mapperconfig = new MapperConfiguration(x => x.AddProfile(new MuiscAppMaperProfile()));
-            IMapper mapper = mapperconfig.CreateMapper();
+            var Artistmapperconfig = new MapperConfiguration(x => x.AddProfile(new ArtistAppMaperProfile()));
+            //var musicMaperConfig = new MapperConfiguration(x => x.AddProfile(new MusicMaperProfile(context)));
+            IMapper mapper = Artistmapperconfig.CreateMapper();
+            //IMapper mapper1 = musicMaperConfig.CreateMapper();
+            //services.AddSingleton(mapper1);
             services.AddSingleton(mapper);
+
+            services.AddScoped(provider => new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile(new MusicMaperProfile(provider.GetService<MusicAppContext>()));
+                }).CreateMapper());
 
         }
 

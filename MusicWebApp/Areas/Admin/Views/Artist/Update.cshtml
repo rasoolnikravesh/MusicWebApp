@@ -1,0 +1,118 @@
+@{
+    TempData["Title"] = "افزودن هنرمند";
+}
+@using MusicWebApp.Areas.Admin.ViewModels.Artist;
+@model InsertArtistViewModel;
+@{
+    var data = ViewData["Data"] as Artist;
+}
+<div>
+    <div class="card card-light">
+        <div class="card-header">
+            <h3 class="card-title">@TempData["Title"]</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form class="form-horizontal" asp-area="admin" asp-controller="Artist" asp-action="InsertArtist">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="inputName" class="col-sm-4 control-label">نام</label>
+                    <div class="col-sm-7">
+                        <input asp-for="Name" class="form-control" id="inputName" placeholder="نام را وارد کنید"
+                            value="@data.Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputLastname" class="col-sm-4 control-label">نام خانوادگی</label>
+                    <div class="col-sm-7">
+                        <input type="text" asp-for="LastName" class="form-control" id="InputLastName"
+                            placeholder="نام خانوادگی را وارد کنید" value="@data.LastName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4">بیو گرافی</label>
+                    <div class="col-sm-7">
+                        <textarea class="form-control" asp-for="Bio" rows="3"
+                            placeholder="وارد کردن اطلاعات ...">@data.Bio</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputLastname" class="col-sm-4 control-label">وب سایت</label>
+                    <div class="col-sm-7">
+                        <input type="text" asp-for="WebSite" class="form-control" id="InputLastName"
+                            placeholder="وب سایت را وارد کنید" value="@data.WebSite">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        @{
+                            if (data.Singer != null)
+                            {
+                                <input class="form-check-input" asp-for="IsSinger" type="checkbox" checked>
+                            }
+                            else
+                            {
+                                <input class="form-check-input" asp-for="IsSinger" type="checkbox">
+
+                            }
+                        }
+                        <label class="form-check-label">خواننده</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        @{
+                            if (data.SongWriter != null)
+                            {
+
+                                <input class="form-check-input" asp-for="IsSongWriter" type="checkbox" checked>
+                            }
+                            else
+                            {
+                                <input class="form-check-input" asp-for="IsSongWriter" type="checkbox">
+
+                            }
+                        }
+                        <label class="form-check-label">شاعر</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        @{
+                            if (data.Compos != null)
+                            {
+                                <input checked class="form-check-input" asp-for="IsComposer" type="checkbox" />
+                            }
+                            else
+                            {
+                                <input class="form-check-input" asp-for="IsComposer" type="checkbox" />
+                            }
+                        }
+                        <label class="form-check-label">آهنگ ساز</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        @{
+                            if (data.Arrangement != null)
+                            {
+                                <input checked class="form-check-input" asp-for="IsArrengement" type="checkbox" />
+                            }
+                            else
+                            {
+                            <input checked class="form-check-input" asp-for="IsArrengement" type="checkbox" />
+                            }
+                        }
+                        <label class="form-check-label">تنظیم کننده</label>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button type="submit" class="btn btn-info">آپدیت</button>
+                <button type="submit" class="btn btn-default float-left">لغو</button>
+            </div>
+            <!-- /.card-footer -->
+        </form>
+    </div>
+</div>
