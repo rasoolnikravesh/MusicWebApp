@@ -29,6 +29,8 @@ namespace MusicWebApp.Areas.Admin.Controllers
 
         public IActionResult Genres()
         {
+            ViewData["genres"] = context.Genres.ToList();
+
             return View();
         }
         public async Task<IActionResult> InsertGenreAsync(InsertGenreViewModel model)
@@ -49,7 +51,7 @@ namespace MusicWebApp.Areas.Admin.Controllers
             return RedirectToAction("Genres");
 
         }
-        
+
         public IActionResult InsertMusic()
         {
             var Genres = context.Genres.ToList();
@@ -57,7 +59,7 @@ namespace MusicWebApp.Areas.Admin.Controllers
             ViewData["returnurl"] = "/Panel/Music/InsertMusic";
             return View();
         }
-        
+
         public async Task<IActionResult> InsertMusicConfirmAsync(InsertMusicViewModel model, [FromServices] IMapper maper, string returnurl = "")
         {
             if (ModelState.IsValid)

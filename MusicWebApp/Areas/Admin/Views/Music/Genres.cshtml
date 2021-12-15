@@ -3,7 +3,6 @@
     TempData["PageName"] = "سبک ها";
 
 }
-@inject MusicAppContext Context;
 @model InsertGenreViewModel
 <div class="card">
     <div class="card-header">
@@ -41,7 +40,7 @@
                         </thead>
                         <tbody>
                             @{
-                                var genres = Context.Genres.ToList();
+                                var genres = ViewData["genres"] as List<Genre>;
                                 if (genres.Any())
                                 {
                                     foreach (var genre in genres)

@@ -37,18 +37,13 @@ namespace MusicWebApp
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
-            var Artistmapperconfig = new MapperConfiguration(x => x.AddProfile(new ArtistAppMaperProfile()));
-            //var musicMaperConfig = new MapperConfiguration(x => x.AddProfile(new MusicMaperProfile(context)));
-            IMapper mapper = Artistmapperconfig.CreateMapper();
-            //IMapper mapper1 = musicMaperConfig.CreateMapper();
-            //services.AddSingleton(mapper1);
-            services.AddSingleton(mapper);
+
+
 
             services.AddScoped(provider => new MapperConfiguration(cfg =>
                 {
                     cfg.AddProfile(new MusicMaperProfile(provider.GetService<MusicAppContext>()));
                 }).CreateMapper());
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

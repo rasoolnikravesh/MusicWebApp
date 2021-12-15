@@ -9,16 +9,15 @@ namespace MusicWebApp.Areas.Admin.ViewModels
     {
         [Required(ErrorMessage = "نام کاربری وارد نشده است")]
         public string Name { get; set; }
-
         public string Title { get; set; }
         public DateTime Date { get; set; }
+        
         public string Genre { get; set; }
-        [Required]
         public string url128 { get; set; }
         public string url320 { get; set; }
-
-        //[Required(ErrorMessage = "عکس را انتخاب کنید")]
+        [Required(ErrorMessage = "عکس را انتخاب کنید")]
         public IFormFile Image { get; set; }
+        public string alt { get; set; }
 
     }
 }
