@@ -5,6 +5,11 @@
 @model InsertMusicViewModel
 
 <div class="card card-success m-3 ">
+
+    <div class="show-image-selected">
+        <img width="35" id="selected-image" />
+    </div>
+
     <form enctype="multipart/form-data" asp-area="admin" asp-controller="Music"
         asp-route-returnurl="@ViewData["returnurl"]" asp-action="InsertMusicConfirm">
         <div class="card-header">
@@ -103,6 +108,7 @@
         <div class="card-footer">
             <button type="submit" class="btn btn-primary">ارسال</button>
         </div>
+        <script src="~/MusicJs/InsertMusic.js"></script>
     </form>
     <!-- /.card-body -->
 </div>

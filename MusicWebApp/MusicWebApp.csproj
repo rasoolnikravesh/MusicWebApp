@@ -27,4 +27,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore" Version="5.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\MusicJs\Shared\" />
+  </ItemGroup>
+
 </Project>

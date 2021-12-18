@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/home/rasool/Desktop/MusicWebApp/MusicWebApp/MusicWebApp.csproj": {}
+    "c:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj": {}
   },
   "projects": {
-    "/home/rasool/Desktop/MusicWebApp/MusicWebApp/MusicWebApp.csproj": {
+    "c:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/MusicWebApp.csproj",
+        "projectUniqueName": "c:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj",
         "projectName": "MusicWebApp",
-        "projectPath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/MusicWebApp.csproj",
-        "packagesPath": "/home/rasool/.nuget/packages/",
-        "outputPath": "/home/rasool/Desktop/MusicWebApp/MusicWebApp/obj/",
+        "projectPath": "c:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj",
+        "packagesPath": "C:\\Users\\rasool\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/rasool/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\rasool\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -107,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

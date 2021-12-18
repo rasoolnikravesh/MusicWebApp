@@ -26,6 +26,8 @@ x64/
 x86/
 build/
 bld/
+obj/
+.ionide/
 [Bb]in/
 [Oo]bj/
 [Oo]ut/
