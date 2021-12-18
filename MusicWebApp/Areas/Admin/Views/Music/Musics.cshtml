@@ -28,7 +28,8 @@
                             <tr role="row">
                                 <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                     aria-sort="ascending" aria-label="موتور رندر: activate to sort column descending">
-                                    نام</th>
+                                    نام
+                                </th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                     aria-label="مرورگر: activate to sort column ascending">تایتل</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
@@ -52,8 +53,21 @@
                                             <td>@item.Date</td>
                                             <td>@item.Url128</td>
                                             <td>
-                                                <a asp-area="admin" asp-controller="music" asp-action="DeleteMusic" asp-route-Id="@item.Id">
-                                                 <button button class="btn btn-outline-danger">  delete</button> </a></td>
+                                                <button class="btn btn-outline-success">
+                                                    <a asp-area="admin" asp-controller="music" asp-action="Update"
+                                           asp-route-id="@item.Id">
+
+                                                    </a> Update
+                                                </button>
+
+                                            </td>
+                                            <td>
+                                                <button button class="btn btn-outline-danger">
+                                                    <a asp-area="admin" asp-controller="music" asp-action="Delete" asp-route-Id="@item.Id">
+                                                    </a>
+                                                    delete
+                                                </button>
+                                            </td>
                                         </tr>
                                     }
                                 }
@@ -88,23 +102,37 @@
                 <div class="col-sm-12 col-md-7">
                     <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
                         <ul class="pagination">
-                            <li class="paginate_button page-item previous disabled" id="example2_previous"><a href="#"
-                                    aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">قبلی</a>
+                            <li class="paginate_button page-item previous disabled" id="example2_previous">
+                                <a href="#"
+                                   aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">قبلی</a>
                             </li>
-                            <li class="paginate_button page-item active"><a href="#" aria-controls="example2"
-                                    data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="2"
-                                    tabindex="0" class="page-link">2</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="3"
-                                    tabindex="0" class="page-link">3</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="4"
-                                    tabindex="0" class="page-link">4</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="5"
-                                    tabindex="0" class="page-link">5</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="6"
-                                    tabindex="0" class="page-link">6</a></li>
-                            <li class="paginate_button page-item next" id="example2_next"><a href="#"
-                                    aria-controls="example2" data-dt-idx="7" tabindex="0" class="page-link">بعدی</a>
+                            <li class="paginate_button page-item active">
+                                <a href="#" aria-controls="example2"
+                                   data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                            </li>
+                            <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="2"
+                                   tabindex="0" class="page-link">2</a>
+                            </li>
+                            <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="3"
+                                   tabindex="0" class="page-link">3</a>
+                            </li>
+                            <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="4"
+                                   tabindex="0" class="page-link">4</a>
+                            </li>
+                            <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="5"
+                                   tabindex="0" class="page-link">5</a>
+                            </li>
+                            <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="6"
+                                   tabindex="0" class="page-link">6</a>
+                            </li>
+                            <li class="paginate_button page-item next" id="example2_next">
+                                <a href="#"
+                                   aria-controls="example2" data-dt-idx="7" tabindex="0" class="page-link">بعدی</a>
                             </li>
                         </ul>
                     </div>

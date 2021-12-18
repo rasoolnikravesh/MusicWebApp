@@ -43,6 +43,7 @@ namespace MusicWebApp
             services.AddScoped(provider => new MapperConfiguration(cfg =>
                 {
                     cfg.AddProfile(new MusicMaperProfile(provider.GetService<MusicAppContext>()));
+                    cfg.AddProfile(new UpdateArtistMaperProfile(provider.GetService<MusicAppContext>()));
                 }).CreateMapper());
         }
 

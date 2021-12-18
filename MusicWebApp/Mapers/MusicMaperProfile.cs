@@ -21,10 +21,12 @@ namespace MusicWebApp.Mapers
             .ForMember(x => x.Genre, y => y.MapFrom(z => Genres(z.Genre)));
             CreateMap<InsertArtistViewModel, Artist>()
             .ForMember(x => x.Singer, y => y.MapFrom(z => singer(z.IsSinger)))
-                .ForMember(x => x.SongWriter, y => y.MapFrom(z => writer(z.IsSongWriter)))
-                .ForMember(x => x.Arrangement, y => y.MapFrom(z => areng(z.IsArrengement)))
-                .ForMember(x => x.Compos, y => y.MapFrom(z => comp(z.IsComposer)))
-                .ForMember(x => x.RemixMusics, y => y.MapFrom(z => mix(z.IsMixAndMaster)));
+            .ForMember(x => x.SongWriter, y => y.MapFrom(z => writer(z.IsSongWriter)))
+            .ForMember(x => x.Arrangement, y => y.MapFrom(z => areng(z.IsArrengement)))
+            .ForMember(x => x.Compos, y => y.MapFrom(z => comp(z.IsComposer)))
+            .ForMember(x => x.RemixMusics, y => y.MapFrom(z => mix(z.IsMixAndMaster)));
+            
+                
 
         }
         private Singer singer(bool issinger) => (issinger) ? new Singer() : null;

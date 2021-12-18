@@ -33,7 +33,7 @@ namespace MusicWebApp.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var artist = maper.Map<InsertArtistViewModel,Artist>(model);
+                var artist = maper.Map<InsertArtistViewModel, Artist>(model);
                 db.Add(artist);
                 await db.SaveChangesAsync();
 
@@ -41,7 +41,7 @@ namespace MusicWebApp.Areas.Admin.Controllers
             return RedirectToAction(nameof(Artists));
         }
         [HttpGet]
-        public async Task<IActionResult> Update(int id)
+        public async Task<IActionResult> UpdateAsync(int id)
         {
             var d = await db.Artists.Include(x => x.Singer)
             .Include(x => x.Arrangement).Include(x => x.Compos)
@@ -49,6 +49,27 @@ namespace MusicWebApp.Areas.Admin.Controllers
             .SingleOrDefaultAsync(x => x.Id == id);
             ViewData["Data"] = d;
             return View();
+        }
+        public async Task<IActionResult> UpdateAsync(UpdateArtistViewModel model, [FromServices] IMapper mapper)
+        {
+            var artist = await db.Artists.Include(x => x.Singer)
+            .Include(x => x.Arrangement).Include(x => x.Compos)
+            .Include(x => x.SongWriter).Include(x => x.RemixMusics)
+            .SingleOrDefaultAsync(x => x.Id == model.Id);
+
+            var res = mapper.Map<Artist>(model);
+            artist.Name = res.Name;
+            artist.Singer = res.Singer;
+            artist.LastName = res.LastName;
+            artist.Bio = res.Bio;
+            artist.WebSite= res.WebSite;
+            artist.RemixMusics= res.RemixMusics;
+            artist.SongWriter= res.SongWriter;
+            artist.Compos= res.Compos;
+            artist.Arrangement= res.Arrangement;    
+
+            await db.SaveChangesAsync();
+            return RedirectToAction(nameof(Artists));
         }
         public async Task<IActionResult> DeleteAsync(int id)
         {

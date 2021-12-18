@@ -2,7 +2,7 @@
     TempData["Title"] = "افزودن هنرمند";
 }
 @using MusicWebApp.Areas.Admin.ViewModels.Artist;
-@model InsertArtistViewModel;
+@model UpdateArtistViewModel;
 @{
     var data = ViewData["Data"] as Artist;
 }
@@ -13,34 +13,36 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form class="form-horizontal" asp-area="admin" asp-controller="Artist" asp-action="InsertArtist">
+        <form class="form-horizontal" asp-area="admin" asp-controller="Artist" asp-action="Update">
+            <input hidden asp-for="Id" />
             <div class="card-body">
                 <div class="form-group">
                     <label for="inputName" class="col-sm-4 control-label">نام</label>
                     <div class="col-sm-7">
                         <input asp-for="Name" class="form-control" id="inputName" placeholder="نام را وارد کنید"
-                            value="@data.Name">
+                               value="@data.Name">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="InputLastname" class="col-sm-4 control-label">نام خانوادگی</label>
                     <div class="col-sm-7">
                         <input type="text" asp-for="LastName" class="form-control" id="InputLastName"
-                            placeholder="نام خانوادگی را وارد کنید" value="@data.LastName">
+                               placeholder="نام خانوادگی را وارد کنید" value="@data.LastName">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-4">بیو گرافی</label>
                     <div class="col-sm-7">
-                        <textarea class="form-control" asp-for="Bio" rows="3"
-                            placeholder="وارد کردن اطلاعات ...">@data.Bio</textarea>
+                        <textarea id="bio" class="form-control" asp-for="Bio" rows="3"
+                                  placeholder="وارد کردن اطلاعات ..."></textarea>
+                        <input hidden type="text" id="bioinput" value="@data.Bio" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="InputLastname" class="col-sm-4 control-label">وب سایت</label>
                     <div class="col-sm-7">
                         <input type="text" asp-for="WebSite" class="form-control" id="InputLastName"
-                            placeholder="وب سایت را وارد کنید" value="@data.WebSite">
+                               placeholder="وب سایت را وارد کنید" value="@data.WebSite">
                     </div>
                 </div>
                 <div class="form-group">
@@ -48,7 +50,7 @@
                         @{
                             if (data.Singer != null)
                             {
-                                <input class="form-check-input" asp-for="IsSinger" type="checkbox" checked>
+                                <input checked class="form-check-input" asp-for="IsSinger" type="checkbox">
                             }
                             else
                             {
@@ -65,7 +67,7 @@
                             if (data.SongWriter != null)
                             {
 
-                                <input class="form-check-input" asp-for="IsSongWriter" type="checkbox" checked>
+                                <input checked class="form-check-input" asp-for="IsSongWriter" type="checkbox">
                             }
                             else
                             {
@@ -100,7 +102,7 @@
                             }
                             else
                             {
-                            <input checked class="form-check-input" asp-for="IsArrengement" type="checkbox" />
+                                <input  class="form-check-input" asp-for="IsArrengement" type="checkbox" />
                             }
                         }
                         <label class="form-check-label">تنظیم کننده</label>
@@ -116,3 +118,4 @@
         </form>
     </div>
 </div>
+<script src="~/MusicJs/Artist/UpdateArtist.js"></script>

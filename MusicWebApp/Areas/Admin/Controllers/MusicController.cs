@@ -82,7 +82,7 @@ namespace MusicWebApp.Areas.Admin.Controllers
             // }
             return RedirectToAction("Genres");
         }
-        public async Task<IActionResult> DeleteMusicAsync(int Id)
+        public async Task<IActionResult> DeleteAsync(int Id)
         {
             var music = context.Musics.SingleOrDefault(x => x.Id == Id);
             if (music != null)
