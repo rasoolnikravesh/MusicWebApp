@@ -44,6 +44,8 @@ namespace MusicWebApp
                 {
                     cfg.AddProfile(new MusicMaperProfile(provider.GetService<MusicAppContext>()));
                     cfg.AddProfile(new UpdateArtistMaperProfile(provider.GetService<MusicAppContext>()));
+                    cfg.AddProfile(new InsertArtistMaperProfile(provider.GetService<MusicAppContext>()));
+
                 }).CreateMapper());
         }
 

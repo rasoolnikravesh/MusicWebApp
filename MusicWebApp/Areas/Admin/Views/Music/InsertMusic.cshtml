@@ -6,9 +6,9 @@
 
 <div class="card card-success m-3 ">
 
-    
+
     <form enctype="multipart/form-data" asp-area="admin" asp-controller="Music"
-          asp-route-returnurl="@ViewData["returnurl"]" asp-action="InsertMusicConfirm">
+          asp-action="InsertMusicConfirm">
         <div class="card-header">
             <h3 class="card-title">@TempData["Title"]</h3>
         </div>
@@ -71,12 +71,44 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
+                    <div class="form-group">
+                        @{
+                            var singers = ViewData["singer"] as List<Singer>;
+                            <label>خواننده</label>
+                            <select class="form-control" asp-for="Singer">
+                                <option selected>انتخاب کنید</option>
+                                @foreach (var singer in singers)
+                                {
+                                    <option>@($"{singer.ArtistId}-{singer.Artist.Name}-{singer.Artist.LastName}")</option>
+                                }
+                            </select>
+                        }
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @{
+                            var songwriters = ViewData["songwriter"] as List<SongWriter>;
+                            <label>شاعر</label>
+                            <select class="form-control" asp-for="SongWriter">
+                                <option selected>انتخاب کنید</option>
+                                @foreach (var songwiter in songwriters)
+                                {
+                                    <option>@($"{songwiter.ArtistId}-{songwiter.Artist.Name}-{songwiter.Artist.LastName}")</option>
+                                }
+                            </select>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
 
                     <div class="form-group">
-                        <label asp-for="Image" class="control-label"></label>
+                        <label asp-for="Image" class="control-label">کاور موزیک</label>
                         <div class="custom-file">
                             <input asp-for="Image" class="custom-file-input" id="customFile">
-                            <label class="custom-file-label" for="customFile">Choose file</label>
+                            <label class="custom-file-label" for="customFile">انتخاب عکس</label>
                         </div>
                         <span asp-validation-for="Image" class="text-danger"></span>
                     </div>

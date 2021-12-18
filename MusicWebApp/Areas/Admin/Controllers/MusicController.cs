@@ -9,6 +9,7 @@ using MusicWebApp.Areas.Identity.Data;
 using MusicWebApp.Models;
 using MusicWebApp.Models.Builders;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace MusicWebApp.Areas.Admin.Controllers
 {
@@ -56,7 +57,8 @@ namespace MusicWebApp.Areas.Admin.Controllers
         {
             var Genres = context.Genres.ToList();
             ViewData["Genres"] = Genres;
-            ViewData["returnurl"] = "/Panel/Music/InsertMusic";
+            ViewData["singer"]= context.Singers.Include(x=> x.Artist).ToList();
+            ViewData["songwriter"] = context.SongWriters.Include(x => x.Artist).ToList();
             return View();
         }
 
@@ -68,7 +70,7 @@ namespace MusicWebApp.Areas.Admin.Controllers
                 context.Add(music);
                 await context.SaveChangesAsync();
             }
-            return RedirectToAction("InsertMusic", "Music");
+            return RedirectToAction(nameof(Musics));
         }
 
         public IActionResult DeleteGenre(int Id)
