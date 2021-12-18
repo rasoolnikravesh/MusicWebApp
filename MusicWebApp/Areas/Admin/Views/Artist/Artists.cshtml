@@ -1,5 +1,6 @@
 @{
     ViewData["Title"] = "هنرمندان";
+    TempData["PageName"] = "هنرمندان";
 }
 @model List<Artist>
 <div class="card">
@@ -44,26 +45,47 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a asp-area="admin" asp-controller="Artist" asp-action="InsertArtist">
-                        <button class="btn btn-primary">افزودن</button>
-                    </a>
+                    <button class="btn btn-primary">
+                        <a asp-area="admin" asp-controller="Artist" asp-action="InsertArtist">
+                        </a>
+                        افزودن
+                    </button>
                 </div>
             </div>
             <div class="row">
-                @* <div class="col-sm-12 col-md-6">
-                    <div class="dataTables_length" id="example1_length"><label>Show <select name="example1_length"
-                    aria-controls="example1" class="form-control form-control-sm">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                    </select> entries</label></div>
-                    </div> *@
-                @* <div class="col-sm-12 col-md-6">
-                    <div id="example1_filter" class="dataTables_filter"><label>Search:<input type="search"
-                    class="form-control form-control-sm" placeholder="" aria-controls="example1"></label>
+                <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_length" id="example1_length">
+                        <label>
+                            Show
+                            <select name="example1_length"
+                                    aria-controls="example1" class="form-control form-control-sm">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select> entries
+                        </label>
                     </div>
-                    </div> *@
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div id="example1_filter" class="dataTables_filter">
+                        <label>
+                            Search:<input type="search"
+                                          class="form-control form-control-sm" placeholder="" aria-controls="example1">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-2">
+
+                    <div class="form-group">
+                        <select class="form-control" id="SortArtistType" name="sortname">
+                            <option>همه</option>
+                            <option>خواننده ها</option>
+                            <option>شاعران</option>
+                        </select>
+                    </div>
+
+                </div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
@@ -76,14 +98,17 @@
                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
                                     aria-label="نام خانوادگی: activate to sort column ascending"
                                     style="width: 429.656px;">
-                                    نام خانوادگی</th>
+                                    نام خانوادگی
+                                </th>
                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
                                     aria-label="بیو گرافی: activate to sort column ascending" style="width: 391.469px;">
-                                    بیو گرافی</th>
+                                    بیو گرافی
+                                </th>
 
                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
                                     aria-label="وب سایت: activate to sort column ascending" style="width: 116.312px;">
-                                    وب سایت</th>
+                                    وب سایت
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -105,15 +130,15 @@
                                         <td>@item.WebSite</td>
                                         <td>
                                             <a asp-area="admin" asp-controller="Artist" asp-action="Update"
-                                        asp-route-id="@item.Id">
+                                       asp-route-id="@item.Id">
 
                                                 <button class="btn btn-success">ویرایش</button>
                                             </a>
                                         </td>
-                                        
+
                                         <td>
                                             <a asp-area="admin" asp-controller="Artist" asp-action="Delete"
-                                        asp-route-id="@item.Id">
+                                       asp-route-id="@item.Id">
 
                                                 <button class="btn btn-outline-danger">حذف</button>
                                             </a>
@@ -139,23 +164,37 @@
                 <div class="col-sm-12 col-md-7">
                     <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
                         <ul class="pagination">
-                            <li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#"
-                                    aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">قبلی</a>
+                            <li class="paginate_button page-item previous disabled" id="example1_previous">
+                                <a href="#"
+                                   aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">قبلی</a>
                             </li>
-                            <li class="paginate_button page-item active"><a href="#" aria-controls="example1"
-                                    data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="2"
-                                    tabindex="0" class="page-link">2</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="3"
-                                    tabindex="0" class="page-link">3</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="4"
-                                    tabindex="0" class="page-link">4</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="5"
-                                    tabindex="0" class="page-link">5</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="6"
-                                    tabindex="0" class="page-link">6</a></li>
-                            <li class="paginate_button page-item next" id="example1_next"><a href="#"
-                                    aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">بعدی</a>
+                            <li class="paginate_button page-item active">
+                                <a href="#" aria-controls="example1"
+                                   data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                            </li>
+                            <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example1" data-dt-idx="2"
+                                   tabindex="0" class="page-link">2</a>
+                            </li>
+                            <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example1" data-dt-idx="3"
+                                   tabindex="0" class="page-link">3</a>
+                            </li>
+                            <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example1" data-dt-idx="4"
+                                   tabindex="0" class="page-link">4</a>
+                            </li>
+                            <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example1" data-dt-idx="5"
+                                   tabindex="0" class="page-link">5</a>
+                            </li>
+                            <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example1" data-dt-idx="6"
+                                   tabindex="0" class="page-link">6</a>
+                            </li>
+                            <li class="paginate_button page-item next" id="example1_next">
+                                <a href="#"
+                                   aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">بعدی</a>
                             </li>
                         </ul>
                     </div>
@@ -165,3 +204,4 @@
     </div>
     <!-- /.card-body -->
 </div>
+<script src="~/MusicJs/Artist/SortArtistType.js"></script>

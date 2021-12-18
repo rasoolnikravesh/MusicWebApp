@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using System.Security.Policy;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -10,6 +10,7 @@ using MusicWebApp.Models;
 using MusicWebApp.Models.Builders;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace MusicWebApp.Areas.Admin.Controllers
 {
@@ -57,7 +58,7 @@ namespace MusicWebApp.Areas.Admin.Controllers
         {
             var Genres = context.Genres.ToList();
             ViewData["Genres"] = Genres;
-            ViewData["singer"]= context.Singers.Include(x=> x.Artist).ToList();
+            ViewData["singer"] = context.Singers.Include(x => x.Artist).ToList();
             ViewData["songwriter"] = context.SongWriters.Include(x => x.Artist).ToList();
             return View();
         }
@@ -93,6 +94,21 @@ namespace MusicWebApp.Areas.Admin.Controllers
                 var r = await context.SaveChangesAsync();
             }
             return RedirectToAction("Musics");
+        }
+        public List<Artist> SortArtists(string sortname)
+        {
+            if (sortname == "همه")
+            {
+                return context.Artists.ToList();
+            }
+            else if (sortname == "خواننده ها")
+            {
+                return context.Artists.Include(x => x.Singer).Where(x => x.Singer != null).ToList();
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }
