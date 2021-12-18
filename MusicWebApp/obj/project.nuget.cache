@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sxlOFsjNZ3dYrGiihVn2Hr000zs7He5bjKYeAH42P0aLRjkPKeS/THLX0xo0+Qn3e0YVmb8BVW5dE1DFtqyhDA==",
+  "dgSpecHash": "a/AumqOdFSmUER7yCP8hY5L8Pw5ItWBiGa4yXQ559bcZ2nmVd95hyhonxJYZYiAQ/HdXhm/Tgvzx7tc0OR++jw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj",
+  "projectFilePath": "C:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rasool\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\rasool\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

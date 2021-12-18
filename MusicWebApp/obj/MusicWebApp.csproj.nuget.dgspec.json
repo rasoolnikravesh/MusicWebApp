@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj": {}
+    "C:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj": {}
   },
   "projects": {
-    "c:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj": {
+    "C:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj",
         "projectName": "MusicWebApp",
-        "projectPath": "c:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj",
+        "projectPath": "C:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\MusicWebApp.csproj",
         "packagesPath": "C:\\Users\\rasool\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\obj\\",
+        "outputPath": "C:\\Users\\rasool\\source\\repos\\rasoolnikravesh\\MusicWebApp\\MusicWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

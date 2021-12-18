@@ -6,12 +6,9 @@
 
 <div class="card card-success m-3 ">
 
-    <div class="show-image-selected">
-        <img width="35" id="selected-image" />
-    </div>
-
+    
     <form enctype="multipart/form-data" asp-area="admin" asp-controller="Music"
-        asp-route-returnurl="@ViewData["returnurl"]" asp-action="InsertMusicConfirm">
+          asp-route-returnurl="@ViewData["returnurl"]" asp-action="InsertMusicConfirm">
         <div class="card-header">
             <h3 class="card-title">@TempData["Title"]</h3>
         </div>
@@ -73,7 +70,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md">
+                <div class="col-md-6">
 
                     <div class="form-group">
                         <label asp-for="Image" class="control-label"></label>
@@ -82,6 +79,12 @@
                             <label class="custom-file-label" for="customFile">Choose file</label>
                         </div>
                         <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <div class="show-image-selected">
+                        <img width="100" id="selected-image" />
                     </div>
                 </div>
 
