@@ -103,6 +103,24 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
+                    <div class="form-group">
+                        @{
+                            var composers = ViewData["composer"] as List<Composer>;
+                            <label>آهنگ ساز</label>
+                            <select class="form-control" asp-for="Composer">
+                                <option selected> انتخاب کنید</option>
+                                @foreach (var composer in composers)
+                                {
+                                    <option>@($"{composer.ArtistId}-{composer.Artist.Name}-{composer.Artist.LastName}")</option>
+                                }
+                            </select>
+                        }
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
 
                     <div class="form-group">
                         <label asp-for="Image" class="control-label">کاور موزیک</label>

@@ -11,6 +11,7 @@ using MusicWebApp.Models.Builders;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using MusicWebApp.Areas.Admin.ViewModels.Music;
 
 namespace MusicWebApp.Areas.Admin.Controllers
 {
@@ -18,26 +19,37 @@ namespace MusicWebApp.Areas.Admin.Controllers
     [Authorize(Policy = "MusicPolicy")]
     public class MusicController : Controller
     {
-        private readonly MusicAppContext context;
-        public MusicController(MusicAppContext _context)
+        private readonly MusicAppContext db;
+        public MusicController(MusicAppContext _db)
         {
-            context = _context;
+            db = _db;
         }
-        public IActionResult Musics()
+        public IActionResult Musics([FromServices]IMapper mapper)
         {
-            var con = context.Musics.ToList();
-            return View(con);
+            var musics = db.Musics
+                .Include(x=>x.Singer).ThenInclude(singer=> singer.Artist)
+                .Include(x=> x.Composer).ThenInclude(composer=> composer.Artist)
+                .Include(x=>x.Genre)
+                .Include(x=>x.SongWriter).ThenInclude(songwriter=> songwriter.Artist)
+                .ToList();
+            List<ShowMusicViewModel> list = new List<ShowMusicViewModel>();
+            foreach (var item in musics)
+            {
+                var musicmodel = mapper.Map<ShowMusicViewModel>(item);
+                list.Add(musicmodel);
+            }
+            return View(list);
         }
 
         public IActionResult Genres()
         {
-            ViewData["genres"] = context.Genres.ToList();
+            ViewData["genres"] = db.Genres.ToList();
 
             return View();
         }
         public async Task<IActionResult> InsertGenreAsync(InsertGenreViewModel model)
         {
-            var genre = context.Genres.SingleOrDefault(x => x.GenreName == model.GenreName);
+            var genre = db.Genres.SingleOrDefault(x => x.GenreName == model.GenreName);
             if (genre == null)
             {
                 genre = new()
@@ -47,8 +59,8 @@ namespace MusicWebApp.Areas.Admin.Controllers
             }
             else
                 return RedirectToAction("Genres");
-            context.Add(genre);
-            await context.SaveChangesAsync();
+            db.Add(genre);
+            await db.SaveChangesAsync();
 
             return RedirectToAction("Genres");
 
@@ -56,10 +68,11 @@ namespace MusicWebApp.Areas.Admin.Controllers
 
         public IActionResult InsertMusic()
         {
-            var Genres = context.Genres.ToList();
+            var Genres = db.Genres.ToList();
             ViewData["Genres"] = Genres;
-            ViewData["singer"] = context.Singers.Include(x => x.Artist).ToList();
-            ViewData["songwriter"] = context.SongWriters.Include(x => x.Artist).ToList();
+            ViewData["singer"] = db.Singers.Include(x => x.Artist).ToList();
+            ViewData["songwriter"] = db.SongWriters.Include(x => x.Artist).ToList();
+            ViewData["composer"] = db.Composers.Include(x => x.Artist).ToList();
             return View();
         }
 
@@ -68,30 +81,30 @@ namespace MusicWebApp.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var music = maper.Map<InsertMusicViewModel, Music>(model);
-                context.Add(music);
-                await context.SaveChangesAsync();
+                db.Add(music);
+                await db.SaveChangesAsync();
             }
             return RedirectToAction(nameof(Musics));
         }
 
         public IActionResult DeleteGenre(int Id)
         {
-            // var q = context.Genres.SingleOrDefault(x => x.Id == Id);
+            // var q = db.Genres.SingleOrDefault(x => x.Id == Id);
             // if (q != null)
             // {
 
-            //     var r = context.Genres.Remove(q);
-            //     var rd = await context.SaveChangesAsync();
+            //     var r = db.Genres.Remove(q);
+            //     var rd = await db.SaveChangesAsync();
             // }
             return RedirectToAction("Genres");
         }
         public async Task<IActionResult> DeleteAsync(int Id)
         {
-            var music = context.Musics.SingleOrDefault(x => x.Id == Id);
+            var music = db.Musics.SingleOrDefault(x => x.Id == Id);
             if (music != null)
             {
-                var result = context.Remove(music);
-                var r = await context.SaveChangesAsync();
+                var result = db.Remove(music);
+                var r = await db.SaveChangesAsync();
             }
             return RedirectToAction("Musics");
         }
@@ -99,11 +112,11 @@ namespace MusicWebApp.Areas.Admin.Controllers
         {
             if (sortname == "همه")
             {
-                return context.Artists.ToList();
+                return db.Artists.ToList();
             }
             else if (sortname == "خواننده ها")
             {
-                return context.Artists.Include(x => x.Singer).Where(x => x.Singer != null).ToList();
+                return db.Artists.Include(x => x.Singer).Where(x => x.Singer != null).ToList();
             }
             else
             {

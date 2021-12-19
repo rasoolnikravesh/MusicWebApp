@@ -3,7 +3,8 @@
     TempData["PageName"] = "موزیک ها";
 
 }
-@model List<Music>
+@using MusicWebApp.Areas.Admin.ViewModels.Music;
+@model List<ShowMusicViewModel>
 
 <div class="card">
     <div class="card-header">
@@ -27,15 +28,16 @@
                         <thead>
                             <tr role="row">
                                 <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                    aria-sort="ascending" aria-label="موتور رندر: activate to sort column descending">
+                                    aria-sort="ascending" aria-label="نام: activate to sort column descending">
                                     نام
                                 </th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                    aria-label="مرورگر: activate to sort column ascending">تایتل</th>
+                                    aria-label="خواننده: activate to sort column ascending">خواننده</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                    aria-label="سیستم عامل: activate to sort column ascending">تاریخ</th>
+                                    aria-label="شاعر: activate to sort column ascending">شاعر</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                    aria-label="ورژن: activate to sort column ascending">لینک</th>
+                                    aria-label="تاریخ: activate to sort column ascending">تاریخ</th>
+
 
                             </tr>
                         </thead>
@@ -49,9 +51,9 @@
 
                                         <tr role="row" class="odd">
                                             <td>@item.Name</td>
-                                            <td>@item.Title</td>
+                                            <td>@item.SingerName</td>
+                                            <td>@item.SongWriterName</td>
                                             <td>@item.Date</td>
-                                            <td>@item.Url128</td>
                                             <td>
                                                 <button class="btn btn-outline-success">
                                                     <a asp-area="admin" asp-controller="music" asp-action="Update"
@@ -89,9 +91,10 @@
                         <tfoot>
                             <tr>
                                 <th rowspan="1" colspan="1">نام</th>
-                                <th rowspan="1" colspan="1">تایتل</th>
+                                <th rowspan="1" colspan="1">خواننده</th>
+                                <th rowspan="1" colspan="1">شاعر</th>
+                                
                                 <th rowspan="1" colspan="1">تاریخ</th>
-                                <th rowspan="1" colspan="1">لینک</th>
                             </tr>
                         </tfoot>
                     </table>

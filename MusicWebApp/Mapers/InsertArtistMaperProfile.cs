@@ -1,10 +1,12 @@
-﻿using AutoMapper;
+using System;
+using AutoMapper;
+using System.Linq;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using MusicWebApp.Areas.Admin.ViewModels;
 using MusicWebApp.Areas.Identity.Data;
 using MusicWebApp.Models;
-using System;
-using System.Linq;
+using MusicWebApp.Areas.Admin.ViewModels.Artist;
 
 namespace MusicWebApp.Mapers
 {
@@ -14,44 +16,17 @@ namespace MusicWebApp.Mapers
         public InsertArtistMaperProfile(MusicAppContext _db)
         {
             db = _db;
-            CreateMap<InsertMusicViewModel, Music>()
-            .ForMember(x => x.CoverImage, y => y.MapFrom(z => Download(z.Image)))
-            .ForMember(x => x.Genre, y => y.MapFrom(z => Genres(z.Genre)))
-            .ForMember(x => x.Singer, y => y.MapFrom(z => setsinger(z.Singer)))
-            .ForMember(x => x.SongWriter, y => y.MapFrom(z => setsongwriter(z.SongWriter)));
-
+            CreateMap<InsertArtistViewModel, Artist>()
+            .ForMember(x => x.Singer, y => y.MapFrom(z => singer(z.IsSinger)))
+            .ForMember(x => x.SongWriter, y => y.MapFrom(z => writer(z.IsSongWriter)))
+            .ForMember(x => x.Arrangement, y => y.MapFrom(z => areng(z.IsArrengement)))
+            .ForMember(x => x.Compos, y => y.MapFrom(z => comp(z.IsComposer)))
+            .ForMember(x => x.RemixMusics, y => y.MapFrom(z => mix(z.IsMixAndMaster)));
         }
-
-        private object setsongwriter(string songWriter)
-        {
-            var s = songWriter.Split("-");
-            int id = int.Parse(s[0]);
-            var q = db.SongWriters.SingleOrDefault(x => x.ArtistId == id);
-            if (q != null)
-            {
-                return q;
-            }
-            return null;
-        }
-
-        private object setsinger(string singer)
-        {
-            var s = singer.Split("-");
-            int singerid = int.Parse(s[0]);
-            var q = db.Singers.SingleOrDefault(x => x.ArtistId == singerid);
-            if (q != null)
-            {
-                return q;
-            }
-            return null;
-        }
-        private object Download(IFormFile image)
-        {
-            byte[] img = new byte[image.Length];
-            image.OpenReadStream().Read(img, 0, img.Length);
-            return img;
-        }
-        private object Genres(string name) => db.Genres.SingleOrDefault(x => x.GenreName == name);
-
+        private Singer singer(bool issinger) => (issinger) ? new Singer() : null;
+        private SongWriter writer(bool isSong) => (isSong) ? new SongWriter() : null;
+        private MixMaster mix(bool isMixAndMaster) => (isMixAndMaster) ? new MixMaster() : null;
+        private Composer comp(bool isComposer) => (isComposer) ? new Composer() : null;
+        private Arrangement areng(bool isArrengement) => (isArrengement) ? new Arrangement() : null;
     }
 }

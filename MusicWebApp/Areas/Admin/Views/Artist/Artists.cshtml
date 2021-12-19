@@ -129,19 +129,21 @@
                                         <td>@item.Bio</td>
                                         <td>@item.WebSite</td>
                                         <td>
-                                            <a asp-area="admin" asp-controller="Artist" asp-action="Update"
-                                       asp-route-id="@item.Id">
-
-                                                <button class="btn btn-success">ویرایش</button>
-                                            </a>
+                                            <button class="btn btn-success">
+                                                <a asp-area="admin" asp-controller="Artist" asp-action="Update"
+                                           asp-route-id="@item.Id">
+                                                </a>
+                                                ویرایش
+                                            </button>
                                         </td>
 
                                         <td>
-                                            <a asp-area="admin" asp-controller="Artist" asp-action="Delete"
-                                       asp-route-id="@item.Id">
-
-                                                <button class="btn btn-outline-danger">حذف</button>
-                                            </a>
+                                            <button class="btn btn-outline-danger">
+                                                <a asp-area="admin" asp-controller="Artist" asp-action="Delete"
+                                           asp-route-id="@item.Id">
+                                                </a>
+                                                حذف
+                                            </button>
                                         </td>
                                     </tr>
                                 }

@@ -12,7 +12,8 @@ namespace MusicWebApp.Areas.Admin.ViewModels
         public string Title { get; set; }
         public DateTime Date { get; set; }
         public string Singer { get; set; }
-        public string SongWriter{ get; set; }
+        public string SongWriter { get; set; }
+        public string Composer { get; set; }
         public string Genre { get; set; }
         public string url128 { get; set; }
         public string url320 { get; set; }
