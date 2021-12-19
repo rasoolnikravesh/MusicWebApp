@@ -1,8 +1,11 @@
+﻿
 @{
-    ViewData["Title"] = "هنرمندان";
-    TempData["PageName"] = "هنرمندان";
+    TempData["Title"] = "خواننده ها";
+    TempData["pagename"] = "خواننده ها";
+
 }
-@model List<Artist>
+@using MusicWebApp.Areas.Admin.ViewModels.Artist;
+@model List<ShowSingersViewModel>
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">@ViewData["Title"]</h3>
@@ -73,17 +76,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-2">
-
-                    <div class="form-group">
-                        <select class="form-control" id="SortArtistType" name="sortname">
-                            <option>همه</option>
-                            <option>خواننده ها</option>
-                            <option>شاعران</option>
-                        </select>
-                    </div>
-
-                </div>
+               
             </div>
             <div class="row">
                 <div class="col-sm-12">
@@ -122,10 +115,9 @@
                                         clas = "odd";
                                     var item = Artists[i];
                                     <tr role="row" class="@clas">
-                                        <td>@item.Name</td>
-                                        <td>@item.LastName</td>
+                                        <td>@item.FullName</td>
                                         <td>@item.Bio</td>
-                                        <td>@item.WebSite</td>
+                                        <td>@item.Website</td>
                                         <td>
                                             <button class="btn btn-success">
                                                 <a asp-area="admin" asp-controller="Artist" asp-action="Update"
@@ -205,3 +197,5 @@
     <!-- /.card-body -->
 </div>
 <script src="~/MusicJs/Artist/SortArtistType.js"></script>
+
+

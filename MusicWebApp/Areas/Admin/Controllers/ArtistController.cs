@@ -7,6 +7,8 @@ using MusicWebApp.Areas.Identity.Data;
 using MusicWebApp.Areas.Admin.ViewModels.Artist;
 using MusicWebApp.Models;
 using AutoMapper;
+using MusicWebApp.Mapers;
+using System.Collections.Generic;
 
 namespace MusicWebApp.Areas.Admin.Controllers
 {
@@ -62,11 +64,11 @@ namespace MusicWebApp.Areas.Admin.Controllers
             artist.Singer = res.Singer;
             artist.LastName = res.LastName;
             artist.Bio = res.Bio;
-            artist.WebSite= res.WebSite;
-            artist.RemixMusics= res.RemixMusics;
-            artist.SongWriter= res.SongWriter;
-            artist.Compos= res.Compos;
-            artist.Arrangement= res.Arrangement;    
+            artist.WebSite = res.WebSite;
+            artist.RemixMusics = res.RemixMusics;
+            artist.SongWriter = res.SongWriter;
+            artist.Compos = res.Compos;
+            artist.Arrangement = res.Arrangement;
 
             await db.SaveChangesAsync();
             return RedirectToAction(nameof(Artists));
@@ -80,6 +82,21 @@ namespace MusicWebApp.Areas.Admin.Controllers
                 await db.SaveChangesAsync();
             }
             return RedirectToAction(nameof(Artists));
+        }
+        public IActionResult Singers([FromServices] IMapper mapper)
+        {
+            var singers = db.Singers.Include(x => x.Artist)
+                 .Include(x => x.SingleMusics).ThenInclude(m=> m.Singer).Include(x=>x.SingleMusics)
+                 .Include(x => x.Genres)
+                 .ToList();
+            List<ShowSingersViewModel> list = new List<ShowSingersViewModel>();
+            foreach (var singer in singers)
+            {
+                var resualt = mapper.Map<ShowSingersViewModel>(singer);
+                list.Add(resualt);
+            }
+
+            return View(list);
         }
 
     }
