@@ -27,10 +27,6 @@ namespace MusicWebApp.Areas.Admin.Controllers
         public IActionResult Musics([FromServices]IMapper mapper)
         {
             var musics = db.Musics
-                .Include(x=>x.Singer).ThenInclude(singer=> singer.Artist)
-                .Include(x=> x.Composer).ThenInclude(composer=> composer.Artist)
-                .Include(x=>x.Genre)
-                .Include(x=>x.SongWriter).ThenInclude(songwriter=> songwriter.Artist)
                 .ToList();
             List<ShowMusicViewModel> list = new List<ShowMusicViewModel>();
             foreach (var item in musics)

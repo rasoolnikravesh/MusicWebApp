@@ -31,10 +31,13 @@
                                     aria-sort="ascending" aria-label="نام: activate to sort column descending">
                                     نام
                                 </th>
+                                
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                     aria-label="خواننده: activate to sort column ascending">خواننده</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                     aria-label="شاعر: activate to sort column ascending">شاعر</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                    aria-label="آهنگساز: activate to sort column ascending">آهنگساز</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                     aria-label="تاریخ: activate to sort column ascending">تاریخ</th>
 
@@ -53,22 +56,21 @@
                                             <td>@item.Name</td>
                                             <td>@item.SingerName</td>
                                             <td>@item.SongWriterName</td>
+                                            <td>@item.ComposerName</td>
                                             <td>@item.Date</td>
                                             <td>
-                                                <button class="btn btn-outline-success">
-                                                    <a asp-area="admin" asp-controller="music" asp-action="Update"
-                                           asp-route-id="@item.Id">
-
-                                                    </a> Update
-                                                </button>
+                                                <a asp-area="admin" asp-controller="music" asp-action="Update"
+                                       asp-route-id="@item.Id">
+                                                    <button class="btn btn-outline-success">Update</button>
+                                                </a>
 
                                             </td>
                                             <td>
-                                                <button button class="btn btn-outline-danger">
-                                                    <a asp-area="admin" asp-controller="music" asp-action="Delete" asp-route-Id="@item.Id">
-                                                    </a>
-                                                    delete
-                                                </button>
+                                                <a asp-area="admin" asp-controller="music" asp-action="Delete" asp-route-Id="@item.Id">
+                                                    <button button class="btn btn-outline-danger">
+                                                        delete
+                                                    </button>
+                                                </a>
                                             </td>
                                         </tr>
                                     }

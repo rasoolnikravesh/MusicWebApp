@@ -16,7 +16,8 @@ namespace MusicWebApp.Mapers
                 .ForMember(x => x.SingerName, y => y.MapFrom(z => setSingerName(z.Singer)))
                 .ForMember(x => x.SongWriterName, y => y.MapFrom(z => setSongWriteName(z.SongWriter)))
                 .ForMember(x => x.GenreName, y => y.MapFrom(z => SetGenreName(z.Genre)))
-                .ForMember(x => x.ComposerName, y => y.MapFrom(z => SetComposerName(z.Composer)));
+                .ForMember(x => x.ComposerName, y => y.MapFrom(z => SetComposerName(z.Composer)))
+                ;
         }
 
         private object SetComposerName(Composer composer)

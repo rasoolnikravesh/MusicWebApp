@@ -16,7 +16,7 @@ namespace MusicWebApp.Mapers
             CreateMap<Singer, ShowSingersViewModel>()
                 .ForMember(x => x.FullName, y => y.MapFrom(z => $"{z.Artist.Name} {z.Artist.LastName}"))
                 .ForMember(x => x.Genres, y => y.MapFrom(z => SetGenres(z.Genres)))
-                .ForMember(x => x.Bio, y => y.MapFrom(z => $"{z.Artist.Bio}"))
+                .ForMember(x => x.Bio, y => y.MapFrom(z => SetBio(z.Artist.Bio)))
                 .ForMember(x => x.Website, y => y.MapFrom(z => $"{z.Artist.WebSite}"))
                 .AfterMap((src, dest, context) =>
                 {
@@ -30,6 +30,21 @@ namespace MusicWebApp.Mapers
                 });
         }
 
+        private object SetBio(string bio)
+        {
+            if (!String.IsNullOrEmpty(bio) || !string.IsNullOrWhiteSpace(bio))
+            {
+                if (bio.Length > 100)
+                {
+                    var newbio = bio.Substring(0, 100);
+                    return newbio;
+                }
+                else
+                    return bio;
+            }
+            else
+                return bio;
+        }
 
         private object SetGenres(List<Genre> genres)
         {

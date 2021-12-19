@@ -22,10 +22,16 @@ namespace MusicWebApp.Areas.Admin.Controllers
             db = Context;
         }
 
-        public IActionResult Artists()
+        public IActionResult Artists([FromServices]IMapper mapper)
         {
             var r = db.Artists.ToList();
-            return View(r);
+            List<ShowArtistViewModel> list = new List<ShowArtistViewModel>();
+            foreach (var artist in r)
+            {
+                var res= mapper.Map<ShowArtistViewModel>(artist);
+                list.Add(res);
+            }
+            return View(list);
         }
 
         [HttpGet()]
@@ -45,20 +51,13 @@ namespace MusicWebApp.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateAsync(int id)
         {
-            var d = await db.Artists.Include(x => x.Singer)
-            .Include(x => x.Arrangement).Include(x => x.Compos)
-            .Include(x => x.SongWriter).Include(x => x.RemixMusics)
-            .SingleOrDefaultAsync(x => x.Id == id);
+            var d = await db.Artists.SingleOrDefaultAsync(x => x.Id == id);
             ViewData["Data"] = d;
             return View();
         }
         public async Task<IActionResult> UpdateAsync(UpdateArtistViewModel model, [FromServices] IMapper mapper)
         {
-            var artist = await db.Artists.Include(x => x.Singer)
-            .Include(x => x.Arrangement).Include(x => x.Compos)
-            .Include(x => x.SongWriter).Include(x => x.RemixMusics)
-            .SingleOrDefaultAsync(x => x.Id == model.Id);
-
+            var artist = await db.Artists.SingleOrDefaultAsync(x => x.Id == model.Id);
             var res = mapper.Map<Artist>(model);
             artist.Name = res.Name;
             artist.Singer = res.Singer;
@@ -85,8 +84,7 @@ namespace MusicWebApp.Areas.Admin.Controllers
         }
         public IActionResult Singers([FromServices] IMapper mapper)
         {
-            var singers = db.Singers.Include(x => x.Artist)
-                 .ToList();
+            var singers = db.Singers.ToList();
             List<ShowSingersViewModel> list = new List<ShowSingersViewModel>();
             foreach (var singer in singers)
             {
