@@ -18,8 +18,9 @@ namespace MusicWebApp.Areas.Identity
             builder.ConfigureServices((context, services) =>
             {
                 services.AddDbContext<MusicAppContext>(options =>
-                    options.UseSqlServer(
-                        context.Configuration.GetConnectionString("MusicWebAppIdentityDbContextConnection")));
+                    options.UseLazyLoadingProxies()
+                        .UseSqlServer(
+                        context.Configuration.GetConnectionString("MusicWebAppIdentityDbContextConnection"))); ;
 
                 services.AddDefaultIdentity<AspNetUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddRoles<IdentityRole>()
@@ -56,7 +57,7 @@ namespace MusicWebApp.Areas.Identity
                             return Task.CompletedTask;
                         },
                         OnRedirectToAccessDenied = z =>
-                        {   
+                        {
                             z.Response.Redirect("/account/loginregister");
                             return Task.CompletedTask;
                         }

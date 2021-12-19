@@ -8,7 +8,7 @@ namespace MusicWebApp.Models
     {
         [Key]
         public int ArtistId { get; set; }
-        public Artist Artist { get; set; }
+        public virtual Artist Artist { get; set; }
         public virtual List<Genre> Genres { get; set; }
         public virtual List<Music> SingleMusics { get; set; }
         public virtual List<Album> Albums { get; set; }

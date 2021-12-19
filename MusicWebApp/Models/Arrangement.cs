@@ -5,8 +5,8 @@ namespace MusicWebApp.Models
     public class Arrangement
     {
         public int ArtistId { get; set; }
-        public Artist Artist { get; set; }
-        public List<Music> Arrangements { get; set; }
+        public virtual Artist Artist { get; set; }
+        public virtual List<Music> Arrangements { get; set; }
         
     }
 }

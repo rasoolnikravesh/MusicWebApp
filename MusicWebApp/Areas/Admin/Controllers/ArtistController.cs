@@ -86,8 +86,6 @@ namespace MusicWebApp.Areas.Admin.Controllers
         public IActionResult Singers([FromServices] IMapper mapper)
         {
             var singers = db.Singers.Include(x => x.Artist)
-                 .Include(x => x.SingleMusics).ThenInclude(m=> m.Singer).Include(x=>x.SingleMusics)
-                 .Include(x => x.Genres)
                  .ToList();
             List<ShowSingersViewModel> list = new List<ShowSingersViewModel>();
             foreach (var singer in singers)

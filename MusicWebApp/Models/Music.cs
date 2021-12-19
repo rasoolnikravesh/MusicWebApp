@@ -19,8 +19,8 @@ namespace MusicWebApp.Models
         public string Url320 { get; set; }
         //singer// 
 
-        public Genre Genre { get; set; }
-        public List<Subject> Subjects { get; set; }
+        public virtual Genre Genre { get; set; }
+        public virtual List<Subject> Subjects { get; set; }
 
         public virtual Singer Singer { get; set; }
 
