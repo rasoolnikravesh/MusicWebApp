@@ -11,6 +11,7 @@ namespace MusicWebApp.Models
         public string LastName { get; set; }
         public string Bio { get; set; }
         public string WebSite { get; set; }
+        public int Image { get; set; }
         public virtual SongWriter SongWriter { get; set; }
         public virtual Singer Singer { get; set; }
         public virtual Composer Compos { get; set; }

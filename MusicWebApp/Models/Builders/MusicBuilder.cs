@@ -26,7 +26,6 @@ namespace MusicWebApp.Models.Builders
       {
         Id = _id,
         Name = _name,
-        Title = _title,
         Text = _text,
         Date = _date,
         Url128 = _url128,
@@ -53,11 +52,7 @@ namespace MusicWebApp.Models.Builders
       return this;
     }
 
-    public MusicBuilder WithTitle(string value)
-    {
-      _title = value;
-      return this;
-    }
+    
 
     public MusicBuilder WithText(string value)
     {
