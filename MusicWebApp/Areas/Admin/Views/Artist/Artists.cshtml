@@ -12,36 +12,37 @@
     <div class="card-body">
         <div id="example1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
             <div>
-                @{
+
+                @* @{
 
                     string mint = (string)TempData["message"];
                     if (mint == "0")
                     {
 
-                        <div class="alert alert-success alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h5><i class="icon fa fa-ban"></i> توجه!</h5>
-                            با موفقیت ثبت شد
-                        </div>
+                    <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fa fa-ban"></i> توجه!</h5>
+                    با موفقیت ثبت شد
+                    </div>
                     }
                     else if (mint == "2")
                     {
 
-                        <div class="alert alert-info alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h5><i class="icon fa fa-ban"></i> توجه!</h5>
-                            قبلا ثبت شده است
-                        </div>
+                    <div class="alert alert-info alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fa fa-ban"></i> توجه!</h5>
+                    قبلا ثبت شده است
+                    </div>
                     }
                     else if (mint == "-1")
                     {
-                        <div class="alert alert-danger alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h5><i class="icon fa fa-ban"></i> توجه!</h5>
-                            هنرمند یافت نشد
-                        </div>
+                    <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fa fa-ban"></i> توجه!</h5>
+                    هنرمند یافت نشد
+                    </div>
                     }
-                }
+                    }*@
 
             </div>
             <div class="row">
@@ -74,7 +75,7 @@
                         </label>
                     </div>
                 </div>
-                
+
             </div>
             <div class="row">
                 <div class="col-sm-12">
@@ -90,14 +91,13 @@
                                     نام خانوادگی
                                 </th>
                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                    aria-label="بیو گرافی: activate to sort column ascending" style="width: 391.469px;">
-                                    بیو گرافی
-                                </th>
-
-                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
                                     aria-label="وب سایت: activate to sort column ascending" style="width: 116.312px;">
                                     وب سایت
                                 </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                aria-label="">نمایش</th>
+                                <th>اپدیت</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -115,8 +115,15 @@
                                     <tr role="row" class="@clas">
                                         <td>@item.Name</td>
                                         <td>@item.LastName</td>
-                                        <td>@item.Bio</td>
                                         <td>@item.WebSite</td>
+
+                                        <td>
+                                            <input hidden id="idinput" value="@item.Id">
+                                            <button type="button" class="btn btn-info" id="showinfo" data-toggle="modal" data-target="#exampleModal">
+                                                نمایش
+                                            </button>
+
+                                        </td>
                                         <td>
                                             <button class="btn btn-success">
                                                 <a asp-area="admin" asp-controller="Artist" asp-action="Update"
@@ -143,7 +150,6 @@
                             <tr>
                                 <th rowspan="1" colspan="1">نام</th>
                                 <th rowspan="1" colspan="1">نام خانوادگی</th>
-                                <th rowspan="1" colspan="1">بیو گرافی</th>
                                 <th rowspan="1" colspan="1">وب سایت</th>
                             </tr>
                         </tfoot>
@@ -195,4 +201,58 @@
     </div>
     <!-- /.card-body -->
 </div>
-<script src="~/MusicJs/Artist/SortArtistType.js"></script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">اطلاعت بیشتر</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>نام</th>
+                            <td id="dataname"></td>
+                        </tr>
+                        <tr>
+                            <th>نام حانوادگی</th>
+                            <td id="datalastname"></td>
+                        </tr>
+                        <tr>
+                            <th>بیوگرافی</th>
+                            <td id="databio"></td>
+                        </tr>
+                        <tr>
+                            <th>وب سایت</th>
+                            <td id="datawebsite"></td>
+                        </tr>
+                        <tr>
+                            <th>خواننده</th>
+                            <td id="dataisSinger"></td>
+                        </tr>
+                        <tr>
+                            <th>آهنگ ساز</th>
+                            <td id="dataisCompos"></td>
+                        </tr>
+                        <tr>
+                            <th>تنظیم</th>
+                            <td id="dataarrengment"></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/MusicJs/Artist/artistinfo.js"></script>

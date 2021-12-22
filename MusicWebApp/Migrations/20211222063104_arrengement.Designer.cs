@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MusicWebApp.Areas.Identity.Data;
 
 namespace MusicWebApp.Migrations
 {
     [DbContext(typeof(MusicAppContext))]
-    partial class MusicAppContextModelSnapshot : ModelSnapshot
+    [Migration("20211222063104_arrengement")]
+    partial class arrengement
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

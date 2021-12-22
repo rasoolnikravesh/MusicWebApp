@@ -71,6 +71,7 @@ namespace MusicWebApp.Areas.Identity.Data
         public DbSet<Music> Musics { get; set; }
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Singer> Singers { get; set; }
+        public DbSet<Arrangement> Arrangements { get; set; }
         public DbSet<SongWriter> SongWriters { get; set; }
         public DbSet<MixMaster> MixMasters { get; set; }
         public DbSet<Composer> Composers { get; set; }

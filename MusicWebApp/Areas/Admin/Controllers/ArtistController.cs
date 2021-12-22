@@ -22,13 +22,13 @@ namespace MusicWebApp.Areas.Admin.Controllers
             db = Context;
         }
 
-        public IActionResult Artists([FromServices]IMapper mapper)
+        public IActionResult Artists([FromServices] IMapper mapper)
         {
             var r = db.Artists.ToList();
             List<ShowArtistViewModel> list = new List<ShowArtistViewModel>();
             foreach (var artist in r)
             {
-                var res= mapper.Map<ShowArtistViewModel>(artist);
+                var res = mapper.Map<ShowArtistViewModel>(artist);
                 list.Add(res);
             }
             return View(list);
@@ -93,6 +93,16 @@ namespace MusicWebApp.Areas.Admin.Controllers
             }
 
             return View(list);
+        }
+        public async Task<IActionResult> ShowinfoAsync(int Id, [FromServices] IMapper mapper)
+        {
+            var artist = await db.Artists.SingleOrDefaultAsync(x => x.Id == Id);
+            if (artist != null)
+            {
+                var res = mapper.Map<ShowArtistViewModel>(artist);
+                return Json(res);
+            }
+            else return null;
         }
 
     }

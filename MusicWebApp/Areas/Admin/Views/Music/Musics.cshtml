@@ -31,15 +31,19 @@
                                     aria-sort="ascending" aria-label="نام: activate to sort column descending">
                                     نام
                                 </th>
-                                
+
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                     aria-label="خواننده: activate to sort column ascending">خواننده</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                     aria-label="شاعر: activate to sort column ascending">شاعر</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                     aria-label="آهنگساز: activate to sort column ascending">آهنگساز</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                     aria-label="تاریخ: activate to sort column ascending">تاریخ</th>
+                                <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="نام: activate to sort column descending">
+                                    تنظیم کننده
+                                </th>
 
 
                             </tr>
@@ -47,45 +51,43 @@
                         <tbody>
                             @{
                                 var music = Model;
-                                if (music.Count > 0)
+                                for (int i = 0; i < music.Count; i++)
                                 {
-                                    foreach (var item in music)
-                                    {
-
-                                        <tr role="row" class="odd">
-                                            <td>@item.Name</td>
-                                            <td>@item.SingerName</td>
-                                            <td>@item.SongWriterName</td>
-                                            <td>@item.ComposerName</td>
-                                            <td>@item.Date</td>
-                                            <td>
-                                                <a asp-area="admin" asp-controller="music" asp-action="Update"
+                                    var oe = i % 2;
+                                    string clas;
+                                    if (oe == 0)
+                                        clas = "even";
+                                    else
+                                        clas = "odd";
+                                    var item = music[i];
+                                    <tr role="row" class="@clas">
+                                        <td>@item.Name</td>
+                                        <td>@item.SingerName</td>
+                                        <td>@item.SongWriterName</td>
+                                        <td>@item.ComposerName</td>
+                                        <td>@item.Date</td>
+                                        <td>@item.ArrengementName</td>
+                                        <td>
+                                            <button>
+                                                <a asp-action="@item.Id">اطلاعات بیشتر</a>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <a asp-area="admin" asp-controller="music" asp-action="Update"
                                        asp-route-id="@item.Id">
-                                                    <button class="btn btn-outline-success">Update</button>
-                                                </a>
-
-                                            </td>
-                                            <td>
-                                                <a asp-area="admin" asp-controller="music" asp-action="Delete" asp-route-Id="@item.Id">
-                                                    <button button class="btn btn-outline-danger">
-                                                        delete
-                                                    </button>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    }
-                                }
-                                else
-                                {
-
-                                    <tr role="row" class="even">
-                                        <td class="sorting_1">Gecko</td>
-                                        <td>Firefox ۱.۵</td>
-                                        <td>Win ۹۸+ / OSX.۲+</td>
-                                        <td>۱.۸</td>
-                                        <td>A</td>
+                                                <button class="btn btn-outline-success">Update</button>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a asp-area="admin" asp-controller="music" asp-action="Delete" asp-route-Id="@item.Id">
+                                                <button button class="btn btn-outline-danger">
+                                                    delete
+                                                </button>
+                                            </a>
+                                        </td>
                                     </tr>
                                 }
+
                             }
 
 

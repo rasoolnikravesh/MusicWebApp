@@ -14,6 +14,8 @@ using Microsoft.Extensions.Hosting;
 using MusicWebApp.Areas.Identity.Data;
 using AutoMapper;
 using MusicWebApp.Mapers;
+using MusicWebApp.Mapers.Artists;
+
 namespace MusicWebApp
 {
     public class Startup
@@ -47,6 +49,7 @@ namespace MusicWebApp
                     cfg.AddProfile(new InsertMusicMaperProfile(provider.GetService<MusicAppContext>()));
                     cfg.AddProfile(new ShowMusicMaperProfile(provider.GetService<MusicAppContext>()));
                     cfg.AddProfile(new ShowSingersMapperProfile());
+                    cfg.AddProfile(new ShowArtistsMapperProfile(provider.GetService<MusicAppContext>()));
                 }).CreateMapper());
         }
 

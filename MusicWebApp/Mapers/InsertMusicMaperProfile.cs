@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using MusicWebApp.Areas.Admin.ViewModels;
 using MusicWebApp.Areas.Identity.Data;
 using MusicWebApp.Models;
@@ -19,8 +20,22 @@ namespace MusicWebApp.Mapers
             .ForMember(x => x.Genre, y => y.MapFrom(z => Genres(z.Genre)))
             .ForMember(x => x.Singer, y => y.MapFrom(z => setsinger(z.Singer)))
             .ForMember(x => x.SongWriter, y => y.MapFrom(z => setsongwriter(z.SongWriter)))
-            .ForMember(x => x.Composer, y => y.MapFrom(z => setcomposer(z.Composer)));
+            .ForMember(x => x.Composer, y => y.MapFrom(z => setcomposer(z.Composer)))
+            .ForMember(x => x.Arrangement, y => y.MapFrom(z => SetArrengement(z.Arrengement)))
+            ;
 
+        }
+
+        private object SetArrengement(string arrengement)
+        {
+            if (arrengement == "انتخاب کنید")
+                return null;
+            var id = Convert.ToInt32(arrengement.Split("-")[0]);
+            var comp = db.Arrangements.SingleOrDefault(x => x.Artist.Id == id);
+            if (comp != null)
+                return comp;
+            else
+                return null;
         }
 
         private object setcomposer(string composer)
@@ -28,8 +43,8 @@ namespace MusicWebApp.Mapers
             if (composer == "انتخاب کنید")
                 return null;
             var id = Convert.ToInt32(composer.Split("-")[0]);
-            var comp = db.Composers.SingleOrDefault(x => x.ArtistId == id);
-            if (comp == null)
+            var comp = db.Composers.Include(x => x.Artist).SingleOrDefault(x => x.ArtistId == id);
+            if (comp != null)
                 return comp;
             else
                 return null;

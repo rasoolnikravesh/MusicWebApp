@@ -24,7 +24,7 @@ namespace MusicWebApp.Areas.Admin.Controllers
         {
             db = _db;
         }
-        public IActionResult Musics([FromServices]IMapper mapper)
+        public IActionResult Musics([FromServices] IMapper mapper)
         {
             var musics = db.Musics
                 .ToList();
@@ -66,9 +66,10 @@ namespace MusicWebApp.Areas.Admin.Controllers
         {
             var Genres = db.Genres.ToList();
             ViewData["Genres"] = Genres;
-            ViewData["singer"] = db.Singers.Include(x => x.Artist).ToList();
-            ViewData["songwriter"] = db.SongWriters.Include(x => x.Artist).ToList();
-            ViewData["composer"] = db.Composers.Include(x => x.Artist).ToList();
+            ViewData["singer"] = db.Singers.ToList();
+            ViewData["songwriter"] = db.SongWriters.ToList();
+            ViewData["composer"] = db.Composers.ToList();
+            ViewData["arrengment"] = db.Arrangements.ToList();
             return View();
         }
 
@@ -118,6 +119,29 @@ namespace MusicWebApp.Areas.Admin.Controllers
             {
                 return null;
             }
+        }
+        [HttpGet()]
+        public async Task<IActionResult> UpdateAsync(int Id)
+        {
+            var music = await db.Musics.SingleOrDefaultAsync(x => x.Id == Id);
+            if (music != null)
+            {
+                ViewData["music"] = music;
+                ViewData["Genres"] = db.Genres.ToList();
+                ViewData["singer"] = db.Singers.ToList();
+                ViewData["songwriter"] = db.SongWriters.ToList();
+                ViewData["composer"] = db.Composers.ToList();
+                ViewData["arrengment"] = db.Arrangements.ToList();
+                return View();
+            }
+            else
+            {
+                return RedirectToAction(nameof(Musics));
+            }
+        }
+        public IActionResult Update(UpdateMusicViewModel model, [FromServices] IMapper mapper)
+        {
+            return RedirectToAction(nameof(Musics));
         }
 
     }

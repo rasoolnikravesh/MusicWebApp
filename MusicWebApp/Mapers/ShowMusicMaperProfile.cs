@@ -17,14 +17,22 @@ namespace MusicWebApp.Mapers
                 .ForMember(x => x.SongWriterName, y => y.MapFrom(z => setSongWriteName(z.SongWriter)))
                 .ForMember(x => x.GenreName, y => y.MapFrom(z => SetGenreName(z.Genre)))
                 .ForMember(x => x.ComposerName, y => y.MapFrom(z => SetComposerName(z.Composer)))
-                ;
+                .ForMember(x => x.ArrengementName, y => y.MapFrom(z => SetArrengement(z.Arrangement)));
+        }
+
+        private object SetArrengement(Arrangement arrangement)
+        {
+            if (arrangement is null)
+                return null;
+            else
+                return $"{ arrangement.Artist.Name} { arrangement.Artist.LastName}";
         }
 
         private object SetComposerName(Composer composer)
         {
             if (composer == null)
                 return null;
-            return null;
+            return $"{ composer.Artist.Name} {composer.Artist.LastName}";
         }
 
         private object SetGenreName(Genre genre)
@@ -51,7 +59,7 @@ namespace MusicWebApp.Mapers
 
         private object setSingerName(Singer singer)
         {
-            
+
             if (singer == null)
                 return null;
             else
