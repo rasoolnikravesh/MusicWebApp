@@ -139,8 +139,27 @@ namespace MusicWebApp.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Musics));
             }
         }
-        public IActionResult Update(UpdateMusicViewModel model, [FromServices] IMapper mapper)
+        public async Task<IActionResult> UpdateAsync(UpdateMusicViewModel model, [FromServices] IMapper mapper)
         {
+            if (ModelState.IsValid)
+            {
+                var mus = mapper.Map<Music>(model);
+                var music = await db.Musics.SingleOrDefaultAsync(x => x.Id == mus.Id);
+                music.CoverImage = mus.CoverImage;
+                music.Name = mus.Name;
+                music.Singer.ArtistId = mus.Singer.ArtistId;
+                music.SongWriter.ArtistId = mus.SongWriter.ArtistId;
+                music.Subjects = mus.Subjects;
+                music.Text = mus.Text;
+                music.Arrangement = mus.Arrangement;
+                music.Url320 = mus.Url320;
+                music.Url128 = mus.Url128;
+                music.MixMaster = mus.MixMaster;
+                music.Genre = mus.Genre;
+                music.Date = mus.Date;
+                music.Composer = mus.Composer;
+                await db.SaveChangesAsync();
+            }
             return RedirectToAction(nameof(Musics));
         }
 

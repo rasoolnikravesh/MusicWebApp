@@ -14,7 +14,7 @@
 <div class="card card-success m-3 ">
 
 
-    <form enctype="multipart/form-data" asp-area="admin" asp-controller="Music"
+    <form enctype="multipart/form-data" id="formupdate" asp-area="admin" asp-controller="Music"
           asp-action="Update">
         <div class="card-header">
             <h3 class="card-title">@TempData["Title"]</h3>
@@ -32,12 +32,14 @@
 
                 </div>
                 <div class="col-md-6">
+                    <input hidden asp-for="Id" value="@music.Id" />
                 </div>
 
             </div>
 
             <div class="row">
                 <div class="col-md-6">
+
                     <div class="form-group">
                         <label>انتخاب تاریخ:</label>
 
@@ -167,12 +169,34 @@
                     <div class="form-group">
                         @{
                             var composers = ViewData["composer"] as List<Composer>;
+                            var compos = music.Composer;
                             <label>آهنگ ساز</label>
                             <select class="form-control" asp-for="Composer">
-                                <option selected> انتخاب کنید</option>
-                                @foreach (var composer in composers)
-                                {
-                                    <option>@($"{composer.ArtistId}-{composer.Artist.Name}-{composer.Artist.LastName}")</option>
+                                @{
+                                    if (compos == null)
+                                    {
+
+                                        <option selected> انتخاب کنید</option>
+                                        @foreach (var composer in composers)
+                                        {
+                                            <option>@($"{composer.ArtistId}-{composer.Artist.Name}-{composer.Artist.LastName}")</option>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <option> انتخاب کنید</option>
+                                        @foreach (var composer in composers)
+                                        {
+                                            if (compos.Artist.Id == composer.ArtistId)
+                                            {
+                                                <option selected>@($"{composer.ArtistId}-{composer.Artist.Name}-{composer.Artist.LastName}")</option>
+                                            }
+                                            else
+                                            {
+                                                <option>@($"{composer.ArtistId}-{composer.Artist.Name}-{composer.Artist.LastName}")</option>
+                                            }
+                                        }
+                                    }
                                 }
                             </select>
                         }
@@ -182,12 +206,33 @@
                     <div class="form-group">
                         @{
                             var arrengements = ViewData["arrengment"] as List<Arrangement>;
+                            var arreng = music.Arrangement;
                             <label>تنظیم کننده</label>
                             <select class="form-control" asp-for="Arrengement">
-                                <option selected>انتخاب کنید</option>
-                                @foreach (var arrengement in arrengements)
+                                @if (arreng == null)
                                 {
-                                    <option>@($"{arrengement.ArtistId}-{arrengement.Artist.Name}-{arrengement.Artist.LastName}")</option>
+                                    <option selected>انتخاب کنید</option>
+                                    @foreach (var arrengement in arrengements)
+                                    {
+                                        <option>@($"{arrengement.ArtistId}-{arrengement.Artist.Name}-{arrengement.Artist.LastName}")</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option>انتخاب کنید</option>
+                                    @foreach (var arrengement in arrengements)
+                                    {
+                                        if (arreng.Artist.Id == arrengement.ArtistId)
+                                        {
+
+                                            <option selected>@($"{arrengement.ArtistId}-{arrengement.Artist.Name}-{arrengement.Artist.LastName}")</option>
+                                        }
+                                        else
+                                        {
+                                            <option>@($"{arrengement.ArtistId}-{arrengement.Artist.Name}-{arrengement.Artist.LastName}")</option>
+
+                                        }
+                                    }
                                 }
 
                             </select>
@@ -201,14 +246,29 @@
                     <div class="form-group">
                         <label asp-for="Image" class="control-label">کاور موزیک</label>
                         <div class="custom-file">
-                            <input asp-for="Image" class="custom-file-input" id="customFile">
+                            <input asp-for="Image" class="custom-file-input" id="image">
                             <label class="custom-file-label" for="customFile">انتخاب عکس</label>
                         </div>
                         <span asp-validation-for="Image" class="text-danger"></span>
                     </div>
                 </div>
+                <input id="ischange" hidden asp-for="IsChange" type="checkbox" />
                 <div class="col-md-6">
+                    @{
+                        if (music.CoverImage.Length > 0)
+                        {
+                            <div class="show-image-selected">
+                                <img width="100" src=@($"data:image/jpg;base64,{Convert.ToBase64String(music.CoverImage)}") id="selected-image" />
+                            </div>
+                        }
+                        else
+                        {
 
+                            <div class="show-image-selected">
+                                <img width="100" id="selected-image" />
+                            </div>
+                        }
+                    }
                     <div class="show-image-selected">
                         <img width="100" id="selected-image" />
                     </div>
@@ -219,14 +279,14 @@
                 <div class="col-md">
                     <div class="form-group">
                         <label>لینک 128</label>
-                        <input type="text" asp-for="url128" class="form-control ">
+                        <input type="text" asp-for="url128" value="@music.Url128" class="form-control ">
                         <span asp-validation-for="url128"></span>
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="form-group">
                         <label>لینک 320</label>
-                        <input type="text" asp-for="url320" class="form-control ">
+                        <input type="text" asp-for="url320" value=@music.Url320 class="form-control ">
                         <span asp-validation-for="url320"></span>
                     </div>
                 </div>
@@ -237,7 +297,13 @@
         <div class="card-footer">
             <button type="submit" class="btn btn-primary">ارسال</button>
         </div>
-        <script src="~/MusicJs/InsertMusic.js"></script>
+        <script>
+              $(document).ready(function() {
+                  
+              $(".normal-example").pDatepicker()
+            });
+        </script>
+        <script src="~/MusicJs/Musics/UpdateMusic.js"></script>
     </form>
     <!-- /.card-body -->
 
@@ -245,3 +311,4 @@
         <a asp-action="Index">Back to List</a>
     </div>
 
+</div>
