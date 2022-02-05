@@ -1,6 +1,40 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<div class="title-box">
+    <h4 class="title h3">تازه منتشرشده ها</h4>
+</div>
 
-<h1>Home Page</h1>
-<a asp-area="Admin" asp-action="Index" asp-controller="AdminPanel">test</a>
+<div class="row auto-fit-columns adonis-animate" data-animation="slideUp" data-animation-item=".music-img-box" data-item-width="230" data-item-max-width="260" style="opacity: 1;">
+    @{
+        var musics = ViewData["musics"] as List<Music>;
+        foreach (Music music in musics)
+        {
+
+            <div class="col-auto" style="width: 241.2px;">
+                <div class="music-img-box mb-e-30 mb-e-lg-40" style="opacity: 1; transform: translateY(0px);">
+                    <div class="img-box box-rounded-sm">
+                        <img class="retina" src="@($"data:image/jpeg;base64,{Convert.ToBase64String(music.CoverImage)}")" data-2x="assets/images/new-releases/new-releases-35@2x.jpg" alt="">
+                        <div class="hover-state">
+                            <div class="absolute-bottom-right pr-e-20 pb-e-20">
+                                <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                            </div>
+                            <div class="absolute-top-left pl-e-20 pt-e-20">
+                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="title"><a href="#">@music.Name</a></h6>
+                    <p class="sub-title category">
+                        <a href="#">@music.Singer.Artist.Name</a>
+                    </p>
+                </div>
+            </div>
+        }
+    }
+    
+
+</div>
+<div class="text-center">
+    <button class="btn btn-primary align-content-center mb-5">بارگیری بیشتر</button>
+</div>

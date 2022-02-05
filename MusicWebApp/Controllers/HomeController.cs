@@ -12,19 +12,19 @@ namespace MusicWebApp.Controllers
 {
     public class HomeController : Controller
     {
-
-        public HomeController(MusicAppContext db)
+        private readonly MusicAppContext db;
+        public HomeController(MusicAppContext _db)
         {
-         
+            db = _db;
         }
 
         public IActionResult Index()
         {
-
+            ViewData["musics"] = db.Musics.ToList();
             return View();
         }
 
-        
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
